@@ -1,29 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title> TirocinioSmart </title>
-
-<!-- Bootstrap core CSS -->
-<link href="initial/vendor/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TirocinioSmart</title>
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="initial/css/the-big-picture.css" rel="stylesheet">
+<!--external css-->
+<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="initial/css/the-big-picture.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/style-responsive.css" rel="stylesheet">
+
 
 </head>
 
 <body>
 
-
 	<!-- Navigation -->
+
 	<!-- 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
 		<div class="container">
@@ -51,14 +48,24 @@
  -->
 
 	<!-- Page Content -->
-
-	<div class="row">
-		<div class="col-md-12 text-center" style="margin-top: 35%">
-			<button class="btn btn-default center-block" style="margin-right:20%" value="Accedi">Accedi</button>
-			<button class="btn btn-default center-block" value="Registrati">Registrati</button>
-		</div>
+	<div class="col-md-12 text-center" style="margin-top: 35%">
+		<a href="Accedi" class="btn btn-theme" style="margin-right: 20%"
+			value="Accedi">Accedi</a> <a href="Registrati" class="btn btn-theme"
+			value="Registrati">Registrati</a>
 	</div>
 
+
+
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="assets/js/jquery.backstretch.min.js"></script>
+	<script>
+		$.backstretch("image/unisalr.jpg", {
+			speed : 500
+		});
+	</script>
 
 
 
@@ -69,4 +76,5 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  -->
 </body>
+
 </html>
