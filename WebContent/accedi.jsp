@@ -44,12 +44,9 @@
 					<input type="text" class="form-control" placeholder="User ID"
 						autofocus> <br> <input type="password"
 						class="form-control" placeholder="Password"> <label
-						class="checkbox"> <span class="pull-right">
-
-					</span>
+						class="checkbox"> <span class="pull-right"> </span>
 					</label>
-					<button class="btn btn-theme btn-block" href="index.html"
-						type="submit">
+					<button class="btn btn-theme btn-block" type="submit">
 						<i class="fa fa-lock"></i> SIGN IN
 					</button>
 					<hr>
@@ -90,14 +87,12 @@
 		</div>
 	</div>
 
-	<!-- js placed at the end of the document so the pages load faster -->
+
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
-
-	<!--BACKSTRETCH-->
-	<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
 	<script type="text/javascript"
-		src="assets/js/jquery.backstretch.min.js"></script>
+		src="assets/js/jquery.backstretch.min.js">
+	</script>
 	<script>
 		$.backstretch("image/unisalr.jpg", {
 			speed : 500
