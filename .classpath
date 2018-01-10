@@ -10,5 +10,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/Alfonso/workspacePW/nowiwant/WebContent/WEB-INF/lib/mysql-connector-java-5.1.39-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angela Ursi/Tomcat/apache-tomcat-8.5.13/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angela Ursi/workspace/nowiwant/WebContent/WEB-INF/lib/mysql-connector-java-5.1.39-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
