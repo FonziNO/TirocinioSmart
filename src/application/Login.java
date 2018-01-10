@@ -61,6 +61,5 @@ public class Login extends HttpServlet{
 			RequestDispatcher login = request.getRequestDispatcher("login.html");
 			login.forward(request, response);
 		}
-		
 	}
 }

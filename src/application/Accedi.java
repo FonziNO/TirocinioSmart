@@ -32,7 +32,6 @@ public class Accedi extends HttpServlet {
 		RequestDispatcher view = request.getRequestDispatcher("accedi.jsp");
 		view.forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
