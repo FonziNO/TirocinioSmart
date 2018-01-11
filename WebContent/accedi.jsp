@@ -38,16 +38,19 @@
 	<div id="login-page">
 		<div class="container">
 
-			<form class="form-login" action="Login" method="post">
-				<h2 class="form-login-heading">sign in now</h2>
+			<form class="form-login" action="Login"
+				onsubmit="return controlloLogin(this);" method="post">
+				<h2 class="form-login-heading">Effettua l'accesso</h2>
 				<div class="login-wrap">
-					<input type="text" class="form-control" placeholder="User ID"
-						autofocus> <br> <input type="password"
-						class="form-control" placeholder="Password"> <label
-						class="checkbox"> <span class="pull-right"> </span>
+					<input type="email" class="form-control" placeholder="E-mail"
+						autofocus value="" required> <br> <input
+						type="password" class="form-control" placeholder="Password"
+						value="" required> <label class="checkbox"> <span
+						class="pull-right"> </span>
 					</label>
-					<button class="btn btn-theme btn-block" type="submit">
-						<i class="fa fa-lock"></i> SIGN IN
+					<button class="btn btn-theme btn-block" type="submit"
+						value="Accedi">
+						<i class="fa fa-lock"></i> ACCEDI
 					</button>
 					<hr>
 
@@ -92,11 +95,26 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript"
 		src="assets/js/jquery.backstretch.min.js">
+		
 	</script>
 	<script>
 		$.backstretch("image/unisalr.jpg", {
 			speed : 500
 		});
+	</script>
+
+	<script>
+		function controlloLogin(form) {
+			var email = form.elements.namedItem("email").value.trim();
+			var pass = form.elements.namedItem("password").value.trim();
+			if (email !== null && email !== "" && pass !== null && pass !== "") {
+
+				return true;
+			} else {
+				document.getElementById("alert").style.display = "block";
+				return false;
+			}
+		}
 	</script>
 
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,14 +20,14 @@
 <body>
 	<div id="login-page">
 		<div class="container">
-			<form class="form-login" role="form" >
+			<form class="form-login" role="form" action="Registra" method="post">
 
 				<h2 class="form-login-heading">Registrati!</h2>
 				<div class="login-wrap">
 					<label for="nome" class="col-sm-3 control-label">Nome</label>
 					<div class="col-sm-9">
-						<input type="text" style="font-family: Ruda" id="nome" placeholder="Nome"
-							class="form-control" autofocus >
+						<input type="text" style="font-family: Ruda" id="nome"
+							placeholder="Nome" class="form-control" autofocus>
 					</div>
 				</div>
 
@@ -43,7 +45,7 @@
 					<label for="email" class="col-sm-3 control-label">Email</label>
 					<div class="col-sm-9">
 						<input type="email" id="email" placeholder="Email"
-							class="form-control">
+							class="form-control" maxlength="20">
 					</div>
 				</div>
 
@@ -52,7 +54,7 @@
 					<label for="cellulare" class="col-sm-3 control-label">Cellulare</label>
 					<div class="col-sm-9">
 						<input type="text" id="cellulare" class="form-control"
-							placeholder="(+39)---|-------">
+							placeholder="Cellulare" onkeypress='validate(event)' maxlength="10">
 					</div>
 				</div>
 
@@ -61,7 +63,7 @@
 					<label for="dataN" class="col-sm-3 control-label">Data</label>
 					<div class="col-sm-9">
 						<input type="data" id="dataN" class="form-control"
-							placeholder="**/**/****">
+							placeholder="**/**/****" maxlength="8">
 					</div>
 				</div>
 
@@ -70,7 +72,7 @@
 					<label for="matricola" class="col-sm-3 control-label">Matricola</label>
 					<div class="col-sm-9">
 						<input type="matricola" id="matricola" class="form-control"
-							placeholder="Matricola">
+							placeholder="0512100000" onkeypress='validate(event)' maxlength="10">
 					</div>
 				</div>
 
@@ -79,7 +81,7 @@
 					<label for="password" class="col-sm-3 control-label">Password</label>
 					<div class="col-sm-9">
 						<input type="password" id="password" placeholder="Password"
-							class="form-control">
+							class="form-control" maxlength="16">
 					</div>
 				</div>
 
@@ -91,7 +93,8 @@
 				<br></br>
 				<!-- /.form-group -->
 				<div class="form-group">
-					<button class="btn btn-theme btn-block" type="submit" style="font-family: Ruda">Registrati</button>
+					<button class="btn btn-theme btn-block" type="submit"
+						style="font-family: Ruda">Registrati</button>
 				</div>
 			</form>
 		</div>
@@ -107,6 +110,19 @@
 		$.backstretch("image/unisalr.jpg", {
 			speed : 500
 		});
+	</script>
+	<script>
+		function validate(evt) {
+			var theEvent = evt || window.event;
+			var key = theEvent.keyCode || theEvent.which;
+			key = String.fromCharCode(key);
+			var regex = /[0-9]|\./;
+			if (!regex.test(key)) {
+				theEvent.returnValue = false;
+				if (theEvent.preventDefault)
+					theEvent.preventDefault();
+			}
+		}
 	</script>
 </body>
 </html>
