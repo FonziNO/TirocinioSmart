@@ -1,6 +1,7 @@
 package storage;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Studente {
 	
@@ -9,7 +10,7 @@ public class Studente {
 	private String matricolaS;
 	private String emailS;
 	private String password;
-	private Date dataNascita;
+	private GregorianCalendar dataNascita;
 	private String cellulare;
 	
 	
@@ -43,10 +44,10 @@ public class Studente {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getDataNascita() {
+	public GregorianCalendar getDataNascita() {
 		return dataNascita;
 	}
-	public void setDataNascita(Date dataNascita) {
+	public void setDataNascita(GregorianCalendar dataNascita) {
 		this.dataNascita = dataNascita;
 	}
 	public String getCellulare() {

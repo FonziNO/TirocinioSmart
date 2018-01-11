@@ -19,6 +19,7 @@ public class RegistratiDao
 		
 		try
 		{
+			
 			String register ="INSERT INTO "+"Studente" + "(Email, Nome, Cognome, Matricola, Password, DataNascita, Cellulare) VALUES (?,?,?,?,?,?,?)";
 		// formulo la stringa
 		

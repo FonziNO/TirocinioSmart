@@ -27,25 +27,25 @@
 					<label for="nome" class="col-sm-3 control-label">Nome</label>
 					<div class="col-sm-9">
 						<input type="text" style="font-family: Ruda" id="nome"
-							placeholder="Nome" class="form-control" autofocus>
+							placeholder="Nome" class="form-control" autofocus name="nome">
 					</div>
 				</div>
 
 
 				<div class="login-wrap">
-					<label for="cognome" class="col-sm-3 control-label">Cognome</label>
+					<label for="cognome" class="col-sm-3 control-label" >Cognome</label>
 					<div class="col-sm-9">
 						<input type="text" id="cognome" placeholder="Cognome"
-							class="form-control" autofocus>
+							class="form-control" autofocus name="cognome">
 					</div>
 				</div>
 
 
 				<div class="login-wrap">
-					<label for="email" class="col-sm-3 control-label">Email</label>
+					<label for="email" class="col-sm-3 control-label" >Email</label>
 					<div class="col-sm-9">
 						<input type="email" id="email" placeholder="Email"
-							class="form-control" maxlength="20">
+							class="form-control" maxlength="20" name="email">
 					</div>
 				</div>
 
@@ -54,7 +54,8 @@
 					<label for="cellulare" class="col-sm-3 control-label">Cellulare</label>
 					<div class="col-sm-9">
 						<input type="text" id="cellulare" class="form-control"
-							placeholder="Cellulare" onkeypress='validate(event)' maxlength="10">
+							placeholder="Cellulare" onkeypress='validate(event)'
+							maxlength="10" name="cellulare">
 					</div>
 				</div>
 
@@ -63,7 +64,7 @@
 					<label for="dataN" class="col-sm-3 control-label">Data</label>
 					<div class="col-sm-9">
 						<input type="data" id="dataN" class="form-control"
-							placeholder="**/**/****" maxlength="10">
+							placeholder="**/**/****" maxlength="10" name="datanascita">
 					</div>
 				</div>
 
@@ -72,7 +73,8 @@
 					<label for="matricola" class="col-sm-3 control-label">Matricola</label>
 					<div class="col-sm-9">
 						<input type="matricola" id="matricola" class="form-control"
-							placeholder="0512100000" onkeypress='validate(event)' maxlength="10">
+							placeholder="0512100000" onkeypress='validate(event)'
+							maxlength="10" name="matricola">
 					</div>
 				</div>
 
@@ -81,14 +83,9 @@
 					<label for="password" class="col-sm-3 control-label">Password</label>
 					<div class="col-sm-9">
 						<input type="password" id="password" placeholder="Password"
-							class="form-control" maxlength="16">
+							class="form-control" maxlength="16" name="password">
 					</div>
 				</div>
-
-
-
-
-
 
 				<br></br>
 				<!-- /.form-group -->
