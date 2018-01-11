@@ -50,8 +50,8 @@
 	<!-- Page Content -->
 	<div class="col-md-12 text-center" style="margin-top: 35%">
 		<a href="Accedi" class="btn btn-theme" style="margin-right: 20%"
-			value="Accedi">Accedi</a> <a href="Registrati" class="btn btn-theme"
-			value="Registrati">Registrati</a>
+			value="Accedi">Accedi</a> <a href="registrati.jsp" class="btn btn-theme"
+			value="Registrati" >Registrati</a>
 	</div>
 
 

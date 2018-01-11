@@ -6,7 +6,7 @@ public class Studente {
 	
 	private String nomeS;
 	private String cognomeS;
-	private int matricolaS;
+	private String matricolaS;
 	private String emailS;
 	private String password;
 	private Date dataNascita;
@@ -25,10 +25,10 @@ public class Studente {
 	public void setCognomeS(String cognomeS) {
 		this.cognomeS = cognomeS;
 	}
-	public int getMatricolaS() {
+	public String getMatricolaS() {
 		return matricolaS;
 	}
-	public void setMatricolaS(int matricolaS) {
+	public void setMatricolaS(String matricolaS) {
 		this.matricolaS = matricolaS;
 	}
 	public String getEmailS() {
