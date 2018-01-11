@@ -21,7 +21,6 @@ import storage.Studente;
  * Servlet implementation class Registrati
  */
 public class Registrati extends HttpServlet {
-	Studente bean= new Studente();
 	RegistratiDao registra = new RegistratiDao(); // creo un costruttore
 	int res=0;
 	private static final long serialVersionUID = 1L;
@@ -40,13 +39,10 @@ public class Registrati extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// o con i beans o attraverso la sessione o la request ( a secondo dell'occorrenza).
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-
-		response.setContentType("text/html");
-		
-		
 		try {
+			response.setContentType("text/html");
 			HttpSession session = request.getSession();
-			
+
 			String email = (String) request.getAttribute("Email");
 			String nome = (String) request.getAttribute("Nome");
 			String cognome = (String) request.getAttribute("Cognome");
@@ -55,18 +51,19 @@ public class Registrati extends HttpServlet {
 			String datanascita = (String) request.getAttribute("DataNascita");
 			Date data = (Date) format.parse(datanascita);
 			String cellulare = (String) request.getAttribute("Cellulare");
-			
+
 			// Qui i dati saranno gia integri, percio devo solo salvarmi sul database ( in quanto ho fatto gia il controllo con javascript)
-			try {
-				res=registra.salva(email,  nome, cognome, matricola, password, data, cellulare);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+
+			res=registra.salva(email,  nome, cognome, matricola, password, data, cellulare);
+
 			RequestDispatcher view = request.getRequestDispatcher("index.jsp");
 			view.forward(request, response);
-			
+
 		} catch (ParseException e1) {
 			e1.printStackTrace();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 
