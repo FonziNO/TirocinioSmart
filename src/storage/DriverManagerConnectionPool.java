@@ -24,7 +24,7 @@ public class DriverManagerConnectionPool
 
 	private static synchronized Connection createDBConnection() throws SQLException {
 		Connection conn = null;
-		conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/tirociniosmart", "root", "sandra");
+		conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/tirociniosmart", "admin", "admin");
 		
 		conn.setAutoCommit(false);// usato in grandi  progetti
 		return conn;
