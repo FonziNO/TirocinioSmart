@@ -16,7 +16,6 @@ import storage.LoginDao;
 public class Login extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
-	int i=0;
 	
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
 	{
@@ -27,39 +26,40 @@ public class Login extends HttpServlet{
 		LoginDao registrato = new LoginDao();
 		
 		try{
-			i = registrato.doLogin(user, password);
+			int i = registrato.doLogin(user, password);
+			System.out.println(i);
+			if(i==1){
+				HttpSession session = request.getSession();
+				session.setAttribute("email", user);
+				RequestDispatcher dashboardUfficioStage = request.getRequestDispatcher("DashboardUfficioStage.html");
+				dashboardUfficioStage.forward(request, response);
+			
+			}
+			else if(i==2){
+				HttpSession session = request.getSession();
+				session.setAttribute("email", user);
+				RequestDispatcher dashboardTutor = request.getRequestDispatcher("DashboardTutor.html");
+				dashboardTutor.forward(request, response);
+			}
+			else if(i==3){
+				HttpSession session = request.getSession();
+				session.setAttribute("email", user);
+				RequestDispatcher dashboardAzienda = request.getRequestDispatcher("DashboardAzienda.html");
+				dashboardAzienda.forward(request, response);
+			}
+			else if(i==4){
+				HttpSession session = request.getSession();
+				session.setAttribute("email", user);
+				RequestDispatcher dashboardStudente = request.getRequestDispatcher("DashboardStudente.html");
+				dashboardStudente.forward(request, response);
+			}else{
+				RequestDispatcher login = request.getRequestDispatcher("accedi.jsp");
+				login.forward(request, response);
+			}
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		
-		System.out.println(i);
-		if(i==1){
-			HttpSession session = request.getSession();
-			session.setAttribute("email", user);
-			RequestDispatcher dashboardUfficioStage = request.getRequestDispatcher("DashboardUfficioStage.html");
-			dashboardUfficioStage.forward(request, response);
 		
-		}
-		else if(i==2){
-			HttpSession session = request.getSession();
-			session.setAttribute("email", user);
-			RequestDispatcher dashboardTutor = request.getRequestDispatcher("DashboardTutor.html");
-			dashboardTutor.forward(request, response);
-		}
-		else if(i==3){
-			HttpSession session = request.getSession();
-			session.setAttribute("email", user);
-			RequestDispatcher dashboardAzienda = request.getRequestDispatcher("DashboardAzienda.html");
-			dashboardAzienda.forward(request, response);
-		}
-		else if(i==4){
-			HttpSession session = request.getSession();
-			session.setAttribute("email", user);
-			RequestDispatcher dashboardStudente = request.getRequestDispatcher("DashboardStudente.html");
-			dashboardStudente.forward(request, response);
-		}else{
-			RequestDispatcher login = request.getRequestDispatcher("accedi.jsp");
-			login.forward(request, response);
-		}
 	}
 }
