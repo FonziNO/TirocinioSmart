@@ -63,7 +63,7 @@
 					<label for="dataN" class="col-sm-3 control-label">Data</label>
 					<div class="col-sm-9">
 						<input type="data" id="dataN" class="form-control"
-							placeholder="**/**/****" maxlength="8">
+							placeholder="**/**/****" maxlength="10">
 					</div>
 				</div>
 
