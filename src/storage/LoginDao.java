@@ -40,26 +40,26 @@ public class LoginDao {
 		int i=0;
 		
 		try{
-			while(risultato1.next()){
-				if(risultato1.getString("Email").equals(email) && risultato1.getString("Password").equals(password) && risultato1.getString("Tipo").equals("1")){
+			while(risultato4.next()){
+				if(risultato4.getString("UfficioStage.Email").equals(email) && risultato4.getString("UfficioStage.Password").equals(password) && risultato4.getString("Tipo").equals("1")){
 					return i=1;
 				}
 			}
 			
 			while(risultato2.next()){
-				if(risultato2.getString("Email").equals(email) && risultato2.getString("Password").equals(password) && risultato2.getString("Tipo").equals("2")){
+				if(risultato2.getString("Tutor.Email").equals(email) && risultato2.getString("Tutor.Password").equals(password) && risultato2.getString("Tipo").equals("2")){
 					return i=2;
 				}
 			}
 			
 			while(risultato3.next()){
-				if(risultato3.getString("Email").equals(email) && risultato3.getString("Password").equals(password) && risultato3.getString("Tipo").equals("3")){
+				if(risultato3.getString("Azienda.Email").equals(email) && risultato3.getString("Azienda.Password").equals(password) && risultato3.getString("Tipo").equals("3")){
 					return i=3;
 				}
 			}
 			
-			while(risultato4.next()){
-				if(risultato4.getString("Email").equals(email) && risultato4.getString("Password").equals(password)){
+			while(risultato1.next()){
+				if(risultato1.getString("Studente.Email").equals(email) && risultato1.getString("Studente.Password").equals(password)){
 					return i=4;
 				}
 			}
