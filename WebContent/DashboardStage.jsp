@@ -79,7 +79,7 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="ListaStudentiUfficio.jsp" >
                           <i class="fa fa-desktop"></i>
                           <span>Lista Studenti</span>
                       </a>

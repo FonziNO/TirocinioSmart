@@ -72,14 +72,14 @@
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.jsp">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="ListaStudentiTutor.jsp" >
                           <i class="fa fa-desktop"></i>
                           <span>Lista Studenti</span>
                       </a>
@@ -102,7 +102,7 @@
 
               <div class="row">
                   <div class="col-lg-9 main-chart">
-                  <p> Nessuna richiesta disponibile</p>
+                  <p> Clicca su Lista Studenti per accettare le richieste</p>
                   
                   	
                   

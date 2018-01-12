@@ -79,7 +79,7 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="ListaStudenti.jsp" >
                           <i class="fa fa-desktop"></i>
                           <span>Lista Studenti</span>
                       </a>
@@ -102,7 +102,7 @@
 
               <div class="row">
                   <div class="col-lg-9 main-chart">
-                  <p> Nessuna richiesta disponibile</p>
+                  <p> Clicca su Lista Studenti per accettare o rifiutare richieste</p>
                   
                   	
                   
