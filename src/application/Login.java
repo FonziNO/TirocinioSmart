@@ -31,26 +31,26 @@ public class Login extends HttpServlet{
 			if(i==1){
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
-				RequestDispatcher dashboardUfficioStage = request.getRequestDispatcher("DashboardUfficioStage.html");
+				RequestDispatcher dashboardUfficioStage = request.getRequestDispatcher("DashboardStage.jsp");
 				dashboardUfficioStage.forward(request, response);
 			
 			}
 			else if(i==2){
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
-				RequestDispatcher dashboardTutor = request.getRequestDispatcher("DashboardTutor.html");
+				RequestDispatcher dashboardTutor = request.getRequestDispatcher("DashboardTutor.jsp");
 				dashboardTutor.forward(request, response);
 			}
 			else if(i==3){
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
-				RequestDispatcher dashboardAzienda = request.getRequestDispatcher("DashboardAzienda.html");
+				RequestDispatcher dashboardAzienda = request.getRequestDispatcher("DashboardAzienda.jsp");
 				dashboardAzienda.forward(request, response);
 			}
 			else if(i==4){
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
-				RequestDispatcher dashboardStudente = request.getRequestDispatcher("DashboardStudente.html");
+				RequestDispatcher dashboardStudente = request.getRequestDispatcher("DashboardStudente.jsp");
 				dashboardStudente.forward(request, response);
 			}else{
 				RequestDispatcher login = request.getRequestDispatcher("accedi.jsp");

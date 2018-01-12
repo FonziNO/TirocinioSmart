@@ -53,7 +53,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.jsp">Logout</a></li>
+                    <li><button class="logout" href="Logout">Logout</button></li>
             	</ul>
             </div>
         </header>
