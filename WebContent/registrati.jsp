@@ -33,7 +33,7 @@
 
 
 				<div class="login-wrap">
-					<label for="cognome" class="col-sm-3 control-label" >Cognome</label>
+					<label for="cognome" class="col-sm-3 control-label">Cognome</label>
 					<div class="col-sm-9">
 						<input type="text" id="cognome" placeholder="Cognome"
 							class="form-control" autofocus name="cognome">
@@ -42,7 +42,7 @@
 
 
 				<div class="login-wrap">
-					<label for="email" class="col-sm-3 control-label" >Email</label>
+					<label for="email" class="col-sm-3 control-label">Email</label>
 					<div class="col-sm-9">
 						<input type="email" id="email" placeholder="Email"
 							class="form-control" name="email">
@@ -87,13 +87,33 @@
 					</div>
 				</div>
 
-				<br></br>
-				<!-- /.form-group -->
-				<div class="form-group">
+				<div class="login-wrap">
+					<label for="password" class="col-sm-3 control-label">Ripeti
+						Password</label>
+					<div class="col-sm-9">
+						<input type="password" id="ripetipassword" placeholder="Password"
+							class="form-control" maxlength="16" name="ripetipassword">
+					</div>
+					<label class="checkbox"> <span
+						class="pull-right"> </span>
+					</label>
+					
+					<hr>
+					<div class="form-group">
 					<button class="btn btn-theme btn-block" type="submit"
 						style="font-family: Ruda">Registrati</button>
+				
 				</div>
+				</div>
+				
+
+				<!-- /.form-group -->
+
+				
+				
+				
 			</form>
+			
 		</div>
 	</div>
 	<!-- ./container -->

@@ -43,7 +43,7 @@
 				<h2 class="form-login-heading">Effettua l'accesso</h2>
 				<div class="login-wrap">
 					<input type="email" name="email" class="form-control" placeholder="E-mail"
-						autofocus value="" required> <br> <input
+						autofocus value="" required style="font-family: Ruda"> <br> <input
 						type="password" name="password" class="form-control" placeholder="Password"
 						value="" required> <label class="checkbox"> <span
 						class="pull-right"> </span>
