@@ -42,11 +42,12 @@
 				onsubmit="return controlloLogin(this);" method="post">
 				<h2 class="form-login-heading">Effettua l'accesso</h2>
 				<div class="login-wrap">
-					<input type="email" name="email" class="form-control" placeholder="E-mail"
-						autofocus value="" required style="font-family: Ruda"> <br> <input
-						type="password" name="password" class="form-control" placeholder="Password"
-						value="" required> <label class="checkbox"> <span
-						class="pull-right"> </span>
+					<input type="email" name="email" class="form-control"
+						placeholder="E-mail" autofocus value="" required
+						style="font-family: Ruda"> <br> <input
+						type="password" name="password" class="form-control"
+						placeholder="Password" value="" required> <label
+						class="checkbox"> <span class="pull-right"> </span>
 					</label>
 					<button class="btn btn-theme btn-block" type="submit"
 						value="Accedi">
@@ -102,21 +103,6 @@
 			speed : 500
 		});
 	</script>
-
-	<script>
-		function controlloLogin(form) {
-			var email = form.elements.namedItem("email").value.trim();
-			var pass = form.elements.namedItem("password").value.trim();
-			if (email !== null && email !== "" && pass !== null && pass !== "") {
-
-				return true;
-			} else {
-				document.getElementById("alert").style.display = "block";
-				return false;
-			}
-		}
-	</script>
-
 
 </body>
 </html>
