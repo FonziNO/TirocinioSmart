@@ -48,7 +48,9 @@
  -->
 
 	<!-- Page Content -->
-	<div class="col-md-12 text-center" style="margin-top: 35%">
+<img src="image/LOGO.png" style="margin-top:15% ; margin-left: 27%">
+	<div class="col-md-12 text-center" >
+		
 		<a href="Accedi" class="btn btn-theme" style="margin-right: 20%"
 			value="Accedi">Accedi</a> <a href="registrati.jsp" class="btn btn-theme"
 			value="Registrati" >Registrati</a>
