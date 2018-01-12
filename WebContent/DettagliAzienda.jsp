@@ -53,7 +53,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="Logout">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -73,14 +73,14 @@
               	  	
                   <li class="mt">
                       <a href="index.html">
-                          <i class="fa fa-dashboard"></i>
+                          <i class="fa fa-dashboard" href="DashboardStudente.jsp"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
+                          <i class="fa fa-desktop" href="ListaAziende.jsp"></i>
                           <span>Lista Aziende</span>
                       </a>
                 
@@ -131,7 +131,7 @@
                             <a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
 			value="Invia Richiesta">Invia Richiesta</a> 
                             
-                          <a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+                          <a href="DettagliAzienda" class="btn btn-theme" style="margin-right: 20%"
 			value="Indietro">Indietro</a>
                        </div>
                   </div><!-- /content-panel -->

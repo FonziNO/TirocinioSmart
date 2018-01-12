@@ -72,15 +72,15 @@
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a href="index.html">
-                          <i class="fa fa-dashboard"></i>
+                      <a href="DashboardStudente.jsp">
+                          <i class="fa fa-dashboard" ></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
+                          <i class="fa fa-desktop" href="ListaAziende.jsp"></i>
                           <span>Lista Aziende</span>
                       </a>
                 
@@ -114,7 +114,7 @@
                               <% for(int i=0;i<lista.size();i++){%>
                               <tr>
                                   <td><%=lista.get(i).getNomeA()%></td>
-                                  <td> <a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+                                  <td> <a href="DettagliAzienda.jsp" class="btn btn-theme" style="margin-right: 20%"
 			value="Dettagli">Dettagli</a> </td>
                               </tr>
                               <% }%>

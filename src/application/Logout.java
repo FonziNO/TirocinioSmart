@@ -15,6 +15,7 @@ public class Logout extends HttpServlet{
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
 	{
 		String stato = (String) request.getSession().getAttribute("email");
+		System.out.println("Stato"+stato);
 		
 		if(stato == null || stato == "") 
 		{
@@ -24,6 +25,7 @@ public class Logout extends HttpServlet{
 		else
 		{	
 			request.getSession().invalidate();
+			System.out.println("chiudo la sessione");
 			
 			RequestDispatcher view = request.getRequestDispatcher("index.jsp");
 			view.forward(request, response);

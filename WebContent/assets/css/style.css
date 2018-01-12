@@ -92,8 +92,8 @@ a, a:hover, a:focus {
 
 .btn-theme {
   color: #fff;
-  background-color: #ff8040;
-  border-color: #ff8040;
+  background-color: #ffd777;
+  border-color: #ffd777;
 }
 .btn-theme:hover,
 .btn-theme:focus,
@@ -432,7 +432,7 @@ a.logo {
     color: #ffffff;
     float: left;
     margin-top: 15px;
-    text-transform: uppercase;
+    text-trans: uppercase;
 }
 
 a.logo b {
@@ -1936,7 +1936,7 @@ label {
 	margin: 0;
 	padding: 25px 20px;
 	text-align: center;
-	background: #68dff0;
+	background: #ffd777;
 	border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	color: #fff;

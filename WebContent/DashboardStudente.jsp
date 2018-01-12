@@ -57,7 +57,7 @@
 			</div>
 			<div class="top-menu">
 				<ul class="nav pull-right top-menu">
-					<li><button class="logout" href="Logout">Logout</button></li>
+					<li><a class="logout" href="Logout">Logout</a></li>
 				</ul>
 			</div>
 		</header>
@@ -78,7 +78,7 @@
 					</p>
 					<h5 class="centered">Marcel Newman</h5>
 
-					<li class="mt"><a class="active" href="index.html"> <i
+					<li class="mt"><a class="active" href="DashboardStudente.jsp"> <i
 							class="fa fa-dashboard"></i> <span>Dashboard</span>
 					</a></li>
 
