@@ -155,7 +155,7 @@
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/sparkline-chart.js"></script>    
+    <script src="assets/js/sparkline-chart.js"></script>   
 	<script src="assets/js/zabuto_calendar.js"></script>	
 	
 	
