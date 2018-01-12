@@ -20,7 +20,7 @@
 <body>
 	<div id="login-page">
 		<div class="container">
-			<form class="form-login" role="form" onsubmit="return passControl()"
+			<form class="form-login" role="form" onsubmit="return Control()"
 				action="Registra" method="post">
 
 				<h2 class="form-login-heading">Registrati!</h2>
@@ -50,6 +50,18 @@
 					</div>
 				</div>
 
+				<div class="login-wrap">
+					<label for="dataN" class="col-sm-3 control-label">Data
+						</label>
+						
+					<div class="col-sm-9">
+						<input type="data" id="dataN" required
+							title="Rispetta il formato!" class="form-control"
+							placeholder="dd/mm/yyyy" maxlength="10" name="datanascita">
+					</div>
+				</div>
+
+
 
 				<div class="login-wrap">
 					<label for="cellulare" class="col-sm-3 control-label">Cellulare</label>
@@ -58,16 +70,6 @@
 							type="text" id="cellulare" class="form-control"
 							placeholder="Cellulare" onkeypress='validate(event)'
 							maxlength="10" name="cellulare">
-					</div>
-				</div>
-
-
-				<div class="login-wrap">
-					<label for="dataN" class="col-sm-3 control-label">Data</label>
-					<div class="col-sm-9">
-						<input type="data" id="dataN" required class="form-control"
-							placeholder="**/**/****" maxlength="10" name="datanascita"
-							>
 					</div>
 				</div>
 
@@ -114,16 +116,8 @@
 							style="font-family: Ruda">Registrati</button>
 
 					</div>
-
-
-
-					<!-- /.form-group -->
-
-
-
 				</div>
 			</form>
-
 		</div>
 	</div>
 	<!-- ./container -->
@@ -152,21 +146,57 @@
 		}
 	</script>
 	<script type="text/javascript">
-		function passControl() {
+		function Control() {
 			var pass1 = document.getElementById("password").value;
 			var pass2 = document.getElementById("ripetipassword").value;
 			var email = document.getElementById("email").value;
+			var data = document.getElementById("dataN").value;
+			var matricola = document.getElementById("matricola").value;
 			var ok = true;
 			if (email.indexOf('studenti.unisa.it') == -1) {
 				alert("E-MAIL NON VALIDA: L'accesso è consentito unicamente ai domini (@studenti.unisa.it)");
-				document.getElementById("email").style.borderColor = "#E34234";
 				return false;
 			}
+			//else{
+			//il campo diventa verde come CORRETTO
+			//}
+			
+			if (data.indexOf('/', 1) == -1) {
+				alert("Separa il giorno nella data di nascita con il carattere '/'");
+				return false;
+			}
+			//else{
+			//il campo diventa verde come CORRETTO
+			//}
+			
+			if (data.indexOf('/', 3) == -1) {
+				alert("Separa il mese nella data di nascita con il carattere '/'");
+				return false;
+			}
+			//else{
+			//il campo diventa verde come CORRETTO
+			//}
+			
+			if (data.length < 10) {
+				alert("La lunghezza della data non è corretta!");
+				return false;
+			}
+			//else{
+			//il campo diventa verde come CORRETTO
+			//}
+			
+			if (matricola.indexOf('05121') == -1) {
+				alert("Prefisso matricola errato! '05121' è il prefisso da utilizzare");
+				return false;
+			}
+			//else{
+			//il campo diventa verde come CORRETTO
+			//}
+			
 			if (pass1 != pass2) { //alert("Passwords Do not match");
-				alert("LE PASSWORD NON COINCIDONO!");
+				alert("Le password immesse non coincidono!");
 				document.getElementById("password").style.borderColor = "#E34234";
 				document.getElementById("ripetipassword").style.borderColor = "#E34234";
-
 				ok = false;
 			} else {
 
@@ -174,7 +204,6 @@
 			return ok;
 		}
 	</script>
-
 	<!-- 
 	<script>
 		function controlloLogin(form) {
