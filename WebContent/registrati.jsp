@@ -45,7 +45,7 @@
 					<label for="email" class="col-sm-3 control-label" >Email</label>
 					<div class="col-sm-9">
 						<input type="email" id="email" placeholder="Email"
-							class="form-control" maxlength="20" name="email">
+							class="form-control" name="email">
 					</div>
 				</div>
 

@@ -45,8 +45,7 @@ public class Registra extends HttpServlet
 		
 		HttpSession session = request.getSession();
 
-		String id= session.getId();
-		session.setAttribute("id", id);
+		
 		session.setAttribute("email", email);
 		session.setAttribute("nome", nome);
 		session.setAttribute("cognome", cognome);
@@ -77,5 +76,3 @@ public class Registra extends HttpServlet
 
 	}
 }
-
-
