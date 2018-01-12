@@ -6,6 +6,7 @@ public class Azienda {
 	private String passwordA;
 	private String nomeA;
 	private String locazioneA;
+
 	public String getEmailA() {
 		return emailA;
 	}

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    import="java.util.ArrayList" import="storage.Azienda" import="application.ListaAziende" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
   <head>
@@ -53,7 +53,7 @@
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="Logout">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -99,7 +99,10 @@
 			  		<div class="col-lg-12">
                       <div class="content-panel">
                       <h5><i class="fa fa-angle-right"></i> Lista Aziende </h5>
-                          <section id="unseen">
+                          <section id="unseen" action="ListaAziende.jsp">
+                          <%ArrayList<Azienda> lista = new ArrayList<Azienda>();
+                          ListaAziende azienda = new ListaAziende();
+                          lista=azienda.doListaAziende();%>
                             <table class="table table-bordered table-striped table-condensed">
                               <thead>
                               
@@ -108,62 +111,13 @@
                                  
                               </thead>
                               <tbody>
+                              <% for(int i=0;i<lista.size();i++){%>
                               <tr>
-                                  <td>Fiammante</td>
+                                  <td><%=lista.get(i).getNomeA()%></td>
                                   <td> <a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
 			value="Dettagli">Dettagli</a> </td>
-                                
-                                 
                               </tr>
-                              <tr>
-                                  <td>AAD</td>
-                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                                
-                                  
-                              </tr>
-                              <tr>
-                                  <td>AAX</td>
-                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                               
-                             
-                              </tr>
-                              <tr>
-                                  <td>ABC</td>
-                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                            
-                              
-                              </tr>
-                              <tr>
-                                  <td>ABP</td>
-                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                                 
-                              </tr>
-                              <tr>
-                                  <td>ABY</td>
-                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                                  
-                           
-                              </tr>
-                              <tr>
-                                  <td>ACR</td>
-                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                               
-                                
-                              </tr>
-                              <tr>
-                                  <td>ADU</td>
-                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                                  
-                               
-                              </tr>
-                       
+                              <% }%>
                               </tbody>
                           </table>
                           </section>
