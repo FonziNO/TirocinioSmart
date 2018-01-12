@@ -104,54 +104,62 @@
                               <thead>
                               
                                   <th>Nome Aziende</th>
-                                  <th> </th>
+                                  <th> Visualizza dettagli dell'azienda</th>
                                  
                               </thead>
                               <tbody>
                               <tr>
                                   <td>Fiammante</td>
-                                  <td><botton> DETTAGLI </botton></td>
+                                  <td> <a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                                 
                                  
                               </tr>
                               <tr>
                                   <td>AAD</td>
-                                  <td>ARDENT LEISURE GROUP</td>
+                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                                 
                                   
                               </tr>
                               <tr>
                                   <td>AAX</td>
-                                  <td>AUSENCO LIMITED</td>
+                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                                
                              
                               </tr>
                               <tr>
                                   <td>ABC</td>
-                                  <td>ADELAIDE BRIGHTON LIMITED</td>
+                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                             
                               
                               </tr>
                               <tr>
                                   <td>ABP</td>
-                                  <td>ABACUS PROPERTY GROUP</td>
+                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                                  
                               </tr>
                               <tr>
                                   <td>ABY</td>
-                                  <td>ADITYA BIRLA MINERALS LIMITED</td>
+                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                                   
                            
                               </tr>
                               <tr>
                                   <td>ACR</td>
-                                  <td>ACRUX LIMITED</td>
+                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                                
                                 
                               </tr>
                               <tr>
                                   <td>ADU</td>
-                                  <td>ADAMUS RESOURCES LIMITED</td>
+                                  <td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+			value="Dettagli">Dettagli</a> </td>
                                   
                                
                               </tr>
