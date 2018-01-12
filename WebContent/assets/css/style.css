@@ -74,7 +74,7 @@ a, a:hover, a:focus {
 /*Theme Backgrounds*/
 
 .bg-theme {
-	background-color: #68dff0;
+	background-color: #ff8040;
 }
 
 .bg-theme02 {
@@ -92,8 +92,8 @@ a, a:hover, a:focus {
 
 .btn-theme {
   color: #fff;
-  background-color: #68dff0;
-  border-color: #48bcb4;
+  background-color: #ff8040;
+  border-color: #ff8040;
 }
 .btn-theme:hover,
 .btn-theme:focus,
@@ -101,8 +101,8 @@ a, a:hover, a:focus {
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
   color: #fff;
-  background-color: #48bcb4;
-  border-color: #48bcb4;
+  background-color: #ff8040;
+  border-color: #ff8040;
 }
 
 .btn-theme02 {
