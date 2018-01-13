@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    import="javax.servlet.http.HttpServletRequest" import="storage.Studente"pageEncoding="ISO-8859-1"%>
+    import="javax.servlet.http.HttpServletRequest" import="storage.Studente" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +78,7 @@
 						<a href="profile.html"><img src="assets/img/ui-sam.jpg"
 							class="img-circle" width="60"></a>
 					</p>
-					<h5 class="centered"><%=session.getAttribute("email")%></h5>
+					<h4 class="centered" style="font-family: Ruda; color: white" ><%= session.getAttribute("Nome") %> <%= session.getAttribute("Cognome") %></h4>
 
 					<li class="mt"><a class="active" href="DashboardStudente.jsp"> <i
 							class="fa fa-dashboard"></i> <span>Dashboard</span>
