@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    import="javax.servlet.http.HttpServletRequest" pageEncoding="ISO-8859-1"%>
+    import="javax.servlet.http.HttpServletRequest" import="storage.Studente"pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
