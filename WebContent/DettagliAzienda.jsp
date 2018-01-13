@@ -72,15 +72,15 @@
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a href="index.html">
-                          <i class="fa fa-dashboard" href="DashboardStudente.jsp"></i>
+                      <a href="DashboardStudente.jsp">
+                          <i class="fa fa-dashboard" ></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop" href="ListaAziende.jsp"></i>
+                      <a href="ListaAziende.jsp">
+                          <i class="fa fa-desktop" ></i>
                           <span>Lista Aziende</span>
                       </a>
                 
@@ -131,7 +131,7 @@
                             <a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
 			value="Invia Richiesta">Invia Richiesta</a> 
                             
-                          <a href="DettagliAzienda" class="btn btn-theme" style="margin-right: 20%"
+                          <a href="ListaAziende.jsp" class="btn btn-theme" style="margin-right: 20%"
 			value="Indietro">Indietro</a>
                        </div>
                   </div><!-- /content-panel -->
