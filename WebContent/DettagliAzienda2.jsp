@@ -111,7 +111,7 @@
                               </thead>
                               <tbody>
                               <tr>
-                                  <td>Fiammante</td>
+                                  <td>Microambiente s.r.l.</td>
                                   <td><botton> Buccino(SA) </botton></td>
                                 <td> </td>
                                  
@@ -128,7 +128,7 @@
                             <p> Pomodori </p>
                             <br>
                             <div align="center">
-                            <a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
+                            <a action="InviaRichiesta" method="post" class="btn btn-theme" style="margin-right: 20%"
 			value="Invia Richiesta">Invia Richiesta</a> 
                             
                           <a href="ListaAziende.jsp" class="btn btn-theme" style="margin-right: 20%"

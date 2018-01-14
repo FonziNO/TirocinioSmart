@@ -29,14 +29,6 @@
   	<url-pattern>/Registra</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>Registrati</servlet-name>
-  	<servlet-class>application.Registrati</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>Registrati</servlet-name>
-  	<url-pattern>/Registrati</url-pattern>
-  </servlet-mapping>
-  <servlet>
   	<servlet-name>Logout</servlet-name>
   	<servlet-class>application.Logout</servlet-class>
   </servlet>
@@ -44,5 +36,12 @@
   	<servlet-name>Logout</servlet-name>
   	<url-pattern>/Logout</url-pattern>
   </servlet-mapping>
-  
+   <servlet>
+  	<servlet-name>InviaRichiesta</servlet-name>
+  	<servlet-class>application.InviaRichiesta</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>InviaRichiesta</servlet-name>
+  	<url-pattern>/InviaRichiesta</url-pattern>
+  </servlet-mapping>
 </web-app>

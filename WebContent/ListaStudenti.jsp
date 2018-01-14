@@ -101,6 +101,7 @@
 
 
 		</div>
+		
 		<table align="right"
 		class="table table-bordered table-striped table-condensed">
 		<thead>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    import="java.util.ArrayList" import="storage.Azienda" import="application.ListaAziende" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="storage.Azienda" import="application.ListaAziende" import="storage.Richiesta"
+import="storage.RichiestaDao" import="java.util.ArrayList" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
   <head>
@@ -69,8 +69,7 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
               	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h4 class="centered" style="font-family: Ruda; color: white" ><%= session.getAttribute("Nome") %> <%= session.getAttribute("Cognome") %></h4>
-
+              	  <h5 class="centered"><%=session.getAttribute("email")%></h5>
               	  	
                   <li class="mt">
                       <a href="DashboardStudente.jsp">
@@ -80,8 +79,8 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop" href="ListaAziende.jsp"></i>
+                      <a href="ListaAziende.jsp">
+                          <i class="fa fa-desktop" ></i>
                           <span>Lista Aziende</span>
                       </a>
                 
@@ -99,37 +98,42 @@
 		  		<div class="row mt">
 			  		<div class="col-lg-12">
                       <div class="content-panel">
-                      <h5><i class="fa fa-angle-right"></i> Lista Aziende </h5>
-                          <section id="unseen" action="ListaAziende.jsp">
-                          <%ArrayList<Azienda> lista = new ArrayList<Azienda>();
-                          ListaAziende azienda = new ListaAziende();
-                          lista=azienda.doListaAziende();%>
+                      <h5><i class="fa fa-angle-right"></i> Dettagli Azienda </h5>
+                          <section id="unseen">
                             <table class="table table-bordered table-striped table-condensed">
                               <thead>
                               
-                                  <th>Nome Aziende</th>
-                                  <th> Visualizza dettagli dell'azienda</th>
+                                  <th>Nome Azienda</th>
+                                  <th>Locazione </th>
+                                  <th>Ambito </th>
+                                  
                                  
                               </thead>
                               <tbody>
                               <tr>
-                                  <td><%=lista.get(0).getNomeA()%></td>
-                                  <td> <a href="DettagliAzienda1.jsp" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
+                                  <td id="nomeAzienda">AF Soluzioni srl</td>
+                                  <td> Buccino(SA) </td>
+                                <td> </td>
+                                 
                               </tr>
-                                <tr>
-                                  <td><%=lista.get(1).getNomeA()%></td>
-                                  <td> <a href="DettagliAzienda2.jsp" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                              </tr>
-                                <tr>
-                                  <td><%=lista.get(2).getNomeA()%></td>
-                                  <td> <a href="DettagliAzienda3.jsp" class="btn btn-theme" style="margin-right: 20%"
-			value="Dettagli">Dettagli</a> </td>
-                              </tr>
+                             
+                            
+                       
                               </tbody>
                           </table>
-                          </section>
+                          <table>
+                           <th align="center"> DETTAGLI</th>
+                        </section>
+                          </table>
+                            <p> Pomodori </p>
+                            <br>
+                            <div align="center">
+                            <a href="InviaRichiesta" method="get" class="btn btn-theme" style="margin-right: 20%"
+			value="Invia Richiesta" name="invia" onsubmit="myFunction()">Invia Richiesta</a> 
+                            
+                          <a href="ListaAziende.jsp" class="btn btn-theme" style="margin-right: 20%"
+			value="Indietro">Indietro</a>
+                       </div>
                   </div><!-- /content-panel -->
                </div><!-- /col-lg-4 -->			
 		  	</div><!-- /row -->
@@ -167,7 +171,5 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
-
   </body>
 </html>
