@@ -129,7 +129,7 @@ import="storage.RichiestaDao" import="java.util.ArrayList" pageEncoding="ISO-885
                             <br>
                             <div align="center">
                             <a href="InviaRichiesta" method="get" class="btn btn-theme" style="margin-right: 20%"
-			value="Invia Richiesta" name="invia" onsubmit="myFunction()">Invia Richiesta</a> 
+			value="Invia Richiesta" name="invia">Invia Richiesta</a> 
                             
                           <a href="ListaAziende.jsp" class="btn btn-theme" style="margin-right: 20%"
 			value="Indietro">Indietro</a>

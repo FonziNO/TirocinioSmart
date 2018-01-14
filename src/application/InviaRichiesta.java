@@ -24,10 +24,9 @@ public class InviaRichiesta extends HttpServlet{
 		session.getId();
 		System.out.println("sto per inviare");
 		String emailStudente = (String) session.getAttribute("email");
-
 		System.out.println("Invio la richiesta");
 		try{
-			res=ricDao.richiedi(r.getCounter(), false, emailStudente, "");
+			res=ricDao.richiedi(r.getCounter(), false, emailStudente, "aziendaAFSoluzioni@gmail.it");
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
