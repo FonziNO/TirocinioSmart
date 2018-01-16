@@ -22,6 +22,7 @@ RichiestaDao ricDao = new RichiestaDao();
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
 		HttpSession session = request.getSession();
 		session.getId();
 		System.out.println("sto per inviare");

@@ -20,6 +20,7 @@ public class InviaRichiesta extends HttpServlet {
 	int res = 0;
 	private static final long serialVersionUID = 1L;
 
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
