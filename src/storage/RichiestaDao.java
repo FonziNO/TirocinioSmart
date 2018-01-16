@@ -37,9 +37,6 @@ public class RichiestaDao {
 			if (!rs.getString("C").equals("0")) {
 				return -1;
 			}
-			if(rs.getString("C").equals("0")){
-				return 1;
-			}
 
 			prep = conn.prepareStatement(richiest);
 			prep.setString(1, id);

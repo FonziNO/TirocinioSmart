@@ -20,7 +20,6 @@ public class InviaRichiesta extends HttpServlet {
 	int res = 0;
 	private static final long serialVersionUID = 1L;
 
-	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
@@ -39,8 +38,7 @@ public class InviaRichiesta extends HttpServlet {
 			res = ricDao.richiedi(r.getCounter(), false, emailStudente, request.getParameter("emailAz"));
 			if (res == -1) {
 				request.setAttribute("errore", "Richiesta già effettuata per questa Azienda");
-			}
-			if(res==1){
+			} else {
 				request.setAttribute("inserisci", "Richiesta inviata");
 			}
 		} catch (SQLException e) {
