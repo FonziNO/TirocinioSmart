@@ -50,7 +50,7 @@
 						class="checkbox"> <span class="pull-right"> </span>
 					</label>
 					<button class="btn btn-theme btn-block" type="submit"
-						value="Accedi" onclick="myFunction()">
+						value="Accedi">
 						<i class="fa fa-lock"></i> ACCEDI
 					</button>
 					<hr>
@@ -104,11 +104,6 @@
 		});
 	</script>
 	
-		<script type="text/javascript">
-	function myFunction(){
-		alert("Email o password inesatti!");
-	}
-	</script>
 
 </body>
 </html>
