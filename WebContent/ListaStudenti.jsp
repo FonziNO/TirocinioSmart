@@ -120,6 +120,8 @@
 					</thead>
 					<tbody>
 						<%
+						
+						System.out.println(stud.size());
 							for (int i = 0; i < stud.size(); i++) {
 
 								for (int j = 0; j < ric.size(); j++) {
