@@ -86,7 +86,7 @@ public class AccettaRichieste {
 				}
 			}
 		}
-		return AttayList<>;
+		return null;
 	
 	}
 	}
