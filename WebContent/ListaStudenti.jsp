@@ -122,10 +122,8 @@
 						<%
 							for (int i = 0; i < stud.size(); i++) {
 
-								for (int j = 0; j < ric.size(); j++) {
-
-									if (ric.get(j).getEmailA().equals(session.getAttribute("email"))
-											&& ric.get(j).getEmailS().equals(stud.get(i).getEmailS())) {
+								if (ric.get(i).getEmailA().equals(session.getAttribute("email"))
+										&& ric.get(i).getEmailS().equals(stud.get(i).getEmailS())) {
 						%>
 						<tr>
 							<td><%=stud.get(i).getNomeS()%></td>
@@ -138,7 +136,6 @@
 
 						<%
 							}
-								}
 							}
 						%>
 

@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import storage.DriverManagerConnectionPool;
 import storage.Richiesta;
 import storage.Studente;
-
+/*
 public class AccettaRichieste {
 	public synchronized ArrayList<Richiesta> doListaRichieste() throws SQLException{
 		Connection conn = null;
@@ -89,4 +89,4 @@ public class AccettaRichieste {
 	
 	}
 	}
-
+*/
