@@ -104,6 +104,13 @@
                           <%ArrayList<Azienda> lista = new ArrayList<Azienda>();
                           ListaAziende azienda = new ListaAziende();
                           lista=azienda.doListaAziende();%>
+                            
+                            <%if(request.getAttribute("errore")!= null){
+                            	%>
+                            	
+                            	<p><%=request.getAttribute("errore")%></p>
+                           <%  }%>
+                            
                             <table class="table table-bordered table-striped table-condensed">
                               <thead>
                               

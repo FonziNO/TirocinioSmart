@@ -15,7 +15,7 @@ import storage.RichiestaDao;
 
 public class InviaRichiesta extends HttpServlet {
 	RichiestaDao ricDao = new RichiestaDao();
-	
+
 	int res = 0;
 	private static final long serialVersionUID = 1L;
 
@@ -32,9 +32,12 @@ public class InviaRichiesta extends HttpServlet {
 
 		System.out.println("Invio la richiesta");
 		try {
+
 			Richiesta r = new Richiesta();
 			res = ricDao.richiedi(r.getCounter(), false, emailStudente, request.getParameter("emailAz"));
-			
+			if (res == -1) {
+				request.setAttribute("errore", "Richiesta già effettuata per questa Azienda");
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
