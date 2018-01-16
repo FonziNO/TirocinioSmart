@@ -125,7 +125,7 @@
 						<input type="hidden" name="emailAz"
 							value="aziendaMicroambiente@gmail.it"> <input type="submit"
 							class="btn btn-theme" value="Invia Richiesta"
-							style="margin-right: 20%" onclick="myFunction()"> <a href="ListaAziende.jsp"
+							style="margin-right: 20%"> <a href="ListaAziende.jsp"
 							class="btn btn-theme" style="margin-right: 20%" value="Indietro">Indietro</a>
 					</form>
 
@@ -166,11 +166,5 @@
 	<script src="assets/js/common-scripts.js"></script>
 
 	<!--script for this page-->
-	
-	<script type="text/javascript">
-	function myFunction(){
-		alert("Richiesta effettuata all'azienda Microambiente!");
-	}
-	</script>
 </body>
 </html>
