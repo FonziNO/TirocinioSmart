@@ -24,19 +24,34 @@ public class Login extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PreparedStatement prep = null;
+		PreparedStatement prep1 = null;
+		PreparedStatement prep2 = null;
 		Connection conn = null;
 		String user = request.getParameter("email");
 		String password = request.getParameter("password");
-		String nomeStudente = "SELECT Nome , Cognome FROM Studente WHERE Email=?";
+		String nomeStudente = "SELECT Nome , Cognome FROM Studente WHERE Studente.Email=?";
+		String nomeAzienda ="SELECT Nome FROM Azienda WHERE Azienda.Email=?";
+		String nomeTutor ="SELECT Nome, Cognome FROM Tutor WHERE Tutor.Email=?";
 		String n = null;
 		String c = null;
+		String azienda = null;
+		String tutorN = null;
+		String tutorC = null;
 		ResultSet rs = null;
+		ResultSet rs1 = null;
+		ResultSet rs2 = null;
 		LoginDao registrato = new LoginDao();
 		
 		try {
 			conn = DriverManagerConnectionPool.getConnection();
 			prep = conn.prepareStatement(nomeStudente);
 			prep.setString(1, user);
+			
+			prep1=conn.prepareStatement(nomeAzienda);
+			prep1.setString(1,user);
+			
+			prep2 = conn.prepareStatement(nomeTutor);
+			prep2.setString(1, user);
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -45,6 +60,12 @@ public class Login extends HttpServlet {
 		try {
 			rs = prep.executeQuery();
 			rs.next();
+			
+			rs1 = prep1.executeQuery();
+			rs1.next();
+			
+			rs2 = prep2.executeQuery();
+			rs2.next();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -52,8 +73,9 @@ public class Login extends HttpServlet {
 		try {
 			int i = registrato.doLogin(user, password);
 			System.out.println(i);
-			n = rs.getString("Nome");
-			c = rs.getString("Cognome");
+
+			
+			
 			if (i == 1) {
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
@@ -61,16 +83,24 @@ public class Login extends HttpServlet {
 				dashboardUfficioStage.forward(request, response);
 
 			} else if (i == 2) {
+				tutorN = rs2.getString("Nome");
+				tutorC = rs2.getString("Cognome");
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
+				session.setAttribute("Nome", tutorN);
+				session.setAttribute("Cognome", tutorC);
 				RequestDispatcher dashboardTutor = request.getRequestDispatcher("DashboardTutor.jsp");
 				dashboardTutor.forward(request, response);
 			} else if (i == 3) {
+				azienda = rs1.getString("Nome");
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
+				session.setAttribute("Nome", azienda);
 				RequestDispatcher dashboardAzienda = request.getRequestDispatcher("DashboardAzienda.jsp");
 				dashboardAzienda.forward(request, response);
 			} else if (i == 4) {
+				n = rs.getString("Nome");
+				c = rs.getString("Cognome");
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
 				session.setAttribute("Nome", n);

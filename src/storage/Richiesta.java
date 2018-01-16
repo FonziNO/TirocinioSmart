@@ -9,6 +9,25 @@ public class Richiesta {
 	
 	private String IdR;
 	private String statoR;
+	private String emailS;
+	private String emailA;
+	
+	public String getEmailS() {
+		return emailS;
+	}
+
+	public void setEmailS(String emailS) {
+		this.emailS = emailS;
+	}
+
+	public String getEmailA() {
+		return emailA;
+	}
+
+	public void setEmailA(String emailA) {
+		this.emailA = emailA;
+	}
+
 	private static int counter = initialize();
 	
 	public Richiesta(){

@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import storage.RichiestaDao;
 
 public class InviaRichiesta extends HttpServlet {
 	RichiestaDao ricDao = new RichiestaDao();
-	Richiesta r = new Richiesta();
+	
 	int res = 0;
 	private static final long serialVersionUID = 1L;
 
@@ -31,9 +32,13 @@ public class InviaRichiesta extends HttpServlet {
 
 		System.out.println("Invio la richiesta");
 		try {
+			Richiesta r = new Richiesta();
 			res = ricDao.richiedi(r.getCounter(), false, emailStudente, request.getParameter("emailAz"));
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		RequestDispatcher dashboardUfficioStage = request.getRequestDispatcher("ListaAziende.jsp");
+		dashboardUfficioStage.forward(request, response);
 	}
 }
