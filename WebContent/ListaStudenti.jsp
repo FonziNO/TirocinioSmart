@@ -120,6 +120,8 @@
 					</thead>
 					<tbody>
 						<%
+						
+						System.out.println(stud.size());
 							for (int i = 0; i < stud.size(); i++) {
 
 								if (ric.get(i).getEmailA().equals(session.getAttribute("email"))
