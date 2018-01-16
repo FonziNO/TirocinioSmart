@@ -74,14 +74,15 @@
 				<a href="profile.html"><img src="assets/img/ui-sam.jpg"
 					class="img-circle" width="60"></a>
 			</p>
-			<h5 class="centered"><%=session.getAttribute("email")%></h5>
+			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
+			</h4>
 
-			<li class="mt"><a class="active" href="DashboardAzienda.jsp">
-					<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+			<li class="mt"><a href="DashboardAzienda.jsp"> <i
+					class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
-			<li class="sub-menu"><a href="javascript:;"> <i
-					class="fa fa-desktop"></i> <span>Lista Studenti</span>
+			<li class="sub-menu"><a class="active" href="javascript:;">
+					<i class="fa fa-desktop"></i> <span>Lista Studenti</span>
 			</a></li>
 
 
@@ -126,7 +127,8 @@
 								for (int j = 0; j < ric.size(); j++) {
 
 									if (ric.get(j).getEmailA().equals(session.getAttribute("email"))
-											&& ric.get(j).getEmailS().equals(stud.get(i).getEmailS())) {%>
+											&& ric.get(j).getEmailS().equals(stud.get(i).getEmailS())) {
+						%>
 						<tr>
 							<td><%=stud.get(i).getNomeS()%></td>
 							<td><%=stud.get(i).getCognomeS()%></td>
@@ -136,8 +138,8 @@
 								style="margin-right: 20%" value="Rifiuta">Rifiuta</a></td>
 						</tr>
 
-						<%	
-									}
+						<%
+							}
 								}
 							}
 						%>
