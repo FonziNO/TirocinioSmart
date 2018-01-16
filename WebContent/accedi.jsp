@@ -50,7 +50,7 @@
 						class="checkbox"> <span class="pull-right"> </span>
 					</label>
 					<button class="btn btn-theme btn-block" type="submit"
-						value="Accedi">
+						value="Accedi" onclick="myFunction()">
 						<i class="fa fa-lock"></i> ACCEDI
 					</button>
 					<hr>
@@ -102,6 +102,12 @@
 		$.backstretch("image/unisalr.jpg", {
 			speed : 500
 		});
+	</script>
+	
+		<script type="text/javascript">
+	function myFunction(){
+		alert("Email o password inesatti!");
+	}
 	</script>
 
 </body>
