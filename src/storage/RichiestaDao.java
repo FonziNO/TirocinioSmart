@@ -20,7 +20,7 @@ public class RichiestaDao {
 			System.out.println("Sono in RichiestaDao");
 			String richiest = "INSERT INTO " + RichiestaDao.TABLE_NAME
 					+ "(ID, Stato, StudenteEmail, AziendaEmail) values(?,?,?,?)";
-			String contol = "SELECT COUNT(*) AS C FROM richiesta WHERE studenteEmail = ? AND AziendaEmail = ?";
+			String contol = "SELECT COUNT(*) AS C FROM richiesta WHERE studenteEmail = ? AND aziendaEmail = ?";
 
 			// formulo la stringa
 
