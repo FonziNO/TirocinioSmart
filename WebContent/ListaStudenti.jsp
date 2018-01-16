@@ -106,8 +106,8 @@
  	ArrayList<Studente> lista = new ArrayList<Studente>(); //Lista degli studenti
  	ArrayList<Richiesta> lista2 = new ArrayList<Richiesta>(); //Lista degli studenti che hanno fatto la richiesta
  	ListaRichieste richieste = new ListaRichieste(); //creazione dell'oggetto richieste
- 	ArrayList<Studente> stud = lista = richieste.doListaStudenti(); //query per gli studenti
- 	ArrayList<Richiesta> ric = lista2 = richieste.doListaRichieste(); //query per le richieste
+ 	ArrayList<Studente> stud = richieste.doListaStudenti(); //query per gli studenti
+ 	ArrayList<Richiesta> ric = richieste.doListaRichieste(); //query per le richieste
  %>
 				<table class="table table-bordered table-striped table-condensed">
 					<thead>

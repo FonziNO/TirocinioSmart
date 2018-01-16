@@ -12,14 +12,14 @@ import storage.Richiesta;
 import storage.Studente;
 
 public class ListaRichieste {
-	public synchronized ArrayList<Studente> doListaStudenti()throws SQLException{ 
+	public synchronized ArrayList<Studente> doListaStudenti(String sessione)throws SQLException{ 
 		Connection conn= null;
 		PreparedStatement s2=null;
 
 
 		List<Studente> listaS = new ArrayList<Studente>();
 		String studenti="select Studente.Email, Studente.Nome, Studente.Cognome, Studente.Matricola"+
-		" from Richiesta, Studente where Richiesta.StudenteEmail=Studente.Email;";
+		" from Richiesta, Studente where Richiesta.StudenteEmail=Studente.Email AND Richiesta.AziendaEmail=" + sessione;
 		conn = DriverManagerConnectionPool.getConnection();
 		s2 = conn.prepareStatement(studenti);
 		ResultSet risultato2 = s2.executeQuery();
