@@ -75,7 +75,7 @@
 				<ul class="sidebar-menu" id="nav-accordion">
 
 					<p class="centered">
-						<a href="profile.html"><img src="image/Utente.png"
+						<a href="profile.html"><img src="image/Student-icon.png"
 							class="img-circle" width="60"></a>
 					</p>
 					<h4 class="centered" style="font-family: Ruda; color: white" ><%= session.getAttribute("Nome") %> <%= session.getAttribute("Cognome") %></h4>

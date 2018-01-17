@@ -69,7 +69,7 @@
 	<script type="text/javascript"
 		src="assets/js/jquery.backstretch.min.js"></script>
 	<script>
-		$.backstretch("image/unisalr.jpg", {
+		$.backstretch("image/unisalr2.jpg", {
 			speed : 500
 		});
 	</script>
