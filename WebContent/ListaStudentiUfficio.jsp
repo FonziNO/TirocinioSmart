@@ -68,12 +68,12 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="assets/img/ui-sam.jpg"
+				<a href="profile.html"><img src="image/icona-ufficio.png"
 					class="img-circle" width="60"></a>
 			</p>
 			<h5 class="centered"><%=session.getAttribute("email")%></h5>
 
-			<li class="mt"><a class="active" href="DashboardTutor.jsp">
+			<li class="mt"><a class="active" href="DashboardStage.jsp">
 			 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
