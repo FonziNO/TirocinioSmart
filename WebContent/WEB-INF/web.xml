@@ -44,4 +44,28 @@
   	<servlet-name>InviaRichiesta</servlet-name>
   	<url-pattern>/InviaRichiesta</url-pattern>
   </servlet-mapping>
+    <servlet>
+  	<servlet-name>AccettazioneRichiesta</servlet-name>
+  	<servlet-class>application.AccettazioneRichiesta</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AccettazioneRichiesta</servlet-name>
+  	<url-pattern>/AccettazioneRichiesta</url-pattern>
+  </servlet-mapping>
+     <servlet>
+  	<servlet-name>RifiutoRichiesta</servlet-name>
+  	<servlet-class>application.RifiutoRichiesta</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RifiutoRichiesta</servlet-name>
+  	<url-pattern>/RifiutoRichiesta</url-pattern>
+  </servlet-mapping>
+   <servlet>
+  	<servlet-name>AccettazioneTutor</servlet-name>
+  	<servlet-class>application.AccettazioneTutor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AccettazioneTutor</servlet-name>
+  	<url-pattern>/AccettazioneTutor</url-pattern>
+  </servlet-mapping>
 </web-app>

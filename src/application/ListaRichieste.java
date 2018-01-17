@@ -12,52 +12,7 @@ import storage.Richiesta;
 import storage.Studente;
 
 public class ListaRichieste {
-
-	/*public synchronized ArrayList<Studente> doListaStudenti() throws SQLException {
-		Connection conn = null;
-		PreparedStatement s2 = null;
-
-		List<Studente> listaS = new ArrayList<Studente>();
-
-		String studenti = "SELECT Studente.Email, Studente.Nome, Studente.Cognome, Studente.Matricola FROM Richiesta, Studente WHERE Studente.Email = Richiesta.StudenteEmail";
-		conn = DriverManagerConnectionPool.getConnection();
-		s2 = conn.prepareStatement(studenti);
-		ResultSet risultato2 = s2.executeQuery();
-
-		conn.commit();
-
-		try {
-
-			while (risultato2.next()) {
-				Studente studente = new Studente();
-				studente.setEmailS(risultato2.getString("Email"));
-				studente.setNomeS(risultato2.getString("Nome"));
-				studente.setCognomeS(risultato2.getString("Cognome"));
-				studente.setMatricolaS(risultato2.getString("Matricola"));
-				listaS.add(studente);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (risultato2 != null) {
-				try {
-					risultato2.close();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			if (s2 != null) {
-				try {
-					s2.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return (ArrayList<Studente>) listaS;
-	}
-*/
+	
 	public synchronized ArrayList<Richiesta> doListaRichieste() throws SQLException {
 		Connection conn = null;
 		PreparedStatement s1 = null;
