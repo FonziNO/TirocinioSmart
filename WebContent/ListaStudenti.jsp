@@ -71,7 +71,7 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="image/Azienda-icona.png"
+				<a href="profile.html"><img src="image/Agency-icon.png"
 					class="img-circle" width="60"></a>
 			</p>
 			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
@@ -129,9 +129,10 @@
 							<td><%=ric.get(i).getNomeS()%></td>
 							<td><%=ric.get(i).getCognomeS()%></td>
 							<td><%=ric.get(i).getMatricolaS()%></td>
-							<td><a class="btn btn-theme" style="margin-right: 20%"
-								value="Accetta">Accetta</a> <a class="btn btn-theme"
-								style="margin-right: 20%" value="Rifiuta">Rifiuta</a></td>
+							<td><form action="AccettazioneRichiesta" method="post"><input type="hidden" name="emailS" value=<%=ric.get(i).getEmailS()%>>
+							<input type="submit" class="btn btn-theme" value="Accetta" style="margin-right:20%"></form><br>
+							<form action="RifiutoRichiesta" method="post"><input type="hidden" name="emailStu" value=<%=ric.get(i).getEmailS()%>>
+							<input type="submit" class="btn btn-theme" value="Rifiuta" style="margin-right:20%"></form></td>
 						</tr>
 
 						<%

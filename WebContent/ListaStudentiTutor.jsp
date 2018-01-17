@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	import="java.util.ArrayList" import="storage.Studente"
+	import="storage.Richiesta" import="storage.StudenteTutor" import="application.ListaStudentiTutor"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -68,17 +71,18 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="image/tutor.png"
+				<a href="profile.html"><img src="Tutor-icon.png"
 					class="img-circle" width="60"></a>
 			</p>
-			<h5 class="centered"><%=session.getAttribute("email")%></h5>
+			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%><%=session.getAttribute("Cognome")%>
+			</h4>
 
-			<li class="mt"><a class="active" href="DashboardTutor.jsp">
-			 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+			<li class="mt"><a href="DashboardAzienda.jsp"> <i
+					class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
-			<li class="sub-menu"><a href="javascript:;"> <i
-					class="fa fa-desktop"></i> <span>Lista Studenti</span>
+			<li class="sub-menu"><a class="active" href="javascript:;">
+					<i class="fa fa-desktop"></i> <span>Lista Studenti</span>
 			</a></li>
 
 
@@ -91,89 +95,87 @@
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
 
-	<div class="row">
-		<div class="col-lg-9 main-chart">
-			
+	<div class="row mt">
+		<div class="col-lg-12">
+			<div class="content-panel">
+				<h5>
+					<i class="fa fa-angle-right"></i> Lista Studenti
+				</h5>
+
+				<section id="unseen" action="ListaStudentiTutor.jsp"> <%
+ 	ListaStudentiTutor richieste = new ListaStudentiTutor(); //creazione dell'oggetto richieste
+ 	//ArrayList<Studente> stud = richieste.doListaStudenti(); //query per gli studenti
+ 	ArrayList<StudenteTutor> ric = richieste.visualizzaAccettati(); //query per le richieste
+ %>
+				<table class="table table-bordered table-striped table-condensed">
+					<thead>
+
+						<th>Nome Studente</th>
+						<th>Cognome Studente</th>
+						<th>Matricola Studente</th>
+						<th>Operazioni</th>
 
 
 
+					</thead>
+					<tbody>
+						<%
+							System.out.println(ric.size());
+							for (int i = 0; i < ric.size(); i++) {
+
+								if (ric.get(i).getTutor().getEmailT().equals(session.getAttribute("email"))) {
+						%>
+						<tr>
+							<td><%=ric.get(i).getStudente().getNomeS()%></td>
+							<td><%=ric.get(i).getStudente().getCognomeS()%></td>
+							<td><%=ric.get(i).getStudente().getMatricolaS()%></td>
+							<td>
+							<form><input type="hidden" name="emailSt" value=<%=ric.get(i).getStudente().getEmailS()%>>
+							<input type="submit" class="btn btn-theme" value="Rifiuta" style="margin-right:20%"></form></td>
+						</tr>
+
+						<%
+							}
+							}
+						%>
 
 
+					</tbody>
+				</table>
+				</section>
+			</div>
+			<!-- /content-panel -->
 		</div>
-		<table align="right"
-		class="table table-bordered table-striped table-condensed">
-		<thead>
-
-			<th>Nome Studente</th>
-			<th>Cognome Studente</th>
-			<th>Matricola Studente</th>
-			<th>Operazioni</th>
-			
-
-
-		</thead>
-		<tbody>
-			
-			<tr>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Accetta">Accetta</a> 
-			</td>
-
-
-			</tr>
-			
-		</tbody>
-	</table>
-		<!-- /row -->
-
+		<!-- /col-lg-4 -->
 	</div>
-	<!-- /col-lg-9 END SECTION MIDDLE --> <!-- **********************************************************************************************************************************************************
-      RIGHT SIDEBAR CONTENT
-      *********************************************************************************************************************************************************** -->
-
-
-
-
+	<!-- /row --> <!-- /row -->
 	</div>
-	<!-- /col-lg-3 -->
+	<!-- /content-panel -->
 	</div>
-	<! --/row --> </section> </section> <!--main content end--> <!--footer start--> <footer
-		class="site-footer">
+	<!-- /col-lg-12 -->
+	</div>
+	<!-- /row --> </section> <! --/wrapper --> </section><!-- /MAIN CONTENT --> <!--main content end-->
+	<!--footer start--> <footer class="site-footer">
 	<div class="text-center">
-		2018 - Tirocinio Smart <a href="DashboardAzienda.jsp#" class="go-top">
+		2018 - Tirocinio Smart <a href="responsive_table.html#" class="go-top">
 			<i class="fa fa-angle-up"></i>
 		</a>
 	</div>
 	</footer> <!--footer end--> </section>
-	
+
 	<!-- js placed at the end of the document so the pages load faster -->
 	<script src="assets/js/jquery.js"></script>
-	<script src="assets/js/jquery-1.8.3.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script class="include" type="text/javascript"
 		src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="assets/js/jquery.scrollTo.min.js"></script>
 	<script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-	<script src="assets/js/jquery.sparkline.js"></script>
 
 
 	<!--common script for all pages-->
 	<script src="assets/js/common-scripts.js"></script>
 
-	<script type="text/javascript"
-		src="assets/js/gritter/js/jquery.gritter.js"></script>
-	<script type="text/javascript" src="assets/js/gritter-conf.js"></script>
-
 	<!--script for this page-->
-	<script src="assets/js/sparkline-chart.js"></script>
-	<script src="assets/js/zabuto_calendar.js"></script>
-
-
-
 
 </body>
-
 </html>
