@@ -16,7 +16,7 @@ public class AccettazioneDao {
 		
 		try{
 			System.out.println("Sono in AccettazioneDao");
-			String richieste="UPDATE Richiesta SET Stato=true WHERE StudenteEmail='"+studEmail+"';";
+			String richieste="UPDATE Richiesta SET Stato=true WHERE StudenteEmail='"+studEmail+"'AND AziendaEmail='"+azEmail+"';";
 			
 			conn = DriverManagerConnectionPool.getConnection();
 			
