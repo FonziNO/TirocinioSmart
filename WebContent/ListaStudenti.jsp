@@ -104,7 +104,7 @@
 
 				<section id="unseen" action="ListaStudenti.jsp"> <%
  	ListaRichieste richieste = new ListaRichieste(); //creazione dell'oggetto richieste
- 	ArrayList<Studente> stud = richieste.doListaStudenti(); //query per gli studenti
+ 	//ArrayList<Studente> stud = richieste.doListaStudenti(); //query per gli studenti
  	ArrayList<Richiesta> ric = richieste.doListaRichieste(); //query per le richieste
  %>
 				<table class="table table-bordered table-striped table-condensed">
@@ -120,16 +120,15 @@
 					</thead>
 					<tbody>
 						<%
-							System.out.println(stud.size());
-							for (int i = 0; i < stud.size(); i++) {
+							System.out.println(ric.size());
+							for (int i = 0; i < ric.size(); i++) {
 
-								if (ric.get(i).getEmailA().equals(session.getAttribute("email"))
-										&& ric.get(i).getEmailS().equals(stud.get(i).getEmailS())) {
+								if (ric.get(i).getEmailA().equals(session.getAttribute("email"))) {
 						%>
 						<tr>
-							<td><%=stud.get(i).getNomeS()%></td>
-							<td><%=stud.get(i).getCognomeS()%></td>
-							<td><%=stud.get(i).getMatricolaS()%></td>
+							<td><%=ric.get(i).getNomeS()%></td>
+							<td><%=ric.get(i).getCognomeS()%></td>
+							<td><%=ric.get(i).getMatricolaS()%></td>
 							<td><a class="btn btn-theme" style="margin-right: 20%"
 								value="Accetta">Accetta</a> <a class="btn btn-theme"
 								style="margin-right: 20%" value="Rifiuta">Rifiuta</a></td>

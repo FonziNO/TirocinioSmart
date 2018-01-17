@@ -6,12 +6,14 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Richiesta {
-	
+
 	private String IdR;
 	private String statoR;
 	private String emailS;
 	private String emailA;
-	
+	private String nomeS;
+	private String cognomeS;
+	private String matricolaS;
 	public String getEmailS() {
 		return emailS;
 	}
@@ -29,8 +31,8 @@ public class Richiesta {
 	}
 
 	private static int counter = initialize();
-	
-	public Richiesta(){
+
+	public Richiesta() {
 		try {
 			increaseCounter();
 		} catch (FileNotFoundException e) {
@@ -38,52 +40,80 @@ public class Richiesta {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public String getIdR() {
 		return IdR;
 	}
+
 	public void setIdR(String idR) {
 		IdR = idR;
 	}
+
 	public String getStatoR() {
 		return statoR;
 	}
+
 	public void setStatoR(String statoR) {
 		this.statoR = statoR;
 	}
-	
-	private static int initialize(){
-		int cont=0;
-		Scanner in=null;
+
+	private static int initialize() {
+		int cont = 0;
+		Scanner in = null;
 		FileReader reader = null;
-		if(counter==0){
-			try{
+		if (counter == 0) {
+			try {
 				reader = new FileReader("Contatore");
 				in = new Scanner(reader);
-				String c=in.nextLine();
-				
+				String c = in.nextLine();
+
 				cont = Integer.parseInt(c);
-			}catch(FileNotFoundException e){
+			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-			}finally{
-				if(in!=null){
+			} finally {
+				if (in != null) {
 					in.close();
 				}
 			}
 		}
 		return cont;
 	}
-	
-	private void increaseCounter() throws FileNotFoundException{
+
+	private void increaseCounter() throws FileNotFoundException {
 		counter++;
-		PrintWriter scrivi= new PrintWriter("Contatore");
+		PrintWriter scrivi = new PrintWriter("Contatore");
 		scrivi.println(counter);
 		scrivi.close();
 	}
-	
-	public static String getCounter(){
-		return "R"+counter;
+
+	public static String getCounter() {
+		return "R" + counter;
 	}
-	
-	
+
+	public void setNomeS(String nomeS) {
+		this.nomeS = nomeS;
+
+	}
+
+	public String getNomeS() {
+		return nomeS;
+	}
+
+	public void setCognomeS(String cognomeS) {
+		this.cognomeS = cognomeS;
+
+	}
+	public String getCognomeS() {
+		return cognomeS;
+	}
+
+	public void setMatricolaS(String matricolaS) {
+		this.matricolaS = matricolaS;
+		
+	}
+	public String getMatricolaS() {
+		return matricolaS;
+	}
+
+
 }
