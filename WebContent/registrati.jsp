@@ -128,7 +128,7 @@
 		
 	</script>
 	<script>
-		$.backstretch("image/unisalr.jpg", {
+		$.backstretch("image/unisalr2.jpg", {
 			speed : 500
 		});
 	</script>
