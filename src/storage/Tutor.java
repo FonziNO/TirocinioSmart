@@ -7,6 +7,13 @@ public class Tutor {
 	private String matricolaT;
 	private String passwordT;
 	private String emailT;
+	private String emailA;
+	public String getEmailA() {
+		return emailA;
+	}
+	public void setEmailA(String emailA) {
+		this.emailA = emailA;
+	}
 	public String getNomeT() {
 		return nomeT;
 	}

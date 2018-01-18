@@ -9,9 +9,7 @@ import java.util.List;
 
 import storage.DriverManagerConnectionPool;
 import storage.Richiesta;
-import storage.Studente;
-import storage.StudenteTutor;
-import storage.Tutor;
+
 
 public class ListaStudentiTutor {
 	

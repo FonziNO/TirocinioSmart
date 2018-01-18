@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	import="java.util.ArrayList" import="storage.Studente"
-	import="storage.Richiesta" import="storage.StudenteTutor"
+	import="storage.Richiesta" 
 	import="application.ListaStudentiTutor" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -81,7 +81,7 @@
 					class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
-			<li class="sub-menu"><a class="active" href="javascript:;">
+			<li class="sub-menu"><a class="active" href="ListaStudentiTutor.jsp">
 					<i class="fa fa-desktop"></i> <span>Lista Studenti</span>
 			</a></li>
 
@@ -133,7 +133,7 @@
 							<td><%=ric.get(i).getCognomeS()%></td>
 							<td><%=ric.get(i).getMatricolaS()%></td>
 							<td>
-								<form>
+								<form action="AccettazioneTutor" method="post">
 									<input type="hidden" name="emailSt"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Accetta"
