@@ -14,6 +14,7 @@ public class Richiesta {
 	private String nomeS;
 	private String cognomeS;
 	private String matricolaS;
+	private String emailT;
 	public String getEmailS() {
 		return emailS;
 	}
@@ -113,6 +114,14 @@ public class Richiesta {
 	}
 	public String getMatricolaS() {
 		return matricolaS;
+	}
+
+	public String getEmailT() {
+		return emailT;
+	}
+
+	public void setEmailT(String emailT) {
+		this.emailT = emailT;
 	}
 
 

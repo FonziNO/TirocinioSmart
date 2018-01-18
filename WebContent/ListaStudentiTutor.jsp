@@ -105,7 +105,7 @@
 				<section id="unseen" action="ListaStudentiTutor.jsp"> <%
  	ListaStudentiTutor richieste = new ListaStudentiTutor(); //creazione dell'oggetto richieste
  	//ArrayList<Studente> stud = richieste.doListaStudenti(); //query per gli studenti
- 	ArrayList<StudenteTutor> ric = richieste.visualizzaAccettati(); //query per le richieste
+ 	ArrayList<Richiesta> ric = richieste.doListaStudenteTutor(); //query per le richieste
  %>
 				<table class="table table-bordered table-striped table-condensed">
 					<thead>
@@ -121,16 +121,19 @@
 					<tbody>
 						<%
 							System.out.println(ric.size());
-							for (int i = 0; i < ric.size(); i++) {
+						System.out.println(session.getAttribute("email"));
 
-								if (ric.get(i).getTutor().getEmailT().equals(session.getAttribute("email"))) {
+							for (int i = 0; i < ric.size(); i++) {
+								System.out.println(ric.get(i).getEmailT());
+
+								if (ric.get(i).getEmailT().equals(session.getAttribute("email"))) {
 						%>
 						<tr>
-							<td><%=ric.get(i).getStudente().getNomeS()%></td>
-							<td><%=ric.get(i).getStudente().getCognomeS()%></td>
-							<td><%=ric.get(i).getStudente().getMatricolaS()%></td>
+							<td><%=ric.get(i).getNomeS()%></td>
+							<td><%=ric.get(i).getCognomeS()%></td>
+							<td><%=ric.get(i).getMatricolaS()%></td>
 							<td>
-							<form><input type="hidden" name="emailSt" value=<%=ric.get(i).getStudente().getEmailS()%>>
+							<form><input type="hidden" name="emailSt" value=<%=ric.get(i).getEmailS()%>>
 							<input type="submit" class="btn btn-theme" value="Rifiuta" style="margin-right:20%"></form></td>
 						</tr>
 
