@@ -86,13 +86,12 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-	<p>In questa sezione puoi scegliere l'Azienda</p>
+	<h5>In questa sezione potrai inviare una richiesta se interessato
+		al progetto formativo offerto dall'azienda.</h5>
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="content-panel">
-				<h5>
-					<i class="fa fa-angle-right"></i> Dettagli Azienda
-				</h5>
+
 				<section id="unseen">
 				<table class="table table-bordered table-striped table-condensed">
 					<thead>
@@ -116,10 +115,10 @@
 					</tbody>
 				</table>
 				<table>
-					<th align="center">DETTAGLI</th>
+					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
 					</section>
 				</table>
-				<p>Pomodori</p>
+				<h5>afknnfsofnaosfnoasifinsofasnio</h5>
 				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">
@@ -127,8 +126,8 @@
 						<input type="hidden" name="emailAz"
 							value="aziendaAFSoluzioni@gmail.it"> <input type="submit"
 							class="btn btn-theme" value="Invia Richiesta"
-							style="margin-right: 20%"> <a href="ListaAziende.jsp"
-							class="btn btn-theme" style="margin-right: 20%" value="Indietro">Indietro</a>
+							style="margin-right: 30%"> <a href="ListaAziende.jsp"
+							class="btn btn-theme" style="margin-right: 4%" value="Indietro">Indietro</a>
 					</form>
 
 
