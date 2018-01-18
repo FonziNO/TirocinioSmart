@@ -134,7 +134,7 @@
 							<td><%=ric.get(i).getMatricolaS()%></td>
 							<td>
 							<form><input type="hidden" name="emailSt" value=<%=ric.get(i).getEmailS()%>>
-							<input type="submit" class="btn btn-theme" value="Rifiuta" style="margin-right:20%"></form></td>
+							<input type="submit" class="btn btn-theme" value="Accetta" style="margin-right:20%"></form></td>
 						</tr>
 
 						<%
