@@ -35,7 +35,6 @@ public class ListaStudentiUfficio {
 				richiesta.setNomeS(risultato.getString("Nome"));
 				richiesta.setCognomeS(risultato.getString("Cognome"));
 				richiesta.setMatricolaS(risultato.getString("Matricola"));
-				richiesta.setEmailT(risultato.getString("Tutor.Email"));
 				
 				
 				lista.add(richiesta);

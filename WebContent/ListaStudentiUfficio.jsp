@@ -89,10 +89,19 @@
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
 
-	<div class="row">
-		<div class="col-lg-9 main-chart"></div>
-		<table align="right"
-			class="table table-bordered table-striped table-condensed">
+	<div class="row mt">
+		<div class="col-lg-12">
+			<div class="content-panel">
+				<h5>
+					<i class="fa fa-angle-right"></i> Lista Studenti
+				</h5>
+
+				<section id="unseen" action="ListaStudentiUfficio.jsp"> <%
+ 	ListaStudentiUfficio richieste = new ListaStudentiUfficio(); //creazione dell'oggetto richieste
+ 	//ArrayList<Studente> stud = richieste.doListaStudenti(); //query per gli studenti
+ 	ArrayList<Richiesta> ric = richieste.doListaStudenteUfficio(); //query per le richieste
+ %>
+				<table class="table table-bordered table-striped table-condensed">
 			<thead>
 
 				<th>Nome Studente</th>
@@ -104,17 +113,29 @@
 
 			</thead>
 			<tbody>
+<%
+							System.out.println(ric.size());
+							System.out.println(session.getAttribute("email"));
 
+							for (int i = 0; i < ric.size(); i++) {
+								System.out.println(ric.get(i).getEmailT());
+
+								if (ric.get(i).getEmailT().equals(session.getAttribute("email"))) {
+						%>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><%=ric.get(i).getNomeS()%></td>
+					<td><%=ric.get(i).getCognomeS()%></td>
+					<td><%=ric.get(i).getMatricolaS()%></td>
 					<td><a href="Dettagli" class="btn btn-theme"
 						style="margin-right: 20%" value="Accetta">Accetta</a></td>
 
 
 				</tr>
 
+	<%
+							}
+							}
+						%>
 			</tbody>
 		</table>
 		<!-- /row -->
