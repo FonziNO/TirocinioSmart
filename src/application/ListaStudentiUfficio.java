@@ -17,7 +17,7 @@ public class ListaStudentiUfficio {
 		PreparedStatement s = null;
 		List<Richiesta> lista = new ArrayList<Richiesta>();
 
-		String query = "SELECT * FROM Richiesta WHERE Richiesta.StudenteEmail = Studente.Email AND Richiesta.Stato = true AND Richiesta.StatoTutor = true;";
+		String query = "SELECT * FROM Richiesta, Studente WHERE Richiesta.StudenteEmail = Studente.Email AND Richiesta.Stato = true AND Richiesta.StatoTutor = true;";
 		
 		conn = DriverManagerConnectionPool.getConnection();
 		s = conn.prepareStatement(query);

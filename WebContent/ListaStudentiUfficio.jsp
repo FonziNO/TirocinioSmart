@@ -118,9 +118,8 @@
 							System.out.println(session.getAttribute("email"));
 
 							for (int i = 0; i < ric.size(); i++) {
-								System.out.println(ric.get(i).getEmailT());
 
-								if (ric.get(i).getEmailT().equals(session.getAttribute("email"))) {
+								if (ric.get(i).getEmailU().equals(session.getAttribute("email"))) {
 						%>
 				<tr>
 					<td><%=ric.get(i).getNomeS()%></td>
