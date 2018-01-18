@@ -28,7 +28,7 @@ AccettazioneTutorDao ricTDao = new AccettazioneTutorDao();
 		String emailTutor = (String) session.getAttribute("email");
 		try {
 			Richiesta r = new Richiesta();
-			res = ricTDao.accettaTutor(r.getCounter(), false, request.getParameter("emailSt"), emailTutor);
+			res = ricTDao.accettaTutor(r.getCounter(), false, false, false, request.getParameter("emailSt"), emailTutor);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -35,7 +35,7 @@ public class InviaRichiesta extends HttpServlet {
 		try {
 
 			Richiesta r = new Richiesta();
-			res = ricDao.richiedi(r.getCounter(), false, emailStudente, request.getParameter("emailAz"));
+			res = ricDao.richiedi(r.getCounter(), false, false, false, emailStudente, request.getParameter("emailAz"));
 			if (res == -1) {
 				request.setAttribute("errore", "Richiesta già effettuata per questa Azienda");
 			} else {

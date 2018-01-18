@@ -9,7 +9,7 @@ public class AccettazioneDao {
 	
 	private static final String TABLE_NAME="Richiesta";
 	int res = 0;
-	public synchronized int accetta(String id, boolean stato, String studEmail, String azEmail) throws SQLException{
+	public synchronized int accetta(String id, boolean stato, boolean statoTutor, boolean statoUfficio, String studEmail, String azEmail) throws SQLException{
 		Connection conn=null;
 		PreparedStatement prep=null;
 		ResultSet rs = null;

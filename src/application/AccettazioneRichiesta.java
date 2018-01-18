@@ -30,7 +30,7 @@ AccettazioneDao ricDao = new AccettazioneDao();
 		String emailAzienda = (String) session.getAttribute("email");
 		try {
 			Richiesta r = new Richiesta();
-			res = ricDao.accetta(r.getCounter(), false, request.getParameter("emailS"), emailAzienda);
+			res = ricDao.accetta(r.getCounter(), false, false, false, request.getParameter("emailS"), emailAzienda);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

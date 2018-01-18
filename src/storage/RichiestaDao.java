@@ -10,7 +10,7 @@ public class RichiestaDao {
 	int res = 0;
 
 	
-	public synchronized int richiedi(String id, boolean stato, String studEmail, String azEmail) throws SQLException {
+	public synchronized int richiedi(String id, boolean stato, boolean statoTutor, boolean statoUfficio, String studEmail, String azEmail) throws SQLException {
 		Connection conn = null; // istanzio la connessione
 		PreparedStatement prep = null; // oggetto per inviare query parametriche
 		PreparedStatement prep2 = null;

@@ -16,7 +16,7 @@ public class ListaRichieste {
 	public synchronized ArrayList<Richiesta> doListaRichieste() throws SQLException {
 		Connection conn = null;
 		PreparedStatement s1 = null;
-		List<Studente> listaS = new ArrayList<Studente>();
+	
 		List<Richiesta> listaR = new ArrayList<Richiesta>();
 
 		String listaRichieste = "SELECT * FROM Richiesta INNER JOIN studente ON StudenteEmail = Email";

@@ -28,7 +28,7 @@ RifiutoRichiestaDao ricDao = new RifiutoRichiestaDao();
 		String emailAzienda = (String) session.getAttribute("email");
 		try {
 			Richiesta r = new Richiesta();
-			res = ricDao.rifiuta(r.getCounter(), false, request.getParameter("emailStu"), emailAzienda);
+			res = ricDao.rifiuta(r.getCounter(), false, false, false, request.getParameter("emailStu"), emailAzienda);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
