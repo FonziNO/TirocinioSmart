@@ -18,7 +18,7 @@ public class RichiestaDao {
 		try {
 			System.out.println("Sono in RichiestaDao");
 			String richiest = "INSERT INTO " + RichiestaDao.TABLE_NAME
-					+ "(ID, Stato, StudenteEmail, AziendaEmail) values(?,?,?,?)";
+					+ "(ID, Stato, StatoTutor, StatoUfficio, StudenteEmail, AziendaEmail) values(?,?,?,?,?,?)";
 			String contol = "SELECT COUNT(*) AS C FROM richiesta WHERE studenteEmail = ? AND aziendaEmail = ?";
 
 			// formulo la stringa
@@ -40,8 +40,10 @@ public class RichiestaDao {
 			prep = conn.prepareStatement(richiest);
 			prep.setString(1, id);
 			prep.setBoolean(2, stato);
-			prep.setString(3, studEmail);
-			prep.setString(4, azEmail);
+			prep.setBoolean(3,statoTutor);
+			prep.setBoolean(4, statoUfficio);
+			prep.setString(5, studEmail);
+			prep.setString(6, azEmail);
 
 			// eseguo la query
 			res = prep.executeUpdate();// mi ritorna il numero di righe
