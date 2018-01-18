@@ -75,8 +75,8 @@
 				<ul class="sidebar-menu" id="nav-accordion">
 
 					<p class="centered">
-						<a href="profile.html"><img src="image/Agency-icon.png"
-							class="img-circle" width="60"></a>
+						<a href="DashboardAzienda.jsp"><img
+							src="image/Agency-icon.png" class="img-circle" width="60"></a>
 					</p>
 					<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
 					</h4>
@@ -137,8 +137,7 @@
 		<!--footer start-->
 		<footer class="site-footer">
 			<div class="text-center">
-				2018 - Tirocinio Smart <a href="DashboardAzienda.jsp#"
-					class="go-top"> <i class="fa fa-angle-up"></i>
+				2018 - Tirocinio Smart <a href="DashboardAzienda.jsp#"> <i></i>
 				</a>
 			</div>
 		</footer>

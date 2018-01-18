@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    import="javax.servlet.http.HttpServletRequest" import="storage.Studente" pageEncoding="ISO-8859-1" %>
+	import="javax.servlet.http.HttpServletRequest"
+	import="storage.Studente" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,13 +76,14 @@
 				<ul class="sidebar-menu" id="nav-accordion">
 
 					<p class="centered">
-						<a href="profile.html"><img src="image/Student-icon.png"
-							class="img-circle" width="60"></a>
+						<a href="DashboardStudente.jsp"><img
+							src="image/Student-icon.png" class="img-circle" width="60"></a>
 					</p>
-					<h4 class="centered" style="font-family: Ruda; color: white" ><%= session.getAttribute("Nome") %> <%= session.getAttribute("Cognome") %></h4>
+					<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
+						<%=session.getAttribute("Cognome")%></h4>
 
-					<li class="mt"><a class="active" href="DashboardStudente.jsp"> <i
-							class="fa fa-dashboard"></i> <span>Dashboard</span>
+					<li class="mt"><a class="active" href="DashboardStudente.jsp">
+							<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 					</a></li>
 
 					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
@@ -113,37 +115,8 @@
 				<!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->
-				<table align="right"
-					class="table table-bordered table-striped table-condensed">
-					<thead>
 
-						<th></th>
-						<th>Stato</th>
-
-
-					</thead>
-					<tbody>
-						<tr>
-							<td>Azienda</td>
-							<td><botton> Oliveto Citra(SA) </botton></td>
-
-
-						</tr>
-						<tr>
-							<td>Tutor</td>
-							<td><botton> Oliveto Citra(SA) </botton></td>
-
-
-						</tr>
-						<tr>
-							<td>Ufficio Stage</td>
-							<td><botton> Oliveto Citra(SA) </botton></td>
-
-
-						</tr>
-					</tbody>
-				</table>
-				<div class="col-lg-3 ds" align="left">
+				<div class="col-md-3 ds">
 					<!--COMPLETED ACTIONS DONUTS CHART-->
 					<h3>NOTIFICATIONS</h3>
 
@@ -187,8 +160,49 @@
 						</div>
 					</div>
 				</div>
-				<!-- /col-lg-3 -->
+				
+				<div class="col-md-9">
+					<div class="content-panel">
+						<h5>
+							<i class="fa fa-angle-right"></i>Stato Progetto Formativo
+						</h5>
+
+						<table class="table table-bordered table-striped table-condensed">
+							<thead>
+
+								<th>Responsabile</th>
+								<th>Stato</th>
+
+
+							</thead>
+							<tbody>
+								<tr>
+									<td>Azienda</td>
+									<td><botton> </botton></td>
+
+
+								</tr>
+								<tr>
+									<td>Tutor</td>
+									<td>S</td>
+
+
+								</tr>
+								<tr>
+									<td>Ufficio Stage</td>
+									<td>A</td>
+
+
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
 				</div>
+
+
+				<!-- /col-lg-3 -->
+
 				<!--/row -->
 			</section>
 			<!-- <section id="unseen"> -->
@@ -200,8 +214,7 @@
 		<!--footer start-->
 		<footer class="site-footer">
 			<div class="text-center">
-				2018 - Tirocinio Smart <a href="principale.html#" class="go-top">
-					<i class="fa fa-angle-up"></i>
+				2018 - Tirocinio Smart <a href="principale.html#"> <i></i>
 				</a>
 			</div>
 		</footer>

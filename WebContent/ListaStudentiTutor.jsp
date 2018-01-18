@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	import="java.util.ArrayList" import="storage.Studente"
-	import="storage.Richiesta" import="storage.StudenteTutor" import="application.ListaStudentiTutor"
-	pageEncoding="ISO-8859-1"%>
+	import="storage.Richiesta" import="storage.StudenteTutor"
+	import="application.ListaStudentiTutor" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -71,13 +71,13 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="Tutor-icon.png"
+				<a href="DashboardTutor.jsp"><img src="image/Tutor-icon.png"
 					class="img-circle" width="60"></a>
 			</p>
-			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%><%=session.getAttribute("Cognome")%>
-			</h4>
+			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
+				<%=session.getAttribute("Cognome")%></h4>
 
-			<li class="mt"><a href="DashboardAzienda.jsp"> <i
+			<li class="mt"><a href="DashboardTutor.jsp"> <i
 					class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
@@ -121,7 +121,7 @@
 					<tbody>
 						<%
 							System.out.println(ric.size());
-						System.out.println(session.getAttribute("email"));
+							System.out.println(session.getAttribute("email"));
 
 							for (int i = 0; i < ric.size(); i++) {
 								System.out.println(ric.get(i).getEmailT());
@@ -133,8 +133,13 @@
 							<td><%=ric.get(i).getCognomeS()%></td>
 							<td><%=ric.get(i).getMatricolaS()%></td>
 							<td>
-							<form><input type="hidden" name="emailSt" value=<%=ric.get(i).getEmailS()%>>
-							<input type="submit" class="btn btn-theme" value="Accetta" style="margin-right:20%"></form></td>
+								<form>
+									<input type="hidden" name="emailSt"
+										value=<%=ric.get(i).getEmailS()%>> <input
+										type="submit" class="btn btn-theme" value="Accetta"
+										style="margin-right: 20%">
+								</form>
+							</td>
 						</tr>
 
 						<%
@@ -160,8 +165,7 @@
 	<!-- /row --> </section> <! --/wrapper --> </section><!-- /MAIN CONTENT --> <!--main content end-->
 	<!--footer start--> <footer class="site-footer">
 	<div class="text-center">
-		2018 - Tirocinio Smart <a href="responsive_table.html#" class="go-top">
-			<i class="fa fa-angle-up"></i>
+		2018 - Tirocinio Smart <a href="responsive_table.html#"> <i></i>
 		</a>
 	</div>
 	</footer> <!--footer end--> </section>

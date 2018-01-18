@@ -71,7 +71,7 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="image/Agency-icon.png"
+				<a href="DashboardAzienda.jsp"><img src="image/Agency-icon.png"
 					class="img-circle" width="60"></a>
 			</p>
 			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
@@ -129,10 +129,18 @@
 							<td><%=ric.get(i).getNomeS()%></td>
 							<td><%=ric.get(i).getCognomeS()%></td>
 							<td><%=ric.get(i).getMatricolaS()%></td>
-							<td><form action="AccettazioneRichiesta" method="post"><input type="hidden" name="emailS" value=<%=ric.get(i).getEmailS()%>>
-							<input type="submit" class="btn btn-theme" value="Accetta" style="margin-right:20%"></form><br>
-							<form action="RifiutoRichiesta" method="post"><input type="hidden" name="emailStu" value=<%=ric.get(i).getEmailS()%>>
-							<input type="submit" class="btn btn-theme" value="Rifiuta" style="margin-right:20%"></form></td>
+							<td><form action="AccettazioneRichiesta" method="post">
+									<input type="hidden" name="emailS"
+										value=<%=ric.get(i).getEmailS()%>> <input
+										type="submit" class="btn btn-theme" value="Accetta"
+										style="margin-right: 20%">
+								</form> <br>
+								<form action="RifiutoRichiesta" method="post">
+									<input type="hidden" name="emailStu"
+										value=<%=ric.get(i).getEmailS()%>> <input
+										type="submit" class="btn btn-theme" value="Rifiuta"
+										style="margin-right: 20%">
+								</form></td>
 						</tr>
 
 						<%
@@ -158,8 +166,7 @@
 	<!-- /row --> </section> <! --/wrapper --> </section><!-- /MAIN CONTENT --> <!--main content end-->
 	<!--footer start--> <footer class="site-footer">
 	<div class="text-center">
-		2018 - Tirocinio Smart <a href="responsive_table.html#" class="go-top">
-			<i class="fa fa-angle-up"></i>
+		2018 - Tirocinio Smart <a href="responsive_table.html#"> <i></i>
 		</a>
 	</div>
 	</footer> <!--footer end--> </section>

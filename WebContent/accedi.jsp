@@ -50,7 +50,7 @@
 						class="checkbox"> <span class="pull-right"> </span>
 					</label>
 					<button class="btn btn-theme btn-block" type="submit"
-						value="Accedi">
+						value="Accedi" style="font-family: Ruda">
 						<i class="fa fa-lock"></i> ACCEDI
 					</button>
 					<hr>
@@ -103,7 +103,7 @@
 			speed : 500
 		});
 	</script>
-	
+
 
 </body>
 </html>

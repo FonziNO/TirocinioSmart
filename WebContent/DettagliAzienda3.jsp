@@ -67,8 +67,8 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="image/Utente.png"
-					class="img-circle" width="60"></a>
+				<a href="DashboardStudente.jsp"><img
+					src="image/Student-icon.png" class="img-circle" width="60"></a>
 			</p>
 			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
 				<%=session.getAttribute("Cognome")%></h4>
@@ -148,8 +148,7 @@
 	<!-- /row --> </section> <! --/wrapper --> </section><!-- /MAIN CONTENT --> <!--main content end-->
 	<!--footer start--> <footer class="site-footer">
 	<div class="text-center">
-		2018 - Tirocinio Smart <a href="responsive_table.html#" class="go-top">
-			<i class="fa fa-angle-up"></i>
+		2018 - Tirocinio Smart <a href="responsive_table.html#"> <i></i>
 		</a>
 	</div>
 	</footer> <!--footer end--> </section>

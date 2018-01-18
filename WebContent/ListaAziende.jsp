@@ -66,8 +66,8 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="image/Utente.png"
-					class="img-circle" width="60"></a>
+				<a href="DashboardStudente.jsp"><img
+					src="image/Student-icon.png" class="img-circle" width="60"></a>
 			</p>
 			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
 				<%=session.getAttribute("Cognome")%></h4>
@@ -77,8 +77,8 @@
 					class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
-			<li class="sub-menu"><a href="javascript:;"> <i
-					class="fa fa-desktop" href="ListaAziende.jsp"></i> <span>Lista
+			<li class="sub-menu"><a href="javascript:;" class="active">
+					<i class="fa fa-desktop" href="ListaAziende.jsp"></i> <span>Lista
 						Aziende</span>
 			</a>
 	</div>
@@ -87,39 +87,42 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-	<p>In questa sezione puoi scegliere l'Azienda</p>
+	<h5>In questa sezione potrai visualizzare i dettagli di un'azienda
+		a tua scelta per poi inviare la richiesta di partecipazione al
+		progetto formativo.</h5>
+	<%
+		if (request.getAttribute("errore") != null) {
+	%>
+	<p>
+		<font color="red"><%=request.getAttribute("errore")%></font>
+	</p>
+	<%
+		}
+	%> <%
+ 	if (request.getAttribute("inserisci") != null) {
+ %>
+	<p>
+		<font color="green"><%=request.getAttribute("inserisci")%></font>
+	</p>
+	<%
+		}
+	%>
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="content-panel">
 				<h5>
-					<i class="fa fa-angle-right"></i> Lista Aziende
+					<i class="fa fa-angle-right"></i> Lista Aziende Disponibili
 				</h5>
 				<section id="unseen" action="ListaAziende.jsp"> <%
  	ArrayList<Azienda> lista = new ArrayList<Azienda>();
  	ListaAziende azienda = new ListaAziende();
  	lista = azienda.doListaAziende();
- %> <%
- 	if (request.getAttribute("errore") != null) {
  %>
-				<p>
-					<font color="red"><%=request.getAttribute("errore")%></font>
-				</p>
-				<%
-					}
-				%> <%
- 	if (request.getAttribute("inserisci") != null) {
- %>
-				<p>
-					<font color="green"><%=request.getAttribute("inserisci")%></font>
-				</p>
-				<%
-					}
-				%>
 				<table class="table table-bordered table-striped table-condensed">
 					<thead>
 
-						<th>Nome Aziende</th>
-						<th>Visualizza dettagli dell'azienda</th>
+						<th>Azienda</th>
+						<th>Visualizza Dettagli</th>
 
 					</thead>
 					<tbody>
@@ -154,12 +157,10 @@
 	</div>
 	<!-- /col-lg-12 -->
 	</div>
-	<!-- /row --> </section>
-	<! --/wrapper --> </section><!-- /MAIN CONTENT --> <!--main content end--> <!--footer start-->
-	<footer class="site-footer">
+	<!-- /row --> </section> <! --/wrapper --> </section><!-- /MAIN CONTENT --> <!--main content end-->
+	<!--footer start--> <footer class="site-footer">
 	<div class="text-center">
-		2018 - Tirocinio Smart <a href="responsive_table.html#" class="go-top">
-			<i class="fa fa-angle-up"></i>
+		2018 - Tirocinio Smart <a href="responsive_table.html#"> <i></i>
 		</a>
 	</div>
 	</footer> <!--footer end--> </section>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -68,20 +68,18 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="profile.html"><img src="image/icona-ufficio.png"
+				<a href="DashboardStage.jsp"><img src="image/UfficioS-icon.png"
 					class="img-circle" width="60"></a>
 			</p>
-			<h5 class="centered"><%=session.getAttribute("email")%></h5>
+			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("email")%></h5>
 
-			<li class="mt"><a class="active" href="DashboardStage.jsp">
-			 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-			</a></li>
+				<li class="mt"><a href="DashboardStage.jsp">
+						<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+				</a></li>
 
-			<li class="sub-menu"><a href="javascript:;"> <i
-					class="fa fa-desktop"></i> <span>Lista Studenti</span>
-			</a></li>
-
-
+				<li class="sub-menu"><a class="active" href="javascript:;"> <i
+						class="fa fa-desktop"></i> <span>Lista Studenti</span>
+				</a></li>
 		</ul>
 		<!-- sidebar menu end-->
 	</div>
@@ -92,41 +90,33 @@
 		class="wrapper">
 
 	<div class="row">
-		<div class="col-lg-9 main-chart">
-			
-
-
-
-
-
-		</div>
+		<div class="col-lg-9 main-chart"></div>
 		<table align="right"
-		class="table table-bordered table-striped table-condensed">
-		<thead>
+			class="table table-bordered table-striped table-condensed">
+			<thead>
 
-			<th>Nome Studente</th>
-			<th>Cognome Studente</th>
-			<th>Matricola Studente</th>
-			<th>Operazioni</th>
-			
-
-
-		</thead>
-		<tbody>
-			
-			<tr>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td><a href="Dettagli" class="btn btn-theme" style="margin-right: 20%"
-			value="Accetta">Accetta</a> 
-			</td>
+				<th>Nome Studente</th>
+				<th>Cognome Studente</th>
+				<th>Matricola Studente</th>
+				<th>Operazioni</th>
 
 
-			</tr>
-			
-		</tbody>
-	</table>
+
+			</thead>
+			<tbody>
+
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a href="Dettagli" class="btn btn-theme"
+						style="margin-right: 20%" value="Accetta">Accetta</a></td>
+
+
+				</tr>
+
+			</tbody>
+		</table>
 		<!-- /row -->
 
 	</div>
@@ -143,12 +133,11 @@
 	<! --/row --> </section> </section> <!--main content end--> <!--footer start--> <footer
 		class="site-footer">
 	<div class="text-center">
-		2018 - Tirocinio Smart <a href="DashboardStage.jsp#" class="go-top">
-			<i class="fa fa-angle-up"></i>
+		2018 - Tirocinio Smart <a href="DashboardStage.jsp#"> <i></i>
 		</a>
 	</div>
 	</footer> <!--footer end--> </section>
-	
+
 	<!-- js placed at the end of the document so the pages load faster -->
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/jquery-1.8.3.min.js"></script>
