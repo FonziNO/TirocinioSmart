@@ -118,7 +118,7 @@
 
 				<div class="col-md-3 ds">
 					<!--COMPLETED ACTIONS DONUTS CHART-->
-					<h3>NOTIFICATIONS</h3>
+					<h3>NOTIFICHE</h3>
 
 					<!-- First Action -->
 					<div class="desc">
@@ -127,7 +127,6 @@
 						</div>
 						<div class="details">
 							<p>
-
 								<a>James Brown</a> subscribed to your newsletter.<br />
 							</p>
 						</div>
@@ -173,19 +172,22 @@
 							<tbody>
 								<tr>
 									<td>Azienda</td>
-									<td><botton> </botton></td>
+									<td><img src="image/StatusVero.jpg" class="img-circle"
+										width="18"></td>
 
 
 								</tr>
 								<tr>
 									<td>Tutor</td>
-									<td>S</td>
+									<td><img src="image/StatusAttesa.jpg" class="img-circle"
+										width="18"></td>
 
 
 								</tr>
 								<tr>
 									<td>Ufficio Stage</td>
-									<td>A</td>
+									<td><img src="image/StatusFalso.jpg" class="img-circle"
+										width="18"></td>
 
 
 								</tr>
