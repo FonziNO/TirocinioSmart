@@ -127,9 +127,8 @@
 						</div>
 						<div class="details">
 							<p>
-								<muted>2 Minutes Ago</muted>
-								<br /> <a href="#">James Brown</a> subscribed to your
-								newsletter.<br />
+
+								<a>James Brown</a> subscribed to your newsletter.<br />
 							</p>
 						</div>
 					</div>
@@ -140,9 +139,7 @@
 						</div>
 						<div class="details">
 							<p>
-								<muted>3 Hours Ago</muted>
-								<br /> <a href="#">Diana Kennedy</a> purchased a year
-								subscription.<br />
+								<a>Diana Kennedy</a> purchased a year subscription.<br />
 							</p>
 						</div>
 					</div>
@@ -153,14 +150,12 @@
 						</div>
 						<div class="details">
 							<p>
-								<muted>7 Hours Ago</muted>
-								<br /> <a href="#">Brandon Page</a> purchased a year
-								subscription.<br />
+								<a>Brandon Page</a> purchased a year subscription.<br />
 							</p>
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="col-md-9">
 					<div class="content-panel">
 						<h5>
