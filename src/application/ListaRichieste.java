@@ -79,7 +79,7 @@ public class ListaRichieste {
 		" from Richiesta, Studente "+
 		" where Studente.Email=Richiesta.StudenteEmail "+
 		" group by richiesta.StudenteEmail "+
-		" having richiesta.Stato=false; ";
+		" having richiesta.Stato=false";
 
 
 		conn = DriverManagerConnectionPool.getConnection();
