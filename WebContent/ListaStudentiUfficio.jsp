@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	import="java.util.ArrayList" import="storage.Studente"
-	import="storage.Richiesta" 
-	import="application.ListaStudentiUfficio" pageEncoding="ISO-8859-1"%>
+	import="storage.Richiesta" import="application.ListaStudentiUfficio"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -75,12 +75,13 @@
 			</p>
 			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("email")%></h5>
 
-				<li class="mt"><a href="DashboardStage.jsp">
-						<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+				<li class="mt"><a href="DashboardStage.jsp"> <i
+						class="fa fa-dashboard"></i> <span>Dashboard</span>
 				</a></li>
 
-				<li class="sub-menu"><a class="active" href="ListaStudentiUfficio.jsp"> <i
-						class="fa fa-desktop"></i> <span>Lista Studenti</span>
+				<li class="sub-menu"><a class="active"
+					href="ListaStudentiUfficio.jsp"> <i class="fa fa-desktop"></i>
+						<span>Lista Studenti</span>
 				</a></li>
 		</ul>
 		<!-- sidebar menu end-->
@@ -104,18 +105,18 @@
  	ArrayList<Richiesta> ric = richieste.doListaStudenteUfficio(); //query per le richieste
  %>
 				<table class="table table-bordered table-striped table-condensed">
-			<thead>
+					<thead>
 
-				<th>Nome Studente</th>
-				<th>Cognome Studente</th>
-				<th>Matricola Studente</th>
-				<th>Operazioni</th>
+						<th>Nome Studente</th>
+						<th>Cognome Studente</th>
+						<th>Matricola Studente</th>
+						<th>Operazioni</th>
 
 
 
-			</thead>
-			<tbody>
-<%
+					</thead>
+					<tbody>
+						<%
 							System.out.println(ric.size());
 							System.out.println(session.getAttribute("email"));
 
@@ -123,34 +124,40 @@
 
 								if (ric.get(i).getEmailU().equals(session.getAttribute("email"))) {
 						%>
-				<tr>
-					<td><%=ric.get(i).getNomeS()%></td>
-					<td><%=ric.get(i).getCognomeS()%></td>
-					<td><%=ric.get(i).getMatricolaS()%></td>
-					<td><a href="Dettagli" class="btn btn-theme"
-						style="margin-right: 20%" value="Accetta">Accetta</a></td>
+						<tr>
+							<td><%=ric.get(i).getNomeS()%></td>
+							<td><%=ric.get(i).getCognomeS()%></td>
+							<td><%=ric.get(i).getMatricolaS()%></td>
+							<td>
+								<form action="AccettazioneUfficio" method="post">
+									<input type="hidden" name="emailSt"
+										value=<%=ric.get(i).getEmailS()%>> <input
+										type="submit" class="btn btn-theme" value="Accetta"
+										style="margin-right: 20%">
+								</form>
+							</td>
 
 
-				</tr>
+						</tr>
 
-	<%
+						<%
 							}
 							}
 						%>
-			</tbody>
-		</table>
-		<!-- /row -->
-
-	</div>
-	<!-- /col-lg-9 END SECTION MIDDLE --> <!-- **********************************************************************************************************************************************************
+					</tbody>
+				</table>
+				<!-- /row -->
+			</div>
+			<!-- /col-lg-9 END SECTION MIDDLE -->
+			<!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->
 
 
 
 
-	</div>
-	<!-- /col-lg-3 -->
+		</div>
+		<!-- /col-lg-3 -->
 	</div>
 	<! --/row --> </section> </section> <!--main content end--> <!--footer start--> <footer
 		class="site-footer">

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import storage.AccettazioneUfficioDao;
+import storage.Azienda;
 import storage.Richiesta;
 import storage.Tutor;
 import storage.UfficioStage;
@@ -20,7 +21,10 @@ public class AccettazioneUfficio extends HttpServlet{
 	AccettazioneUfficioDao ricUDao = new AccettazioneUfficioDao();
 	
 	int res = 0;
-	//String emailAzienda;
+	int res2=0;
+	String emailAzienda;
+	String emailTutor;
+	boolean stato;
 	private static final long serialVersionUID = 1L;
 	
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,17 +34,29 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 		session.getId();
 		System.out.println("l'ufficio sta per accettare");
 		try {
-			ArrayList<UfficioStage> lista= new ArrayList<UfficioStage>();
-			lista=ricUDao.doListaUfficio();
-//			for(int i=0; i<lista.size(); i++){
-//				System.out.println("email associate al tutor"+lista.get(i).getEmailA());
-//				if(lista.get(i).getEmailT().equals(session.getAttribute("email"))){
-//					emailAzienda=lista.get(i).getEmailA();
-//				}
-//			}
+			ArrayList<Azienda> lista= new ArrayList<Azienda>();
+			lista=ricUDao.doListaAziende();
+			for(int i=0; i<lista.size(); i++){
+				System.out.println("email azienda"+lista.get(i).getEmailA());
+				emailAzienda=lista.get(i).getEmailA();
+			}
 			Richiesta r = new Richiesta();
-			res = ricUDao.accettaUfficio(r.getCounter(), false, false, false, request.getParameter("emailSt"), null);
+			res = ricUDao.accettaUfficio(r.getCounter(), false, false, false, request.getParameter("emailSt"), emailAzienda);
+			ListaRichieste listaR= new ListaRichieste();
+			ArrayList<Richiesta> richieste = new ArrayList<Richiesta>();
+			richieste=listaR.doListaRichieste();
+			for(int i=0; i<richieste.size(); i++){
+					stato=richieste.get(i).getStatoU();
+			}
+			ListaStudentiTutor listaT= new ListaStudentiTutor();
+			ArrayList<Richiesta> tutor= new ArrayList<Richiesta>();
+			tutor=listaT.doListaStudenteTutor();
+			for(int i=0; i<tutor.size(); i++){
+				if(emailAzienda.equals(tutor.get(i).getEmailA()))
+					emailTutor=tutor.get(i).getEmailT();
 			
+			}
+			res2=ricUDao.cambiaStatoPF(emailAzienda, emailTutor, stato);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -19,8 +19,7 @@ public class AccettazioneUfficioDao {
 		try{
 			System.out.println("Sono in AccettazioneUfficioDao");
 
-			String richieste="UPDATE Richiesta SET StatoUfficio=true WHERE StatoTutor = true;";
-
+			String richieste="UPDATE Richiesta SET StatoUfficio=true WHERE StudenteEmail='"+studEmail+"'AND AziendaEmail='"+azEmailT+"' AND StatoTutor=true AND Stato=true;";
 			conn = DriverManagerConnectionPool.getConnection();
 
 			prep = conn.prepareStatement(richieste);
@@ -49,27 +48,27 @@ public class AccettazioneUfficioDao {
 
 		return res;
 	}
-	public synchronized ArrayList<UfficioStage> doListaUfficio() throws SQLException {
+	public synchronized ArrayList<Azienda> doListaAziende() throws SQLException {
 		Connection conn = null;
 		PreparedStatement s1 = null;
 
-		List<UfficioStage> lista = new ArrayList<UfficioStage>();
+		List<Azienda> listaA = new ArrayList<Azienda>();
 
-		String listaUfficio = "SELECT * FROM UfficioStage;";
+		String listaAziende = "SELECT * FROM Azienda;";
 
 		conn = DriverManagerConnectionPool.getConnection();
-		s1 = conn.prepareStatement(listaUfficio);
+		s1 = conn.prepareStatement(listaAziende);
 
 		ResultSet risultato1 = s1.executeQuery();
 		conn.commit();
 
 		try {
 			while (risultato1.next()) {
-				UfficioStage ufficio = new UfficioStage();
+				Azienda azienda = new Azienda();
 				
-				ufficio.setEmailU(risultato1.getString("Email"));
+				azienda.setEmailA(risultato1.getString("Email"));
 
-				lista.add(ufficio);
+				listaA.add(azienda);
 
 
 			}
@@ -93,10 +92,43 @@ public class AccettazioneUfficioDao {
 				}
 			}
 		}
-		return (ArrayList<UfficioStage>) lista;
+		return (ArrayList<Azienda>) listaA;
 	}
+	
+	public synchronized int cambiaStatoPF(String emailAzienda, String emailTutor, boolean stato) throws SQLException{
+		Connection conn=null;
+		PreparedStatement prep=null;
+		ResultSet rs = null;
+		try{
+			System.out.println("Sono in AccettazioneUfficioDao");
+
+			String richieste="UPDATE ProgettoFormativo SET StatoP=true WHERE AziendaEmail='"+emailAzienda+"' AND TutorEmail='"+emailTutor+"';";
+			conn = DriverManagerConnectionPool.getConnection();
+
+			prep = conn.prepareStatement(richieste);
+
+			res=prep.executeUpdate();
+			System.out.println(richieste);
 
 
+		}finally {
+			try {
+				if (prep != null) {
+					prep.close();
+					System.out.print("ho modificato" + res);
+					System.out.println("");
+				}
+
+			} finally {
+				if (prep != null) {
+					prep.close();
+				}
+			}
+			DriverManagerConnectionPool.releaseConnection(conn);
+		}
+		return res;
+		
+	}
 
 
 }

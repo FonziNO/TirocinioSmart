@@ -15,8 +15,26 @@ public class Richiesta {
 	private String cognomeS;
 	private String matricolaS;
 	private String emailT;
+	private boolean statoT;
 	private String emailU;
+	private boolean statoU;
 	
+	public boolean getStatoT() {
+		return statoT;
+	}
+
+	public void setStatoT(boolean statoT) {
+		this.statoT = statoT;
+	}
+
+	public boolean getStatoU() {
+		return statoU;
+	}
+
+	public void setStatoU(boolean statoU) {
+		this.statoU = statoU;
+	}
+
 	public String getEmailU() {
 		return emailU;
 	}

@@ -33,6 +33,8 @@ public class ListaRichieste {
 				
 				richiesta.setIdR(risultato1.getString("ID"));
 				richiesta.setStatoR(risultato1.getString("Stato"));
+				richiesta.setStatoT(risultato1.getBoolean("StatoTutor"));
+				richiesta.setStatoU(risultato1.getBoolean("StatoUfficio"));
 				richiesta.setEmailS(risultato1.getString("StudenteEmail"));
 				richiesta.setEmailA(risultato1.getString("AziendaEmail"));
 				
