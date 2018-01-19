@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Richiesta {
 
 	private String IdR;
-	private String statoR;
+	private boolean statoR;
 	private String emailS;
 	private String emailA;
 	private String nomeS;
@@ -78,11 +78,11 @@ public class Richiesta {
 		IdR = idR;
 	}
 
-	public String getStatoR() {
+	public boolean getStatoR() {
 		return statoR;
 	}
 
-	public void setStatoR(String statoR) {
+	public void setStatoR(boolean statoR) {
 		this.statoR = statoR;
 	}
 

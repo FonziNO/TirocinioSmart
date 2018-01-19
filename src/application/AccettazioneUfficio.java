@@ -34,21 +34,23 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 		session.getId();
 		System.out.println("l'ufficio sta per accettare");
 		try {
-			ArrayList<Azienda> lista= new ArrayList<Azienda>();
+			Richiesta r = new Richiesta();
+			ArrayList<Richiesta> lista= new ArrayList<Richiesta>();
 			lista=ricUDao.doListaAziende();
 			for(int i=0; i<lista.size(); i++){
 				System.out.println("email azienda"+lista.get(i).getEmailA());
 				emailAzienda=lista.get(i).getEmailA();
+				
 			}
-			Richiesta r = new Richiesta();
-			res = ricUDao.accettaUfficio(r.getCounter(), false, false, false, request.getParameter("emailSt"), emailAzienda);
-			ListaRichieste listaR= new ListaRichieste();
+			res = ricUDao.accettaUfficio(r.getCounter(), false, false, false, request.getParameter("emailSt"), null);
+			
+		/*	ListaRichieste listaR= new ListaRichieste();
 			ArrayList<Richiesta> richieste = new ArrayList<Richiesta>();
 			richieste=listaR.doListaRichieste();
 			for(int i=0; i<richieste.size(); i++){
 					stato=richieste.get(i).getStatoU();
-			}
-			ListaStudentiTutor listaT= new ListaStudentiTutor();
+			}*/
+			/*ListaStudentiTutor listaT= new ListaStudentiTutor();
 			ArrayList<Richiesta> tutor= new ArrayList<Richiesta>();
 			tutor=listaT.doListaStudenteTutor();
 			for(int i=0; i<tutor.size(); i++){
@@ -56,7 +58,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 					emailTutor=tutor.get(i).getEmailT();
 			
 			}
-			res2=ricUDao.cambiaStatoPF(emailAzienda, emailTutor, stato);
+			res2=ricUDao.cambiaStatoPF(emailAzienda, emailTutor, stato);*/
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

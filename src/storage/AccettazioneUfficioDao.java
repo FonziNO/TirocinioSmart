@@ -11,7 +11,7 @@ public class AccettazioneUfficioDao {
 	
 	private static final String TABLE_NAME="Richiesta";
 	int res = 0;
-	public synchronized int accettaUfficio(String id, boolean stato, boolean statoTutor, boolean statoUfficio, String studEmail, String azEmailT) throws SQLException{
+	public synchronized int accettaUfficio(String id, boolean stato, boolean statoTutor, boolean statoUfficio, String studEmail, String azEmailA) throws SQLException{
 		Connection conn=null;
 		PreparedStatement prep=null;
 		ResultSet rs = null;
@@ -19,7 +19,7 @@ public class AccettazioneUfficioDao {
 		try{
 			System.out.println("Sono in AccettazioneUfficioDao");
 
-			String richieste="UPDATE Richiesta SET StatoUfficio=true WHERE StudenteEmail='"+studEmail+"'AND AziendaEmail='"+azEmailT+"' AND StatoTutor=true AND Stato=true;";
+			String richieste="UPDATE Richiesta SET StatoUfficio=true WHERE StudenteEmail='"+studEmail+"'AND StatoTutor=true AND Stato=true;";
 			conn = DriverManagerConnectionPool.getConnection();
 
 			prep = conn.prepareStatement(richieste);
@@ -48,13 +48,13 @@ public class AccettazioneUfficioDao {
 
 		return res;
 	}
-	public synchronized ArrayList<Azienda> doListaAziende() throws SQLException {
+	public synchronized ArrayList<Richiesta> doListaAziende() throws SQLException {
 		Connection conn = null;
 		PreparedStatement s1 = null;
 
-		List<Azienda> listaA = new ArrayList<Azienda>();
+		List<Richiesta> listaA = new ArrayList<Richiesta>();
 
-		String listaAziende = "SELECT * FROM Azienda;";
+		String listaAziende = "SELECT * FROM Richiesta;";
 
 		conn = DriverManagerConnectionPool.getConnection();
 		s1 = conn.prepareStatement(listaAziende);
@@ -64,11 +64,11 @@ public class AccettazioneUfficioDao {
 
 		try {
 			while (risultato1.next()) {
-				Azienda azienda = new Azienda();
+				Richiesta richiesta = new Richiesta();
 				
-				azienda.setEmailA(risultato1.getString("Email"));
+				richiesta.setEmailA(risultato1.getString("AziendaEmail"));
 
-				listaA.add(azienda);
+				listaA.add(richiesta);
 
 
 			}
@@ -92,10 +92,10 @@ public class AccettazioneUfficioDao {
 				}
 			}
 		}
-		return (ArrayList<Azienda>) listaA;
+		return (ArrayList<Richiesta>) listaA;
 	}
 	
-	public synchronized int cambiaStatoPF(String emailAzienda, String emailTutor, boolean stato) throws SQLException{
+	/*public synchronized int cambiaStatoPF(String emailAzienda, String emailTutor, boolean stato) throws SQLException{
 		Connection conn=null;
 		PreparedStatement prep=null;
 		ResultSet rs = null;
@@ -128,7 +128,7 @@ public class AccettazioneUfficioDao {
 		}
 		return res;
 		
-	}
+	}*/
 
 
 }
