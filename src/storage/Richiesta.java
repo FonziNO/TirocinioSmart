@@ -15,6 +15,16 @@ public class Richiesta {
 	private String cognomeS;
 	private String matricolaS;
 	private String emailT;
+	private String emailU;
+	
+	public String getEmailU() {
+		return emailU;
+	}
+
+	public void setEmailU(String emailU) {
+		this.emailU = emailU;
+	}
+
 	public String getEmailS() {
 		return emailS;
 	}

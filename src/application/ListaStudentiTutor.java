@@ -44,11 +44,14 @@ public class ListaStudentiTutor {
 				Richiesta richiesta = new Richiesta();
 				
 				richiesta.setIdR(risultato.getString("ID"));
+				
 				richiesta.setEmailA(risultato.getString("AziendaEmail"));
+				
 				richiesta.setEmailS(risultato.getString("StudenteEmail"));
 				richiesta.setNomeS(risultato.getString("Nome"));
 				richiesta.setCognomeS(risultato.getString("Cognome"));
 				richiesta.setMatricolaS(risultato.getString("Matricola"));
+				
 				richiesta.setEmailT(risultato.getString("Tutor.Email"));
 				
 				

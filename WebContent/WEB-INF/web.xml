@@ -68,4 +68,12 @@
   	<servlet-name>AccettazioneTutor</servlet-name>
   	<url-pattern>/AccettazioneTutor</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>AccettazioneUfficio</servlet-name>
+  	<servlet-class>application.AccettazioneUfficio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AccettazioneUfficio</servlet-name>
+  	<url-pattern>/AccettazioneUfficio</url-pattern>
+  </servlet-mapping>
 </web-app>

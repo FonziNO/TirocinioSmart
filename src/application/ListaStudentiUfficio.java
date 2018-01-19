@@ -12,12 +12,12 @@ import storage.Richiesta;
 
 public class ListaStudentiUfficio {
 	
-	public synchronized ArrayList<Richiesta> doListaStudenteTutor() throws SQLException {
+	public synchronized ArrayList<Richiesta> doListaStudenteUfficio() throws SQLException {
 		Connection conn = null;
 		PreparedStatement s = null;
 		List<Richiesta> lista = new ArrayList<Richiesta>();
 
-		String query = "SELECT * FROM Richiesta, Studente WHERE Richiesta.StudenteEmail = Studente.Email AND Richiesta.Stato = true AND Richiesta.StatoTutor = true;";
+		String query = "SELECT * FROM Richiesta, Studente, UfficioStage WHERE Richiesta.StudenteEmail = Studente.Email AND Richiesta.Stato = true AND Richiesta.StatoTutor = true;";
 		
 		conn = DriverManagerConnectionPool.getConnection();
 		s = conn.prepareStatement(query);
@@ -32,9 +32,12 @@ public class ListaStudentiUfficio {
 				richiesta.setIdR(risultato.getString("ID"));
 				richiesta.setEmailA(risultato.getString("AziendaEmail"));
 				richiesta.setEmailS(risultato.getString("StudenteEmail"));
+				
 				richiesta.setNomeS(risultato.getString("Nome"));
 				richiesta.setCognomeS(risultato.getString("Cognome"));
 				richiesta.setMatricolaS(risultato.getString("Matricola"));
+				
+				richiesta.setEmailU(risultato.getString("UfficioStage.Email"));
 				
 				
 				lista.add(richiesta);
