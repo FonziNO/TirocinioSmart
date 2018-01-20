@@ -46,6 +46,7 @@ public class ListaStudentiTutor {
 				richiesta.setIdR(risultato.getString("ID"));
 				
 				richiesta.setEmailA(risultato.getString("AziendaEmail"));
+				richiesta.setStatoT(risultato.getBoolean("StatoTutor"));
 				
 				richiesta.setEmailS(risultato.getString("StudenteEmail"));
 				richiesta.setNomeS(risultato.getString("Nome"));

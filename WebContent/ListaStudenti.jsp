@@ -136,13 +136,13 @@
 									<input type="hidden" name="emailS"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Accetta"
-										style="margin-right: 20%">
+										style="margin-right: 20%" onclick="accetta()">
 								</form> <br>
 								<form action="RifiutoRichiesta" method="post">
 									<input type="hidden" name="emailStu"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Rifiuta"
-										style="margin-right: 20%">
+										style="margin-right: 20%" onclick="rifiuta()">
 								</form></td>
 						</tr>
 
@@ -189,6 +189,14 @@
 	<script src="assets/js/common-scripts.js"></script>
 
 	<!--script for this page-->
+	<script>
+	function accetta(){
+		alert("La richiesta è stata accettata");
+	}
+	function rifiuta(){
+		alert("La richiesta è stata rifiutata");
+	}
+	</script>
 
 </body>
 </html>

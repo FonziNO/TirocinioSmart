@@ -126,7 +126,7 @@
 							for (int i = 0; i < ric.size(); i++) {
 								System.out.println(ric.get(i).getEmailT());
 
-								if (ric.get(i).getEmailT().equals(session.getAttribute("email"))) {
+								if (ric.get(i).getEmailT().equals(session.getAttribute("email")) && ric.get(i).getStatoT() == false ) {
 						%>
 						<tr>
 							<td><%=ric.get(i).getNomeS()%></td>
@@ -137,7 +137,7 @@
 									<input type="hidden" name="emailSt"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Accetta"
-										style="margin-right: 20%">
+										style="margin-right: 20%" onclick="accetta()">
 								</form>
 							</td>
 						</tr>
@@ -183,6 +183,11 @@
 	<script src="assets/js/common-scripts.js"></script>
 
 	<!--script for this page-->
+	<script>
+	function accetta(){
+		alert("Accettazione effettuata");
+	}
+	</script>
 
 </body>
 </html>
