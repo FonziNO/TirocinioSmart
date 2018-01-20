@@ -48,10 +48,11 @@
  -->
 
 	<!-- Page Content -->
-	<div class="col-md-12">
-		<img src="image/LOGO.png" style="margin-left: 27%">
-
+	<div class="col-md-6 text-center"
+		style="margin-left: 27%; margin-right: 26%">
+		<img src="image/LOGO.png" class="img-responsive">
 	</div>
+
 
 
 	<div class="col-md-12 text-center">
