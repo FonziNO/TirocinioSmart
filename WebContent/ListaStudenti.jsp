@@ -126,7 +126,7 @@
 								System.out.println("Email azienda in lista studenti: " + ric.get(i).getEmailA());
 								if (ric.get(i).getEmailA().equals(session.getAttribute("email"))) {
 									for (int j = 0; j < ric2.size(); j++) {
-										if (ric.get(i).getEmailS().equals(ric2.get(j).getEmailS()) && ric.get(i).getStatoR() == false) {
+										if (ric.get(j).getEmailS().equals(ric2.get(j).getEmailS()) && ric.get(i).getStatoR() == false && ric.get(j).getStatoT() == false && ric.get(j).getStatoU() == false) {
 						%>
 						<tr>
 							<td><%=ric.get(i).getNomeS()%></td>
