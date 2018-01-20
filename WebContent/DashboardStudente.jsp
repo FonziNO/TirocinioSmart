@@ -131,7 +131,8 @@
 							</p>
 						</div>
 					</div>
-					<!-- Second Action -->
+					<!--  
+					<!-- Second Action
 					<div class="desc">
 						<div class="thumb">
 							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
@@ -142,7 +143,7 @@
 							</p>
 						</div>
 					</div>
-					<!-- Third Action -->
+					<!-- Third Action
 					<div class="desc">
 						<div class="thumb">
 							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
@@ -153,6 +154,7 @@
 							</p>
 						</div>
 					</div>
+					-->
 				</div>
 
 				<div class="col-md-9">
