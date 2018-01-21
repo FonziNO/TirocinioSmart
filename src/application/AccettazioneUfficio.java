@@ -43,6 +43,9 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 				
 			}
 			res = ricUDao.accettaUfficio(r.getCounter(), false, false, false, request.getParameter("emailSt"), null);
+			if(res >= 0 ){
+				request.setAttribute("accetta", "Richiesta accettata");
+				}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

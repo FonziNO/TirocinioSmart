@@ -42,7 +42,9 @@ AccettazioneTutorDao ricTDao = new AccettazioneTutorDao();
 			}
 			Richiesta r = new Richiesta();
 			res = ricTDao.accettaTutor(r.getCounter(), false, false, false, request.getParameter("emailSt"), emailAzienda);
-			
+			if(res >= 0 ){
+				request.setAttribute("accetta", "Richiesta accettata");
+				}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

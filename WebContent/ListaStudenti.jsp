@@ -87,6 +87,7 @@
 
 
 		</ul>
+			
 		<!-- sidebar menu end-->
 	</div>
 	</aside> <!--sidebar end--> <!-- **********************************************************************************************************************************************************
@@ -94,7 +95,27 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-
+		
+	 <%
+ 	if (request.getAttribute("accetta") != null) {
+ %>
+	<p>
+		<font color="green"><%=request.getAttribute("accetta")%></font>
+	</p>
+	<%
+		}
+	%>
+	
+	<%
+ 	if (request.getAttribute("rifiuta") != null) {
+ %>
+	<p>
+		<font color="red"><%=request.getAttribute("rifiuta")%></font>
+	</p>
+	<%
+		}
+	%>
+	
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="content-panel">
@@ -134,7 +155,7 @@
 									<input type="hidden" name="emailS"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Accetta"
-										style="margin-right: 20%" onclick="accetta()">
+										style="margin-right: 20%" onclick="accetta('La richiesta è stata accettata')">
 								</form> <br>
 								<form action="RifiutoRichiesta" method="post">
 									<input type="hidden" name="emailStu"
@@ -186,14 +207,6 @@
 	<script src="assets/js/common-scripts.js"></script>
 
 	<!--script for this page-->
-	<script>
-		function accetta() {
-			alert("La richiesta è stata accettata");
-		}
-		function rifiuta() {
-			alert("La richiesta è stata rifiutata");
-		}
-	</script>
 
 </body>
 </html>

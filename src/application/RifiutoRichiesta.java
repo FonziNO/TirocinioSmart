@@ -29,7 +29,10 @@ RifiutoRichiestaDao ricDao = new RifiutoRichiestaDao();
 		try {
 			Richiesta r = new Richiesta();
 			res = ricDao.rifiuta(r.getCounter(), false, false, false, request.getParameter("emailStu"), emailAzienda);
-			
+			System.out.println("Sono in rifiuto richiesta "+res);
+			if(res >=0 ){
+				request.setAttribute("rifiuta", "Richiesta rifiutata");
+				}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

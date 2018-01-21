@@ -19,6 +19,7 @@ public class AccettazioneRichiesta extends HttpServlet {
 AccettazioneDao ricDao = new AccettazioneDao();
 	
 	int res = 0;
+	int res2 = 0;
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,7 +32,11 @@ AccettazioneDao ricDao = new AccettazioneDao();
 		try {
 			Richiesta r = new Richiesta();
 			res = ricDao.accetta(r.getCounter(), false, false, false, request.getParameter("emailS"), emailAzienda);
-			res = ricDao.deleteRichieste(request.getParameter("emailS"));
+			res2 = ricDao.deleteRichieste(request.getParameter("emailS"));
+			System.out.println("Sono in accettazione richiesta " +res2);
+			if(res2 >= 0 ){
+			request.setAttribute("accetta", "Richiesta accettata");
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

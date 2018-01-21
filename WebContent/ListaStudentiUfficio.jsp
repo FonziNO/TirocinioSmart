@@ -91,7 +91,17 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-
+		
+		 <%
+ 	if (request.getAttribute("accetta") != null) {
+ %>
+	<p>
+		<font color="green"><%=request.getAttribute("accetta")%></font>
+	</p>
+	<%
+		}
+	%>
+	
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="content-panel">
