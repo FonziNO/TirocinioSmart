@@ -31,6 +31,7 @@ AccettazioneDao ricDao = new AccettazioneDao();
 		try {
 			Richiesta r = new Richiesta();
 			res = ricDao.accetta(r.getCounter(), false, false, false, request.getParameter("emailS"), emailAzienda);
+			res = ricDao.deleteRichieste(request.getParameter("emailS"));
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

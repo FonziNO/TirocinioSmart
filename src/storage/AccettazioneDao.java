@@ -43,5 +43,36 @@ public class AccettazioneDao {
 		return res;
 
 	}
+	
+	public synchronized int deleteRichieste(String emailS) throws SQLException {
+		Connection conn = null;
+		PreparedStatement prep = null;
+
+		try{
+			String listaRichieste = "delete from Richiesta where Richiesta.StudenteEmail='"+emailS+"' and Richiesta.Stato=false;";
+
+			conn = DriverManagerConnectionPool.getConnection();
+			prep = conn.prepareStatement(listaRichieste);
+
+			res=prep.executeUpdate();
+			System.out.println(listaRichieste);
+		}finally {
+			try {
+				if (prep != null) {
+					prep.close();
+					System.out.print("ho modificato" + res);
+					System.out.println("");
+				}
+
+			} finally {
+				if (prep != null) {
+					prep.close();
+				}
+
+				DriverManagerConnectionPool.releaseConnection(conn);
+			}
+		}
+		return res;
+	}
 
 }

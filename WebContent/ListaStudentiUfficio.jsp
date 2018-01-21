@@ -122,7 +122,7 @@
 
 							for (int i = 0; i < ric.size(); i++) {
 
-								if (ric.get(i).getEmailU().equals(session.getAttribute("email")) && ric.get(i).getStatoU() == false) {
+								if (ric.get(i).getEmailU().equals(session.getAttribute("email"))) {
 						%>
 						<tr>
 							<td><%=ric.get(i).getNomeS()%></td>
@@ -133,7 +133,7 @@
 									<input type="hidden" name="emailSt"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Accetta"
-										style="margin-right: 20%" onclick="accetta()">
+										style="margin-right: 20%">
 								</form>
 							</td>
 
@@ -189,11 +189,6 @@
 	<script src="assets/js/sparkline-chart.js"></script>
 	<script src="assets/js/zabuto_calendar.js"></script>
 
-	<script>
-	function accetta(){
-		alert("Accettazione effettuata");
-	}
-	</script>
 
 
 

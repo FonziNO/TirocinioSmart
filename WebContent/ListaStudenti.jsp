@@ -106,7 +106,6 @@
  	ListaRichieste richieste = new ListaRichieste(); //creazione dell'oggetto richieste
  	//ArrayList<Studente> stud = richieste.doListaStudenti(); //query per gli studenti
  	ArrayList<Richiesta> ric = richieste.doListaRichieste(); //query per le richieste
- 	ArrayList<Richiesta> ric2 = richieste.doLista();
  %>
 				<table class="table table-bordered table-striped table-condensed">
 					<thead>
@@ -125,8 +124,7 @@
 							for (int i = 0; i < ric.size(); i++) {
 								System.out.println("Email azienda in lista studenti: " + ric.get(i).getEmailA());
 								if (ric.get(i).getEmailA().equals(session.getAttribute("email"))) {
-									for (int j = 0; j < ric2.size(); j++) {
-										if (ric.get(i).getEmailS().equals(ric2.get(j).getEmailS()) && ric.get(i).getStatoR() == false) {
+									if (ric.get(i).getStatoR() == false) {
 						%>
 						<tr>
 							<td><%=ric.get(i).getNomeS()%></td>
@@ -147,8 +145,7 @@
 						</tr>
 
 						<%
-										}
-									}
+							}
 								}
 							}
 						%>
@@ -190,12 +187,12 @@
 
 	<!--script for this page-->
 	<script>
-	function accetta(){
-		alert("La richiesta è stata accettata");
-	}
-	function rifiuta(){
-		alert("La richiesta è stata rifiutata");
-	}
+		function accetta() {
+			alert("La richiesta è stata accettata");
+		}
+		function rifiuta() {
+			alert("La richiesta è stata rifiutata");
+		}
 	</script>
 
 </body>

@@ -32,7 +32,7 @@ public class ListaStudentiUfficio {
 				richiesta.setIdR(risultato.getString("ID"));
 				richiesta.setEmailA(risultato.getString("AziendaEmail"));
 				richiesta.setEmailS(risultato.getString("StudenteEmail"));
-				richiesta.setStatoU(risultato.getBoolean("StatoUfficio"));
+				//richiesta.setStatoU(risultato.getBoolean("StatoUfficio"));
 				
 				richiesta.setNomeS(risultato.getString("Nome"));
 				richiesta.setCognomeS(risultato.getString("Cognome"));
