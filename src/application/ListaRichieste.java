@@ -9,8 +9,6 @@ import java.util.List;
 
 import storage.DriverManagerConnectionPool;
 import storage.Richiesta;
-import storage.Studente;
-
 public class ListaRichieste {
 
 	public synchronized ArrayList<Richiesta> doListaRichieste() throws SQLException {

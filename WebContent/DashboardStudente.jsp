@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	import="javax.servlet.http.HttpServletRequest"
-	import="storage.Studente" pageEncoding="ISO-8859-1"%>
+	import="storage.Studente" import="application.ListaRichieste"
+	import="storage.Richiesta" import=" java.util.ArrayList"
+	import="application.RifiutoRichiesta" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,36 +127,25 @@
 						<div class="thumb">
 							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
 						</div>
+						<%
+							ListaRichieste richieste = new ListaRichieste();
+							ArrayList<Richiesta> r = new ArrayList<Richiesta>();
+							ArrayList<Richiesta> listaRifiuto = new ArrayList<Richiesta>();
+							r = richieste.doListaRichieste();
+
+							for (int i = 0; i < r.size(); i++) {
+								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
+						%>
 						<div class="details">
 							<p>
-								<a>James Brown</a> subscribed to your newsletter.<br />
+								<a><%=r.get(i).getEmailA()%></a> ha accettato la tua richiesta<br />
 							</p>
 						</div>
+						<%
+							}
+							}
+						%>
 					</div>
-					<!--  
-					<!-- Second Action
-					<div class="desc">
-						<div class="thumb">
-							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-						</div>
-						<div class="details">
-							<p>
-								<a>Diana Kennedy</a> purchased a year subscription.<br />
-							</p>
-						</div>
-					</div>
-					<!-- Third Action
-					<div class="desc">
-						<div class="thumb">
-							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-						</div>
-						<div class="details">
-							<p>
-								<a>Brandon Page</a> purchased a year subscription.<br />
-							</p>
-						</div>
-					</div>
-					-->
 				</div>
 
 				<div class="col-md-9">
@@ -172,26 +163,79 @@
 
 							</thead>
 							<tbody>
+								<%
+									for (int i = 0; i < r.size(); i++) {
+										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
+								%>
 								<tr>
 									<td>Azienda</td>
 									<td><img src="image/StatusVero.jpg" class="img-circle"
 										width="18"></td>
-
-
 								</tr>
+
+								<%
+									}
+
+										else if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == false) {
+								%>
+								<tr>
+									<td>Azienda</td>
+									<td><img src="image/StatusAttesa.jpg" class="img-circle"
+										width="18"></td>
+								</tr>
+								<%
+									}
+									}
+								%>
+								<%
+									for (int i = 0; i < r.size(); i++) {
+										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
+								%>
+								<tr>
+									<td>Tutor</td>
+									<td><img src="image/StatusVero.jpg" class="img-circle"
+										width="18"></td>
+
+									<%
+										} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
+													&& r.get(i).getStatoR() == false) {
+									%>
+								
 								<tr>
 									<td>Tutor</td>
 									<td><img src="image/StatusAttesa.jpg" class="img-circle"
 										width="18"></td>
-
-
 								</tr>
+								<%
+									}
+									}
+								%>
+								</tr>
+								<%
+									for (int i = 0; i < r.size(); i++) {
+										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
+								%>
 								<tr>
 									<td>Ufficio Stage</td>
-									<td><img src="image/StatusFalso.jpg" class="img-circle"
+									<td><img src="image/StatusVero.jpg" class="img-circle"
 										width="18"></td>
+								</tr>
+								<%}
+								else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
+											&& r.get(i).getStatoR() == false) {
+							%>
 
 
+
+								<tr>
+									<td>Uffico Stage</td>
+									<td><img src="image/StatusAttesa.jpg" class="img-circle"
+										width="18"></td>
+								</tr>
+								<%
+									}
+									}
+								%>
 								</tr>
 							</tbody>
 						</table>

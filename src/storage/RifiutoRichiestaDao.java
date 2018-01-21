@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RifiutoRichiestaDao {
 	
 	private static final String TABLE_NAME="Richiesta";
 	int res = 0;
+	
 	public synchronized int rifiuta(String id, boolean stato, boolean statoTutor, boolean statoUfficioStage, String studEmail, String azEmail) throws SQLException{
 		Connection conn=null;
 		PreparedStatement prep=null;
