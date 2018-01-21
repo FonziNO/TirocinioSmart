@@ -123,6 +123,7 @@
 							for (int i = 0; i < ric.size(); i++) {
 
 								if (ric.get(i).getEmailU().equals(session.getAttribute("email"))) {
+									if(ric.get(i).getStatoU()==false){
 						%>
 						<tr>
 							<td><%=ric.get(i).getNomeS()%></td>
@@ -141,8 +142,9 @@
 						</tr>
 
 						<%
-							}
-							}
+									}
+								}
+						}
 						%>
 					</tbody>
 				</table>

@@ -127,6 +127,7 @@
 								System.out.println(ric.get(i).getEmailT());
 
 								if (ric.get(i).getEmailT().equals(session.getAttribute("email"))) {
+									if(ric.get(i).getStatoT()==false){
 						%>
 						<tr>
 							<td><%=ric.get(i).getNomeS()%></td>
@@ -143,7 +144,8 @@
 						</tr>
 
 						<%
-							}
+									}
+								}
 							}
 						%>
 

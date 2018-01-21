@@ -43,22 +43,6 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 				
 			}
 			res = ricUDao.accettaUfficio(r.getCounter(), false, false, false, request.getParameter("emailSt"), null);
-			
-		/*	ListaRichieste listaR= new ListaRichieste();
-			ArrayList<Richiesta> richieste = new ArrayList<Richiesta>();
-			richieste=listaR.doListaRichieste();
-			for(int i=0; i<richieste.size(); i++){
-					stato=richieste.get(i).getStatoU();
-			}*/
-			/*ListaStudentiTutor listaT= new ListaStudentiTutor();
-			ArrayList<Richiesta> tutor= new ArrayList<Richiesta>();
-			tutor=listaT.doListaStudenteTutor();
-			for(int i=0; i<tutor.size(); i++){
-				if(emailAzienda.equals(tutor.get(i).getEmailA()))
-					emailTutor=tutor.get(i).getEmailT();
-			
-			}
-			res2=ricUDao.cambiaStatoPF(emailAzienda, emailTutor, stato);*/
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
