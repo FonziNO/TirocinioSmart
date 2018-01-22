@@ -95,7 +95,7 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-		
+		<h5>In questa sezione potrai visualizzare la lista degli studenti che hanno effettuato richiesta alla tua Azienda</h5>
 	 <%
  	if (request.getAttribute("accetta") != null) {
  %>

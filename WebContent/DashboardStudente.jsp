@@ -124,9 +124,7 @@
 
 					<!-- First Action -->
 					<div class="desc">
-						<div class="thumb">
-							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-						</div>
+
 						<%
 							ListaRichieste richieste = new ListaRichieste();
 							ArrayList<Richiesta> r = new ArrayList<Richiesta>();
@@ -136,6 +134,9 @@
 							for (int i = 0; i < r.size(); i++) {
 								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
 						%>
+						<div class="thumb">
+							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+						</div>
 						<div class="details">
 							<p>
 								<a><%=r.get(i).getEmailA()%></a> ha accettato la tua richiesta<br />
@@ -220,10 +221,10 @@
 									<td><img src="image/StatusVero.jpg" class="img-circle"
 										width="18"></td>
 								</tr>
-								<%}
-								else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
-											&& r.get(i).getStatoR() == false) {
-							%>
+								<%
+									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
+												&& r.get(i).getStatoR() == false) {
+								%>
 
 
 
