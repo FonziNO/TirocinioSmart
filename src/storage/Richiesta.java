@@ -24,6 +24,8 @@ public class Richiesta {
 	private String emailT;
 	private String nomeT;
 	private String cognomeT;
+	private String notifica;
+	
 	
 	public String getNomeA() {
 		return nomeA;
@@ -183,6 +185,14 @@ public class Richiesta {
 
 	public void setEmailT(String emailT) {
 		this.emailT = emailT;
+	}
+
+	public String getNotifica() {
+		return notifica;
+	}
+
+	public void setNotifica(String notifica) {
+		this.notifica = notifica;
 	}
 
 

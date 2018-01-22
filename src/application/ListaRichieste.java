@@ -49,7 +49,7 @@ public class ListaRichieste {
 				richiesta.setNomeS(risultato1.getString("Nome"));
 				richiesta.setCognomeS(risultato1.getString("Cognome"));
 				richiesta.setMatricolaS(risultato1.getString("Matricola"));
-
+				richiesta.setNotifica(risultato1.getString("notifica"));
 				listaR.add(richiesta);
 
 			}

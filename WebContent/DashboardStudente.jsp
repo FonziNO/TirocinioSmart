@@ -87,11 +87,79 @@
 					<li class="mt"><a class="active" href="DashboardStudente.jsp">
 							<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 					</a></li>
+					<%
+						ListaRichieste richieste = new ListaRichieste();
+						ArrayList<Richiesta> r = new ArrayList<Richiesta>();
+						r = richieste.doListaRichieste();
+						for (int i = 0; i < r.size(); i++) {
 
+							if (r.isEmpty() && r.get(i).getEmailS().equals(session.getAttribute("email"))) {
+					%>
+					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
+							class="fa fa-desktop"></i> <span>Lista Aziende</span>
+					</a></li>
+					<%
+						System.out.println("SE NON CI SONO RICHIESTE");
+
+							}
+
+							else if (!r.isEmpty() && r.get(i).getEmailS().equals(session.getAttribute("email"))
+									&& r.get(i).getStatoR() == false) {
+					%>
+					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
+							class="fa fa-desktop"></i> <span>Lista Aziende</span>
+					</a></li>
+					<%
+						System.out.println("La richiesta è stata inviata da chi è loggato");
+
+							}
+
+							else if (!(r.get(i).getEmailS().equals(session.getAttribute("email")))
+									&& r.get(i).getNotifica() != null) {
+					%>
 					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
 							class="fa fa-desktop"></i> <span>Lista Aziende</span>
 					</a></li>
 
+					<%
+						System.out.println("Non c'è nella lista delle richieste e la notifica è null");
+								System.out.println(r.get(i).getNotifica());
+
+							}
+
+							else if (!(r.get(i).getEmailS().equals(session.getAttribute("email")))
+									&& (r.get(i).getNotifica() == null)) {
+					%>
+					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
+							class="fa fa-desktop"></i> <span>Lista Aziende</span>
+					</a></li>
+
+					<%
+						System.out.println("Se la richiesta è stata fatta da me e non sono stato rifiutato");
+								System.out.println(r.get(i).getNotifica());
+
+							}
+
+							else if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true
+									&& (r.get(i).getNotifica() != null || request.getAttribute("notifica") != null)) {
+					%><li class="sub-menu" onclick="messaggio()"><a> <i
+							class="fa fa-desktop"></i> <span>Lista Aziende</span>
+					</a></li>
+					<%
+						System.out.println("Se la richiesta è stata fatta da me sono stato rifiutato e poi accettato");
+								System.out.println(r.get(i).getNotifica());
+
+								break;
+							} else if (request.getAttribute("notifica") != null) {
+					%><li class="sub-menu" onclick="messaggio()"><a> <i
+							class="fa fa-desktop"></i> <span>Lista Aziende</span>
+					</a></li>
+					<%
+						break;
+							}
+
+						}
+					%>
 
 				</ul>
 				<!-- sidebar menu end-->
@@ -128,11 +196,6 @@
 					<div class="desc">
 
 						<%
-							ListaRichieste richieste = new ListaRichieste();
-							ArrayList<Richiesta> r = new ArrayList<Richiesta>();
-							ArrayList<Richiesta> listaRifiuto = new ArrayList<Richiesta>();
-							r = richieste.doListaRichieste();
-
 							for (int i = 0; i < r.size(); i++) {
 								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
 						%>
@@ -148,6 +211,24 @@
 							}
 							}
 						%>
+
+
+						<%
+							if (request.getAttribute("notifica") != null) {
+						%>
+						<div class="thumb">
+							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+						</div>
+						<div class="details">
+							<p>
+								L'azienda <a><%=request.getAttribute("notifica")%></a> ha
+								rifiutato la richiesta<br />
+							</p>
+						</div>
+						<%
+							}
+						%>
+
 						<%
 							for (int i = 0; i < r.size(); i++) {
 								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
@@ -182,22 +263,10 @@
 							}
 							}
 						%>
-
-
-						<%
-							if (request.getAttribute("notifica") != null) {
-						%>
-						<div class="details">
-							<p>
-								<a>Notifiche</a>
-								<%=request.getAttribute("notifica")%><br />
-							</p>
-						</div>
-						<%
-							}
-						%>
 					</div>
 				</div>
+
+				<!-- STATO PROGETTO FORMATIVO -->
 
 				<div class="col-md-9">
 					<div class="content-panel">
@@ -226,17 +295,10 @@
 									</td>
 								</tr>
 								<%
-									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
-												&& r.get(i).getStatoR() == false) {
+									}
+									}
 								%>
-								<img src="image/StatusAttesa.jpg" class="img-circle" width="18">
 
-								<%
-									}
-								%>
-								<%
-									}
-								%>
 								</tr>
 
 								<tr>
@@ -251,8 +313,8 @@
 									</td>
 								</tr>
 								<%
-									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
-												&& r.get(i).getStatoT() == false) {
+									} else if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == false
+												&& r.get(i).getStatoR() == true) {
 								%>
 								<img src="image/StatusAttesa.jpg" class="img-circle" width="18">
 
@@ -276,8 +338,8 @@
 									</td>
 								</tr>
 								<%
-									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
-												&& r.get(i).getStatoU() == false) {
+									} else if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == false
+												&& r.get(i).getStatoR() == true) {
 								%>
 								<img src="image/StatusAttesa.jpg" class="img-circle" width="18">
 
@@ -378,7 +440,11 @@
 	<script src="assets/js/sparkline-chart.js"></script>
 	<script src="assets/js/zabuto_calendar.js"></script>
 
-
+	<script>
+		function messaggio() {
+			alert("non puoi inviare richieste");
+		}
+	</script>
 
 
 </body>

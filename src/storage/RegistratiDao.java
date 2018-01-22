@@ -18,7 +18,7 @@ public class RegistratiDao {
 		try {
 			System.out.println("Sono in RegistratiDao");
 			String register = "INSERT INTO " + RegistratiDao.TABLE_NAME
-					+ "(Email, Nome, Cognome, Matricola, Password, DataNascita, Cellulare, Tipo) VALUES (?,?,?,?,?,?,?,?)";
+					+ "(Email, Nome, Cognome, Matricola, Password, DataNascita, Cellulare, Tipo, notifica) VALUES (?,?,?,?,?,?,?,?,?)";
 			// formulo la stringa
 
 			conn = DriverManagerConnectionPool.getConnection();
@@ -31,6 +31,7 @@ public class RegistratiDao {
 			prep.setDate(6, Date.valueOf(datanascita));
 			prep.setString(7, cellulare);
 			prep.setInt(8, 0);
+			prep.setString(9, null);
 
 			// eseguo la query
 			res = prep.executeUpdate();// mi ritorna il numero di righe

@@ -98,12 +98,12 @@ public class Login extends HttpServlet {
 			} else if (i == 4) {
 				n = rs.getString("Nome");
 				c = rs.getString("Cognome");
-				String pisello = rs.getString("notifica");
+				String not = rs.getString("notifica");
 				HttpSession session = request.getSession();
 				session.setAttribute("email", user);
 				session.setAttribute("Nome", n);
 				session.setAttribute("Cognome", c);
-				request.setAttribute("notifica", pisello);
+				request.setAttribute("notifica", not);
 				RequestDispatcher dashboardStudente = request.getRequestDispatcher("DashboardStudente.jsp");
 				dashboardStudente.forward(request, response);
 				System.out.println(n + " " + c);
