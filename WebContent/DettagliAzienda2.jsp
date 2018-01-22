@@ -86,8 +86,8 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-	<h5 style="margin-left:10%">In questa sezione potrai inviare una richiesta se interessato
-		al progetto formativo offerto dall'azienda.</h5>
+	<h5 style="margin-left: 10%">In questa sezione potrai inviare una
+		richiesta se interessato al progetto formativo offerto dall'azienda.</h5>
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="content-panel">
@@ -104,9 +104,9 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id="nomeAzienda">AF Soluzioni srl</td>
-							<td>Buccino(SA)</td>
-							<td></td>
+							<td id="nomeAzienda">Microambiente srl</td>
+							<td>Salerno, Lungo Mare Colombo Cristoforo, 207 </td>
+							<td>Certificazione qualita', sicurezza, ambiente a Salerno</td>
 
 						</tr>
 
@@ -115,10 +115,21 @@
 					</tbody>
 				</table>
 				<table>
-					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
+					<h4 align="center">DETTAGLI AZIENDA</h4>
 					</section>
 				</table>
-				<h5>afknnfsofnaosfnoasifinsofasnio</h5>
+				<h5>Microambiente Srl è una società operante nel contesto
+					nazionale e internazionale, formatasi nel 2005 da un gruppo di
+					professionisti dotati di esperienze multidisciplinari, legati da un
+					rapporto di collaborazione iniziato nel 1991. La società è in grado
+					di offrire la propria competenza e professionalità in svariati
+					servizi connessi alla variabile ambientale, rivolgendo la propria
+					attenzione agli enti pubblici e privati e alle imprese. La forza
+					dell'azienda è quella di puntare, da oramai più di dieci anni, al
+					miglioramento e alla innovazione della comunicazione e dei sistemi
+					informativi. L'azienda è leader in Campania per le certificazioni
+					per le aziende in tema ambientale, in particolare per lo schema
+					normativo ISO 14001.</h5>
 				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">
