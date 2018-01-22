@@ -105,7 +105,9 @@
 		<!--main content start-->
 		<section id="main-content">
 			<section class="wrapper">
-
+				<h5>In questa sezione potrai visualizzare le notifiche inerenti
+					alle tue richieste, ed anche lo stato di una richiesta accettata o
+					rifiutata da parte dei responsabili della richiesta.</h5>
 				<div class="row">
 					<div class="col-lg-9 main-chart"></div>
 					<!-- /row -->
@@ -146,8 +148,8 @@
 							}
 							}
 						%>
-					<%
-						for (int i = 0; i < r.size(); i++) {
+						<%
+							for (int i = 0; i < r.size(); i++) {
 								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
 						%>
 						<div class="thumb">
@@ -162,9 +164,9 @@
 							}
 							}
 						%>
-						
+
 						<%
-						for (int i = 0; i < r.size(); i++) {
+							for (int i = 0; i < r.size(); i++) {
 								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == true) {
 						%>
 						<div class="thumb">
@@ -199,70 +201,76 @@
 							<tbody>
 								<tr>
 									<td>Azienda</td>
-									
-									<td><%
-									for (int i = 0; i < r.size(); i++) {
-										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
-								%><img src="image/StatusVero.jpg" class="img-circle"
-										width="18"></td>
+
+									<td>
+										<%
+											for (int i = 0; i < r.size(); i++) {
+												if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
+										%><img src="image/StatusVero.jpg" class="img-circle"
+										width="18">
+									</td>
 								</tr>
 								<%
 									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
 												&& r.get(i).getStatoR() == false) {
 								%>
-								<img src="image/StatusAttesa.jpg" class="img-circle"
-										width="18">
-										
-										<%} %>
-										<%
+								<img src="image/StatusAttesa.jpg" class="img-circle" width="18">
+
+								<%
 									}
-									
+								%>
+								<%
+									}
 								%>
 								</tr>
-								
-							<tr>
+
+								<tr>
 									<td>Tutor</td>
-									
-									<td><%
-									for (int i = 0; i < r.size(); i++) {
-										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
-								%><img src="image/StatusVero.jpg" class="img-circle"
-										width="18"></td>
+
+									<td>
+										<%
+											for (int i = 0; i < r.size(); i++) {
+												if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
+										%><img src="image/StatusVero.jpg" class="img-circle"
+										width="18">
+									</td>
 								</tr>
 								<%
 									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
 												&& r.get(i).getStatoT() == false) {
 								%>
-								<img src="image/StatusAttesa.jpg" class="img-circle"
-										width="18">
-										
-										<%} %>
-										<%
+								<img src="image/StatusAttesa.jpg" class="img-circle" width="18">
+
+								<%
 									}
-									
+								%>
+								<%
+									}
 								%>
 								</tr>
-								
+
 								<tr>
 									<td>Ufficio Stage</td>
-									
-									<td><%
-									for (int i = 0; i < r.size(); i++) {
-										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == true) {
-								%><img src="image/StatusVero.jpg" class="img-circle"
-										width="18"></td>
+
+									<td>
+										<%
+											for (int i = 0; i < r.size(); i++) {
+												if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == true) {
+										%><img src="image/StatusVero.jpg" class="img-circle"
+										width="18">
+									</td>
 								</tr>
 								<%
 									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
 												&& r.get(i).getStatoU() == false) {
 								%>
-								<img src="image/StatusAttesa.jpg" class="img-circle"
-										width="18">
-										
-										<%} %>
-										<%
+								<img src="image/StatusAttesa.jpg" class="img-circle" width="18">
+
+								<%
 									}
-									
+								%>
+								<%
+									}
 								%>
 								</tr>
 							</tbody>
@@ -275,7 +283,48 @@
 				<!-- /col-lg-3 -->
 
 				<!--/row -->
+				<div class="col-md-3"></div>
+			<div class="col-md-4" style="margin-top:1.5%">
+				<div class="content-panel">
+					<h5>
+						<i class="fa fa-angle-right"></i>Legenda
+					</h5>
+					<table class="table table-bordered table-striped table-condensed">
+
+						<thead>
+
+							<th>Stato</th>
+							<th>Riferimento</th>
+
+
+						</thead>
+						<tbody>
+							<tr>
+								<td>Accettato</td>
+
+								<td><img src="image/StatusVero.jpg" class="img-circle"
+									width="18"></td>
+							</tr>
+							<tr>
+								<td>In Attesa</td>
+
+								<td><img src="image/StatusAttesa.jpg" class="img-circle"
+									width="18"></td>
+							</tr>
+							<tr>
+								<td>Rifiutato</td>
+
+								<td><img src="image/StatusFalso.jpg" class="img-circle"
+									width="18"></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
 			</section>
+			
+
 			<!-- <section id="unseen"> -->
 
 			<!-- </section> -->
