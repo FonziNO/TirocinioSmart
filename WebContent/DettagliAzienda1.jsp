@@ -105,8 +105,11 @@
 					<tbody>
 						<tr>
 							<td id="nomeAzienda">AF Soluzioni srl</td>
-							<td>Buccino(SA)</td>
-							<td></td>
+							<td> Via San Leonardo, 120 - 84131 Salerno</td>
+							<td>AF Soluzioni è un punto di riferimento sulle tematiche che <br>
+							riguardano la gestione degli approvvigionamenti per via telematica <br>
+							e la collaborazione con fornitori e clienti via Web. 
+							</td>
 
 						</tr>
 
@@ -115,10 +118,13 @@
 					</tbody>
 				</table>
 				<table>
-					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
+					<h4 align="center">DETTAGLI AZIENDA</h4>
 					</section>
 				</table>
-				<h5>afknnfsofnaosfnoasifinsofasnio</h5>
+				<h5>AF Soluzioni è un azienda di produzione di soluzioni software gestionali multicanali per 
+							l'SCM. La elevata flessibilità delle soluzioni ed il continuo adeguamento alle nuove 
+							esigenze del mercato sono i temi che indirizzano le strategie di sviluppo.<br>
+						<a href="https://www.afsoluzioni.it/index.html"> Clicca qui per vedere la pagina ufficiale dell'azienda</a></h5>
 				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">

@@ -17,7 +17,9 @@ public class ListaRichieste {
 
 		List<Richiesta> listaR = new ArrayList<Richiesta>();
 
-		String listaRichieste = "SELECT * FROM Richiesta INNER JOIN studente ON StudenteEmail = Email";
+		String listaRichieste = "SELECT * FROM Richiesta INNER JOIN studente ON StudenteEmail = Email"+
+		" INNER JOIN tutor ON tutor.AziendaEmail=richiesta.AziendaEmail"+
+		" INNER JOIN UfficioStage";
 		conn = DriverManagerConnectionPool.getConnection();
 		s1 = conn.prepareStatement(listaRichieste);
 
@@ -34,6 +36,8 @@ public class ListaRichieste {
 				richiesta.setStatoU(risultato1.getBoolean("StatoUfficio"));
 				richiesta.setEmailS(risultato1.getString("StudenteEmail"));
 				richiesta.setEmailA(risultato1.getString("AziendaEmail"));
+				richiesta.setEmailT(risultato1.getString("tutor.Email"));
+				richiesta.setEmailU(risultato1.getString("UfficioStage.Email"));
 
 				richiesta.setNomeS(risultato1.getString("Nome"));
 				richiesta.setCognomeS(risultato1.getString("Cognome"));

@@ -146,6 +146,39 @@
 							}
 							}
 						%>
+					<%
+						for (int i = 0; i < r.size(); i++) {
+								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
+						%>
+						<div class="thumb">
+							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+						</div>
+						<div class="details">
+							<p>
+								<a><%=r.get(i).getEmailA()%></a> ha accettato la tua richiesta<br />
+							</p>
+						</div>
+						<%
+							}
+							}
+						%>
+						
+						<%
+						for (int i = 0; i < r.size(); i++) {
+								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == true) {
+						%>
+						<div class="thumb">
+							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+						</div>
+						<div class="details">
+							<p>
+								<a><%=r.get(i).getEmailU()%></a> ha accettato la tua richiesta<br />
+							</p>
+						</div>
+						<%
+							}
+							}
+						%>
 					</div>
 				</div>
 
@@ -164,78 +197,72 @@
 
 							</thead>
 							<tbody>
-								<%
-									for (int i = 0; i < r.size(); i++) {
-										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
-								%>
 								<tr>
 									<td>Azienda</td>
-									<td><img src="image/StatusVero.jpg" class="img-circle"
-										width="18"></td>
-								</tr>
-
-								<%
-									}
-
-										else if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == false) {
-								%>
-								<tr>
-									<td>Azienda</td>
-									<td><img src="image/StatusAttesa.jpg" class="img-circle"
-										width="18"></td>
-								</tr>
-								<%
-									}
-									}
-								%>
-								<%
+									
+									<td><%
 									for (int i = 0; i < r.size(); i++) {
 										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
-								%>
-								<tr>
-									<td>Tutor</td>
-									<td><img src="image/StatusVero.jpg" class="img-circle"
-										width="18"></td>
-
-									<%
-										} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
-													&& r.get(i).getStatoR() == false) {
-									%>
-								
-								<tr>
-									<td>Tutor</td>
-									<td><img src="image/StatusAttesa.jpg" class="img-circle"
-										width="18"></td>
-								</tr>
-								<%
-									}
-									}
-								%>
-								</tr>
-								<%
-									for (int i = 0; i < r.size(); i++) {
-										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
-								%>
-								<tr>
-									<td>Ufficio Stage</td>
-									<td><img src="image/StatusVero.jpg" class="img-circle"
+								%><img src="image/StatusVero.jpg" class="img-circle"
 										width="18"></td>
 								</tr>
 								<%
 									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
 												&& r.get(i).getStatoR() == false) {
 								%>
-
-
-
-								<tr>
-									<td>Uffico Stage</td>
-									<td><img src="image/StatusAttesa.jpg" class="img-circle"
+								<img src="image/StatusAttesa.jpg" class="img-circle"
+										width="18">
+										
+										<%} %>
+										<%
+									}
+									
+								%>
+								</tr>
+								
+							<tr>
+									<td>Tutor</td>
+									
+									<td><%
+									for (int i = 0; i < r.size(); i++) {
+										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
+								%><img src="image/StatusVero.jpg" class="img-circle"
 										width="18"></td>
 								</tr>
 								<%
+									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
+												&& r.get(i).getStatoT() == false) {
+								%>
+								<img src="image/StatusAttesa.jpg" class="img-circle"
+										width="18">
+										
+										<%} %>
+										<%
 									}
+									
+								%>
+								</tr>
+								
+								<tr>
+									<td>Ufficio Stage</td>
+									
+									<td><%
+									for (int i = 0; i < r.size(); i++) {
+										if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == true) {
+								%><img src="image/StatusVero.jpg" class="img-circle"
+										width="18"></td>
+								</tr>
+								<%
+									} else if (r.get(i).getEmailS().equals(session.getAttribute("email"))
+												&& r.get(i).getStatoU() == false) {
+								%>
+								<img src="image/StatusAttesa.jpg" class="img-circle"
+										width="18">
+										
+										<%} %>
+										<%
 									}
+									
 								%>
 								</tr>
 							</tbody>
