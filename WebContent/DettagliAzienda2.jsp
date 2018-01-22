@@ -86,7 +86,7 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-	<h5>In questa sezione potrai inviare una richiesta se interessato
+	<h5 style="margin-left:10%">In questa sezione potrai inviare una richiesta se interessato
 		al progetto formativo offerto dall'azienda.</h5>
 	<div class="row mt">
 		<div class="col-lg-12">

@@ -118,7 +118,7 @@
 					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
 					</section>
 				</table>
-				<h5>afknnfsofnaosfnoasifinsofasnio</h5>
+				<h5 style="margin-left:10%">afknnfsofnaosfnoasifinsofasnio</h5>
 				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">
