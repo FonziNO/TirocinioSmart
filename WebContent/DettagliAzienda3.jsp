@@ -104,9 +104,11 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id="nomeAzienda">AF Soluzioni srl</td>
-							<td>Buccino(SA)</td>
-							<td></td>
+							<td id="nomeAzienda">Theorema s.r.l.-Fisciano(SA)</td>
+							<td>Via Mandrizzo, ASI Zona Industriale
+                            84084, Fisciano (SA)</td>
+							<td>Theorem@ S.r.l. progetta e sviluppa soluzioni healthcare per la gestione 
+							del workflow nella radiologia, nella cardiologia e nei laboratori d'analisi cliniche.</td>
 
 						</tr>
 
@@ -115,10 +117,12 @@
 					</tbody>
 				</table>
 				<table>
-					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
+					<h4 align="center">DETTAGLI AZIENDA</h4>
 					</section>
 				</table>
-				<h5 style="margin-left:10%">afknnfsofnaosfnoasifinsofasnio</h5>
+				<h5 style="margin-left:10%">Grazie all'elevata flessibilita' e scalabilita' e' possibile sviluppare numerose soluzioni, 
+				abbinate o non a specifiche configurazioni hardware, per 
+				soddisfare ogni necessita' nella diagnostica per immagini</h5>
 				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">
