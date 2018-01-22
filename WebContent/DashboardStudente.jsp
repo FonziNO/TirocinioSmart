@@ -157,7 +157,8 @@
 						</div>
 						<div class="details">
 							<p>
-								<a><%=r.get(i).getNomeT()%> <%=r.get(i).getCognomeT() %></a> ha accettato la tua richiesta<br />
+								<a><%=r.get(i).getNomeT()%> <%=r.get(i).getCognomeT()%></a> ha
+								accettato la tua richiesta<br />
 							</p>
 						</div>
 						<%
@@ -179,6 +180,20 @@
 						</div>
 						<%
 							}
+							}
+						%>
+
+
+						<%
+							if (request.getAttribute("notifica") != null) {
+						%>
+						<div class="details">
+							<p>
+								<a>Notifiche</a>
+								<%=request.getAttribute("notifica")%><br />
+							</p>
+						</div>
+						<%
 							}
 						%>
 					</div>
@@ -284,46 +299,46 @@
 
 				<!--/row -->
 				<div class="col-md-3"></div>
-			<div class="col-md-4" style="margin-top:1.5%">
-				<div class="content-panel">
-					<h5>
-						<i class="fa fa-angle-right"></i>Legenda
-					</h5>
-					<table class="table table-bordered table-striped table-condensed">
+				<div class="col-md-4" style="margin-top: 1.5%">
+					<div class="content-panel">
+						<h5>
+							<i class="fa fa-angle-right"></i>Legenda
+						</h5>
+						<table class="table table-bordered table-striped table-condensed">
 
-						<thead>
+							<thead>
 
-							<th>Stato</th>
-							<th>Riferimento</th>
+								<th>Stato</th>
+								<th>Riferimento</th>
 
 
-						</thead>
-						<tbody>
-							<tr>
-								<td>Accettato</td>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Accettato</td>
 
-								<td><img src="image/StatusVero.jpg" class="img-circle"
-									width="18"></td>
-							</tr>
-							<tr>
-								<td>In Attesa</td>
+									<td><img src="image/StatusVero.jpg" class="img-circle"
+										width="18"></td>
+								</tr>
+								<tr>
+									<td>In Attesa</td>
 
-								<td><img src="image/StatusAttesa.jpg" class="img-circle"
-									width="18"></td>
-							</tr>
-							<tr>
-								<td>Rifiutato</td>
+									<td><img src="image/StatusAttesa.jpg" class="img-circle"
+										width="18"></td>
+								</tr>
+								<tr>
+									<td>Rifiutato</td>
 
-								<td><img src="image/StatusFalso.jpg" class="img-circle"
-									width="18"></td>
-							</tr>
-						</tbody>
-					</table>
+									<td><img src="image/StatusFalso.jpg" class="img-circle"
+										width="18"></td>
+								</tr>
+							</tbody>
+						</table>
 
+					</div>
 				</div>
-			</div>
 			</section>
-			
+
 
 			<!-- <section id="unseen"> -->
 
