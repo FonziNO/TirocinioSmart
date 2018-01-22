@@ -141,7 +141,7 @@
 						</div>
 						<div class="details">
 							<p>
-								<a><%=r.get(i).getEmailA()%></a> ha accettato la tua richiesta<br />
+								<a><%=r.get(i).getNomeA()%></a> ha accettato la tua richiesta<br />
 							</p>
 						</div>
 						<%
@@ -157,7 +157,7 @@
 						</div>
 						<div class="details">
 							<p>
-								<a><%=r.get(i).getEmailA()%></a> ha accettato la tua richiesta<br />
+								<a><%=r.get(i).getNomeT()%> <%=r.get(i).getCognomeT() %></a> ha accettato la tua richiesta<br />
 							</p>
 						</div>
 						<%
@@ -174,7 +174,7 @@
 						</div>
 						<div class="details">
 							<p>
-								<a><%=r.get(i).getEmailU()%></a> ha accettato la tua richiesta<br />
+								<a>L'Ufficio Stage</a> ha accettato la tua richiesta<br />
 							</p>
 						</div>
 						<%

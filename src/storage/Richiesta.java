@@ -8,16 +8,49 @@ import java.util.Scanner;
 public class Richiesta {
 
 	private String IdR;
+	
 	private boolean statoR;
+	private boolean statoT;
+	private boolean statoU;
+	
 	private String emailS;
-	private String emailA;
 	private String nomeS;
 	private String cognomeS;
 	private String matricolaS;
+	
+	private String nomeA;
+	private String emailA;
+	
 	private String emailT;
-	private boolean statoT;
+	private String nomeT;
+	private String cognomeT;
+	
+	public String getNomeA() {
+		return nomeA;
+	}
+
+	public void setNomeA(String nomeA) {
+		this.nomeA = nomeA;
+	}
+
+	public String getNomeT() {
+		return nomeT;
+	}
+
+	public void setNomeT(String nomeT) {
+		this.nomeT = nomeT;
+	}
+
+	public String getCognomeT() {
+		return cognomeT;
+	}
+
+	public void setCognomeT(String cognomeT) {
+		this.cognomeT = cognomeT;
+	}
+
 	private String emailU;
-	private boolean statoU;
+
 	
 	public boolean getStatoT() {
 		return statoT;

@@ -19,6 +19,7 @@ public class ListaRichieste {
 
 		String listaRichieste = "SELECT * FROM Richiesta INNER JOIN studente ON StudenteEmail = Email"+
 		" INNER JOIN tutor ON tutor.AziendaEmail=richiesta.AziendaEmail"+
+		" INNER JOIN azienda ON richiesta.AziendaEmail=azienda.Email"+
 		" INNER JOIN UfficioStage";
 		conn = DriverManagerConnectionPool.getConnection();
 		s1 = conn.prepareStatement(listaRichieste);
@@ -31,13 +32,19 @@ public class ListaRichieste {
 				Richiesta richiesta = new Richiesta();
 
 				richiesta.setIdR(risultato1.getString("ID"));
+				
 				richiesta.setStatoR(risultato1.getBoolean("Stato"));
 				richiesta.setStatoT(risultato1.getBoolean("StatoTutor"));
 				richiesta.setStatoU(risultato1.getBoolean("StatoUfficio"));
+				
 				richiesta.setEmailS(risultato1.getString("StudenteEmail"));
 				richiesta.setEmailA(risultato1.getString("AziendaEmail"));
 				richiesta.setEmailT(risultato1.getString("tutor.Email"));
 				richiesta.setEmailU(risultato1.getString("UfficioStage.Email"));
+				
+				richiesta.setNomeA(risultato1.getString("Azienda.Nome"));
+				richiesta.setNomeT(risultato1.getString("Tutor.Nome"));
+				richiesta.setCognomeT(risultato1.getString("Tutor.Cognome"));
 
 				richiesta.setNomeS(risultato1.getString("Nome"));
 				richiesta.setCognomeS(risultato1.getString("Cognome"));
