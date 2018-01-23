@@ -84,82 +84,44 @@
 					<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
 						<%=session.getAttribute("Cognome")%></h4>
 
-					<li class="mt"><a class="active" href="DashboardStudente.jsp">
-							<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+					<li class="mt"><a class="active" href="Dashboard"> <i
+							class="fa fa-dashboard"></i> <span>Dashboard</span>
 					</a></li>
+
+
+
 					<%
 						ListaRichieste richieste = new ListaRichieste();
 						ArrayList<Richiesta> r = new ArrayList<Richiesta>();
 						r = richieste.doListaRichieste();
+						int flag = 0;
 						for (int i = 0; i < r.size(); i++) {
 
-							if (r.isEmpty() && r.get(i).getEmailS().equals(session.getAttribute("email"))) {
+							if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
+								flag = 1;
+								System.out.println("si è loggato chi ha fatto una richiesta ed è stato accettato");
+							}
+							if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == false) {
+								flag = 0;
+								System.out.println("si è loggato chi ha fatto una richiesta e non è stato ancora accettato");
+							}
+						}
 					%>
+
+					<%
+						if (flag == 0) {
+					%>
+
 					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
 							class="fa fa-desktop"></i> <span>Lista Aziende</span>
 					</a></li>
 					<%
 						System.out.println("SE NON CI SONO RICHIESTE");
 
-							}
-
-							else if (!r.isEmpty() && r.get(i).getEmailS().equals(session.getAttribute("email"))
-									&& r.get(i).getStatoR() == false) {
-					%>
-					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
-							class="fa fa-desktop"></i> <span>Lista Aziende</span>
-					</a></li>
-					<%
-						System.out.println("La richiesta è stata inviata da chi è loggato");
-
-							}
-
-							else if (!(r.get(i).getEmailS().equals(session.getAttribute("email")))
-									&& r.get(i).getNotifica() != null) {
-					%>
-					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
-							class="fa fa-desktop"></i> <span>Lista Aziende</span>
-					</a></li>
-
-					<%
-						System.out.println("Non c'è nella lista delle richieste e la notifica è null");
-								System.out.println(r.get(i).getNotifica());
-
-							}
-
-							else if (!(r.get(i).getEmailS().equals(session.getAttribute("email")))
-									&& (r.get(i).getNotifica() == null)) {
-					%>
-					<li class="sub-menu"><a href="ListaAziende.jsp"> <i
-							class="fa fa-desktop"></i> <span>Lista Aziende</span>
-					</a></li>
-
-					<%
-						System.out.println("Se la richiesta è stata fatta da me e non sono stato rifiutato");
-								System.out.println(r.get(i).getNotifica());
-
-							}
-
-							else if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true
-									&& (r.get(i).getNotifica() != null || request.getAttribute("notifica") != null)) {
-					%><li class="sub-menu" onclick="messaggio()"><a> <i
-							class="fa fa-desktop"></i> <span>Lista Aziende</span>
-					</a></li>
-					<%
-						System.out.println("Se la richiesta è stata fatta da me sono stato rifiutato e poi accettato");
-								System.out.println(r.get(i).getNotifica());
-
-								break;
-							} else if (request.getAttribute("notifica") != null) {
-					%><li class="sub-menu" onclick="messaggio()"><a> <i
-							class="fa fa-desktop"></i> <span>Lista Aziende</span>
-					</a></li>
-					<%
-						break;
-							}
-
 						}
 					%>
+
+
 
 				</ul>
 				<!-- sidebar menu end-->
@@ -193,46 +155,35 @@
 					<h3>NOTIFICHE</h3>
 
 					<!-- First Action -->
+					<div class="col-md-3 ds"></div>
+					<%
+						for (int i = 0; i < r.size(); i++) {
+							if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == true) {
+					%>
 					<div class="desc">
-
-						<%
-							for (int i = 0; i < r.size(); i++) {
-								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
-						%>
 						<div class="thumb">
 							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
 						</div>
 						<div class="details">
 							<p>
-								<a><%=r.get(i).getNomeA()%></a> ha accettato la tua richiesta<br />
+								<a>L'Ufficio Stage</a> ha accettato la tua richiesta<br />
 							</p>
 						</div>
-						<%
-							}
-							}
-						%>
+					</div>
+					<%
+						}
+						}
+					%>
 
 
-						<%
-							if (request.getAttribute("notifica") != null) {
-						%>
-						<div class="thumb">
-							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-						</div>
-						<div class="details">
-							<p>
-								L'azienda <a><%=request.getAttribute("notifica")%></a> ha
-								rifiutato la richiesta<br />
-							</p>
-						</div>
-						<%
-							}
-						%>
 
-						<%
-							for (int i = 0; i < r.size(); i++) {
-								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
-						%>
+
+
+					<%
+						for (int i = 0; i < r.size(); i++) {
+							if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoT() == true) {
+					%>
+					<div class="desc">
 						<div class="thumb">
 							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
 						</div>
@@ -242,28 +193,37 @@
 								accettato la tua richiesta<br />
 							</p>
 						</div>
-						<%
-							}
-							}
-						%>
-
-						<%
-							for (int i = 0; i < r.size(); i++) {
-								if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoU() == true) {
-						%>
+					</div>
+					<%
+						}
+						}
+					%>
+					<%
+						for (int i = 0; i < r.size(); i++) {
+							if (r.get(i).getEmailS().equals(session.getAttribute("email")) && r.get(i).getStatoR() == true) {
+					%>
+					<div class="desc">
 						<div class="thumb">
 							<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
 						</div>
 						<div class="details">
 							<p>
-								<a>L'Ufficio Stage</a> ha accettato la tua richiesta<br />
+								<a><%=r.get(i).getNomeA()%></a> ha accettato la tua richiesta<br />
 							</p>
 						</div>
-						<%
-							}
-							}
-						%>
 					</div>
+					<%
+						}
+						}
+					%>
+
+					<%
+						if (request.getAttribute("notifica") != null) {
+					%><%=request.getAttribute("notifica")%>
+					<%
+						}
+					%>
+
 				</div>
 
 				<!-- STATO PROGETTO FORMATIVO -->

@@ -5,75 +5,84 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  	<servlet-name>Login</servlet-name>
-  	<servlet-class>application.Login</servlet-class>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>application.Login</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Login</servlet-name>
-  	<url-pattern>/Login</url-pattern>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>Accedi</servlet-name>
-  	<servlet-class>application.Accedi</servlet-class>
+    <servlet-name>Accedi</servlet-name>
+    <servlet-class>application.Accedi</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Accedi</servlet-name>
-  	<url-pattern>/Accedi</url-pattern>
+    <servlet-name>Accedi</servlet-name>
+    <url-pattern>/Accedi</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>Registra</servlet-name>
-  	<servlet-class>application.Registra</servlet-class>
+    <servlet-name>Registra</servlet-name>
+    <servlet-class>application.Registra</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Registra</servlet-name>
-  	<url-pattern>/Registra</url-pattern>
+    <servlet-name>Registra</servlet-name>
+    <url-pattern>/Registra</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>Logout</servlet-name>
-  	<servlet-class>application.Logout</servlet-class>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>application.Logout</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Logout</servlet-name>
-  	<url-pattern>/Logout</url-pattern>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
   </servlet-mapping>
-   <servlet>
-  	<servlet-name>InviaRichiesta</servlet-name>
-  	<servlet-class>application.InviaRichiesta</servlet-class>
+<servlet>
+    <servlet-name>Dashboard</servlet-name>
+    <servlet-class>application.Dashboard</servlet-class>
   </servlet>
-  <servlet-mapping>
-  	<servlet-name>InviaRichiesta</servlet-name>
-  	<url-pattern>/InviaRichiesta</url-pattern>
+ <servlet-mapping>
+    <servlet-name>Dashboard</servlet-name>
+    <url-pattern>/Dashboard</url-pattern>
   </servlet-mapping>
-    <servlet>
-  	<servlet-name>AccettazioneRichiesta</servlet-name>
-  	<servlet-class>application.AccettazioneRichiesta</servlet-class>
+
+  <servlet>
+    <servlet-name>InviaRichiesta</servlet-name>
+    <servlet-class>application.InviaRichiesta</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>AccettazioneRichiesta</servlet-name>
-  	<url-pattern>/AccettazioneRichiesta</url-pattern>
-  </servlet-mapping>
-     <servlet>
-  	<servlet-name>RifiutoRichiesta</servlet-name>
-  	<servlet-class>application.RifiutoRichiesta</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>RifiutoRichiesta</servlet-name>
-  	<url-pattern>/RifiutoRichiesta</url-pattern>
-  </servlet-mapping>
-   <servlet>
-  	<servlet-name>AccettazioneTutor</servlet-name>
-  	<servlet-class>application.AccettazioneTutor</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>AccettazioneTutor</servlet-name>
-  	<url-pattern>/AccettazioneTutor</url-pattern>
+    <servlet-name>InviaRichiesta</servlet-name>
+    <url-pattern>/InviaRichiesta</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>AccettazioneUfficio</servlet-name>
-  	<servlet-class>application.AccettazioneUfficio</servlet-class>
+    <servlet-name>AccettazioneRichiesta</servlet-name>
+    <servlet-class>application.AccettazioneRichiesta</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>AccettazioneUfficio</servlet-name>
-  	<url-pattern>/AccettazioneUfficio</url-pattern>
+    <servlet-name>AccettazioneRichiesta</servlet-name>
+    <url-pattern>/AccettazioneRichiesta</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RifiutoRichiesta</servlet-name>
+    <servlet-class>application.RifiutoRichiesta</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RifiutoRichiesta</servlet-name>
+    <url-pattern>/RifiutoRichiesta</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AccettazioneTutor</servlet-name>
+    <servlet-class>application.AccettazioneTutor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccettazioneTutor</servlet-name>
+    <url-pattern>/AccettazioneTutor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AccettazioneUfficio</servlet-name>
+    <servlet-class>application.AccettazioneUfficio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccettazioneUfficio</servlet-name>
+    <url-pattern>/AccettazioneUfficio</url-pattern>
   </servlet-mapping>
 </web-app>

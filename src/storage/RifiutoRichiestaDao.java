@@ -29,11 +29,13 @@ public class RifiutoRichiestaDao {
 			res = prep.executeUpdate();
 			System.out.println(richieste);
 
-			String update = "UPDATE studente SET notifica = CONCAT(COALESCE(notifica, ''), 'rifiuto', ?) WHERE Email='"
+			String update = "UPDATE studente SET notifica = CONCAT(COALESCE(notifica, ''), '<br>', ?) WHERE Email='"
 					+ studEmail + "'";
 			prep2 = null;
 			prep2 = conn.prepareStatement(update);
-			prep2.setString(1, azEmail);
+			String pisellino = "<div class=\"desc\"><div class=\"thumb\"><span class=\"badge bg-theme\"><i class=\"fa fa-clock-o\"></i></span></div><div class=\"details\"><p>L'azienda: <a>"
+					+ azEmail + "</a> ha rifiutato la tua richiesta.</p></div></div>";
+			prep2.setString(1, pisellino);
 
 			prep2.executeUpdate();
 

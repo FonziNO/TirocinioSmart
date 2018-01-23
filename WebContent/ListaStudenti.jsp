@@ -87,7 +87,7 @@
 
 
 		</ul>
-			
+
 		<!-- sidebar menu end-->
 	</div>
 	</aside> <!--sidebar end--> <!-- **********************************************************************************************************************************************************
@@ -95,18 +95,17 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-		<h5>In questa sezione potrai visualizzare la lista degli studenti che hanno effettuato richiesta alla tua Azienda</h5>
-	 <%
- 	if (request.getAttribute("accetta") != null) {
- %>
+	<h5>In questa sezione potrai visualizzare la lista degli studenti
+		che hanno effettuato richiesta alla tua Azienda</h5>
+	<%
+		if (request.getAttribute("accetta") != null) {
+	%>
 	<p>
 		<font color="green"><%=request.getAttribute("accetta")%></font>
 	</p>
 	<%
 		}
-	%>
-	
-	<%
+	%> <%
  	if (request.getAttribute("rifiuta") != null) {
  %>
 	<p>
@@ -115,7 +114,7 @@
 	<%
 		}
 	%>
-	
+
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="content-panel">
@@ -151,13 +150,16 @@
 							<td><%=ric.get(i).getNomeS()%></td>
 							<td><%=ric.get(i).getCognomeS()%></td>
 							<td><%=ric.get(i).getMatricolaS()%></td>
-							<td><form action="AccettazioneRichiesta" method="post">
+							<td><form action="AccettazioneRichiesta" method="post"
+									style="display: inline-block;">
 									<input type="hidden" name="emailS"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Accetta"
-										style="margin-right: 20%" onclick="accetta('La richiesta è stata accettata')">
-								</form> <br>
-								<form action="RifiutoRichiesta" method="post">
+										style="margin-right: 20%"
+										onclick="accetta('La richiesta è stata accettata')">
+								</form> &nbsp; &nbsp; &nbsp;
+								<form action="RifiutoRichiesta" method="post"
+									style="display: inline-block;">
 									<input type="hidden" name="emailStu"
 										value=<%=ric.get(i).getEmailS()%>> <input
 										type="submit" class="btn btn-theme" value="Rifiuta"
