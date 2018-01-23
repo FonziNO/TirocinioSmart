@@ -67,13 +67,13 @@
 		<ul class="sidebar-menu" id="nav-accordion">
 
 			<p class="centered">
-				<a href="DashboardStudente.jsp"><img
+				<a href="Dashboard"><img
 					src="image/Student-icon.png" class="img-circle" width="60"></a>
 			</p>
 			<h4 class="centered" style="font-family: Ruda; color: white"><%=session.getAttribute("Nome")%>
 				<%=session.getAttribute("Cognome")%></h4>
 
-			<li class="mt"><a href="DashboardStudente.jsp"> <i
+			<li class="mt"><a href="Dashboard"> <i
 					class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
