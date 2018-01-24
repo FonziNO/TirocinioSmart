@@ -144,10 +144,9 @@ public class AccountTest extends TestCase {
 			}
 		}
 
-		int studente =  loginDao.doLogin(emailSTest, passwordSTest);
-		
+		int studente = loginDao.doLogin(emailSTest, passwordSTest);
+
 		assertEquals(4, studente);
-		
 
 		conn = null;
 		prep = null;
@@ -171,4 +170,61 @@ public class AccountTest extends TestCase {
 
 	}
 
+	public final void testLoginAzienda() throws Exception {
+		String emailATest = "azienda@gmail.com";
+		String passwordATest = "azienda123";
+		String nomeATest = "aziendaTest";
+		String locazioneATest = "Cile";
+		int tipoATest = 3;
+
+		conn = null;
+		prep = null;
+
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+			prep = conn.prepareStatement("INSERT INTO azienda (email,password,nome,locazione,tipo) " + "VALUES(?,?,?,?,?);");
+
+			prep.setString(1, emailATest);
+			prep.setString(2, passwordATest);
+			prep.setString(3, nomeATest);
+			prep.setString(4, locazioneATest);
+			prep.setInt(5, tipoATest);
+
+			prep.executeUpdate();
+			conn.commit();
+		} finally {
+			try {
+				if (prep != null)
+					prep.close();
+			} finally {
+				if (conn != null)
+					conn.close();
+			}
+		}
+
+		int azienda = loginDao.doLogin(emailATest, passwordATest);
+
+		assertEquals(3, azienda);
+
+		conn = null;
+		prep = null;
+
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+			prep = conn.prepareStatement("DELETE FROM azienda WHERE email=?;");
+
+			prep.setString(1, emailATest);
+			prep.executeUpdate();
+			//conn.commit();
+		} finally {
+			try {
+				if (prep != null)
+					prep.close();
+			} finally {
+				if (conn != null)
+					conn.close();
+			}
+		}
+
+	}
 }
