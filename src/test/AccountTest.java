@@ -215,7 +215,7 @@ public class AccountTest extends TestCase {
 
 			prep.setString(1, emailATest);
 			prep.executeUpdate();
-			//conn.commit();
+			conn.commit();
 		} finally {
 			try {
 				if (prep != null)
