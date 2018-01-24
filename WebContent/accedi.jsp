@@ -103,6 +103,20 @@
 			speed : 500
 		});
 	</script>
+	
+	<script>
+		function controlloLogin(form) {
+			var email = form.elements.namedItem("email").value.trim();
+			var pass = form.elements.namedItem("password").value.trim();
+			if (email !== null && email !== "" && pass !== null && pass !== "") {
+	
+				return true;
+			} else {
+				document.getElementById("alert").style.display = "block";
+				return false;
+			}
+		}
+	</script>
 
 
 </body>
