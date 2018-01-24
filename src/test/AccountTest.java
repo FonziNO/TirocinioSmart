@@ -104,14 +104,15 @@ public class AccountTest extends TestCase {
 	}
 
 	public final void testLoginStudente() throws Exception {
-		String nomeS = "Nicola";
-		String cognomeS = "Neri";
-		String matricolaS = "0512106358";
-		String emailS = "n.neri@studenti.unisa.it";
-		String passwordS = "NicolaNeri";
-		String dataNascita = "25/06/1995";
-		dataNascita = sdfsql.format(sdfjava.parse(dataNascita));
-		String cellulareS = "3021548965";
+		String nomeSTest = "Giovannino";
+		String cognomeSTest = "Mucciacino";
+		String matricolaSTest = "0512106355";
+		String emailSTest = "g.m@studenti.unisa.it";
+		String passwordSTest = "giovannino";
+		String dataNascitaTest = "25/06/1997";
+		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
+		String cellulareSTest = "3021548555";
+		int tipoTest = 0;
 
 		conn = null;
 		prep = null;
@@ -119,18 +120,20 @@ public class AccountTest extends TestCase {
 		try {
 			conn = DriverManagerConnectionPool.getConnection();
 			prep = conn.prepareStatement(
-					"INSERT INTO studente (email,nome,cognome,matricola,password,datanascita,cellulare) "
-							+ "VALUES(?,?,?,?,?,?,?);");
+					"INSERT INTO studente (email,nome,cognome,matricola,password,datanascita,cellulare,tipo) "
+							+ "VALUES(?,?,?,?,?,?,?,?);");
 
-			prep.setString(1, emailS);
-			prep.setString(2, nomeS);
-			prep.setString(3, cognomeS);
-			prep.setString(4, matricolaS);
-			prep.setString(5, passwordS);
-			prep.setString(6, dataNascita);
-			prep.setString(7, cellulareS);
+			prep.setString(1, emailSTest);
+			prep.setString(2, nomeSTest);
+			prep.setString(3, cognomeSTest);
+			prep.setString(4, matricolaSTest);
+			prep.setString(5, passwordSTest);
+			prep.setString(6, dataNascitaTest);
+			prep.setString(7, cellulareSTest);
+			prep.setInt(8, tipoTest);
 
 			prep.executeUpdate();
+			conn.commit();
 		} finally {
 			try {
 				if (prep != null)
@@ -141,9 +144,9 @@ public class AccountTest extends TestCase {
 			}
 		}
 
-		int studente = loginDao.doLogin(emailS, passwordS);
+		int studente =  loginDao.doLogin(emailSTest, passwordSTest);
 		
-		assertEquals(emailS, 4);
+		assertEquals(4, studente);
 		
 
 		conn = null;
@@ -151,11 +154,11 @@ public class AccountTest extends TestCase {
 
 		try {
 			conn = DriverManagerConnectionPool.getConnection();
-			prep = conn.prepareStatement("DELETE FROM docente WHERE email=?;");
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
 
-			prep.setString(1, emailS);
-
+			prep.setString(1, emailSTest);
 			prep.executeUpdate();
+			conn.commit();
 		} finally {
 			try {
 				if (prep != null)
