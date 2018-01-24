@@ -103,7 +103,7 @@
 			speed : 500
 		});
 	</script>
-	
+	<!--
 	<script>
 		function controlloLogin(form) {
 			var email = form.elements.namedItem("email").value.trim();
@@ -117,7 +117,7 @@
 			}
 		}
 	</script>
-
+  -->
 
 </body>
 </html>
