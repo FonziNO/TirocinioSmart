@@ -16,7 +16,7 @@ public class RegistratiDao {
 		PreparedStatement prep = null; // oggetto per inviare query parametriche
 
 		try {
-			System.out.println("Sono in RegistratiDao");
+			// System.out.println("Sono in RegistratiDao");
 			String register = "INSERT INTO " + RegistratiDao.TABLE_NAME
 					+ "(Email, Nome, Cognome, Matricola, Password, DataNascita, Cellulare, Tipo, notifica) VALUES (?,?,?,?,?,?,?,?,?)";
 			// formulo la stringa
@@ -35,15 +35,14 @@ public class RegistratiDao {
 
 			// eseguo la query
 			res = prep.executeUpdate();// mi ritorna il numero di righe
-										// aggiornate percio un intero
 			conn.commit();
-			System.out.println("risultato: " + res);
+			// System.out.println("risultato: " + res);
 		} finally {
 			try {
 				if (prep != null) {
 					prep.close();
-					System.out.print("ho modificato" + res);
-					System.out.println("");
+					// System.out.print("ho modificato" + res);
+					// System.out.println("");
 				}
 
 			} finally {
