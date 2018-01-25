@@ -16,17 +16,17 @@ import storage.AccettazioneTutorDao;
 import storage.AccettazioneUfficioDao;
 import storage.DriverManagerConnectionPool;
 import storage.RichiestaDao;
+import storage.RifiutoRichiestaDao;
 
-public class AccettazioneRichiestaTest {
+public class RifiutaRichiestaTest {
 	private static final String TABLE_NAME = "Richiesta";
 	Connection conn;
 	PreparedStatement prep = null; // oggetto per inviare query parametriche
 	PreparedStatement prep2 = null;
 	RichiestaDao richiesta;
-	InviaRichiesta inviaric;
-	AccettazioneDao accAz;
-	AccettazioneTutorDao accTu;
-	AccettazioneUfficioDao accUf;
+	RifiutoRichiestaDao rifAz;
+	
+	
 
 
 	ResultSet rs = null;
@@ -40,6 +40,8 @@ public class AccettazioneRichiestaTest {
 
 
 
+	
+	
 	public void cancellaDatiDB() throws SQLException{
 		conn = null;
 		prep = null;
@@ -67,38 +69,37 @@ public class AccettazioneRichiestaTest {
 
 	}
 	@Test
-	public void accettaAz() throws Exception{
-		accAz = new AccettazioneDao();
+	public void rifiutaTest() throws Exception{
+		
+		rifAz = new RifiutoRichiestaDao();
+		richiesta = new RichiestaDao();
 
-		iD= "R112";
-		stat= true;
+		iD= "R113";
+		stat= false;
 		statoTuto=false;
 		statoUffici=false;
-		studEmai="a.ursi@studenti.unisa.it";
+		studEmai="n.neri@studenti.unisa.it";
 		azEmai="aziendaMicroambiente@gmail.it";
+		
+		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
-		accAz.accetta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
+		rifAz.rifiuta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
 		try {
-			String control2="SELECT * FROM Richiesta WHERE ID LIKE ? AND Stato LIKE ? AND StatoTutor LIKE ? AND StatoUfficio LIKE ? AND StudenteEmail LIKE ? AND AziendaEmail LIKE ?;";
+			String control2="SELECT * FROM Richiesta;";
 			// formulo la stringa
 
 			conn = DriverManagerConnectionPool.getConnection();
 			prep= conn.prepareStatement(control2);
 
-			prep.setString(1, iD);
-			prep.setBoolean(2, stat);
-			prep.setBoolean(3, statoTuto);
-			prep.setBoolean(4, statoUffici);
-			prep.setString(5, studEmai);
-			prep.setString(6, azEmai);
 
 			rs = prep.executeQuery();
 			conn.commit();
 
-			if(!rs.next())
-				throw new Exception("ERRORE!");
-			else{
+			while(rs.next())
+//				throw new Exception("ERRORE!");
+//			else{
+			{
 				String idr=rs.getString("ID");
 				boolean stato=rs.getBoolean("Stato");
 				boolean statoTu=rs.getBoolean("StatoTutor");
@@ -106,17 +107,17 @@ public class AccettazioneRichiestaTest {
 				String studE=rs.getString("StudenteEmail");
 				String azE=rs.getString("AziendaEmail");
 
-				assertEquals(idr,iD);
-				assertEquals(stato, stat);
-				assertEquals(statoTu, statoTuto);
-				assertEquals(statoUff, statoUffici);
-				assertEquals(studE,studEmai);
-				assertEquals(azE,azEmai);
+				assertNotEquals(idr,iD);
+//				assertNotEquals(stato, stat);
+//				assertNotEquals(statoTu, statoTuto);
+//				assertNotEquals(statoUff, statoUffici);
+//				assertNotEquals(studE,studEmai);
+//				assertNotEquals(azE,azEmai);
+				
 
-
-				prep.close();
 
 			}
+			prep.close();
 		}
 
 		finally {
