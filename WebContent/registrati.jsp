@@ -18,6 +18,22 @@
 
 </head>
 <body>
+<%
+		String errore = (String) request.getAttribute("ErroreRegistrazione");
+		if (errore == null) {
+			errore = "";
+		}
+		if (!errore.equals("")) {
+			
+			
+	%>
+		<script>
+		alert("Email già esistente!");
+		</script>
+	
+	<%
+		}
+	%>
 	<div id="login-page">
 		<div class="container">
 			<form class="form-login" role="form" onsubmit="return Control()"
@@ -51,9 +67,8 @@
 				</div>
 
 				<div class="login-wrap">
-					<label for="dataN" class="col-sm-3 control-label">Data
-						</label>
-						
+					<label for="dataN" class="col-sm-3 control-label">Data </label>
+
 					<div class="col-sm-9">
 						<input type="data" id="dataN" required
 							title="Rispetta il formato!" class="form-control"
@@ -114,6 +129,11 @@
 
 						<button class="btn btn-theme btn-block" type="submit"
 							style="font-family: Ruda">Registrati</button>
+						<form>
+
+							<a href="index.jsp" class="btn btn-theme btn-block" type="submit"
+								value="Indietro" style="font-family: Ruda">Indietro</a>
+						</form>
 
 					</div>
 				</div>
@@ -160,7 +180,7 @@
 			//else{
 			//il campo diventa verde come CORRETTO
 			//}
-			
+
 			if (data.indexOf('/', 1) == -1) {
 				alert("Separa il giorno nella data di nascita con il carattere '/'");
 				return false;
@@ -168,7 +188,7 @@
 			//else{
 			//il campo diventa verde come CORRETTO
 			//}
-			
+
 			if (data.indexOf('/', 3) == -1) {
 				alert("Separa il mese nella data di nascita con il carattere '/'");
 				return false;
@@ -176,7 +196,7 @@
 			//else{
 			//il campo diventa verde come CORRETTO
 			//}
-			
+
 			if (data.length < 10) {
 				alert("La lunghezza della data non è corretta!");
 				return false;
@@ -184,7 +204,7 @@
 			//else{
 			//il campo diventa verde come CORRETTO
 			//}
-			
+
 			if (matricola.indexOf('05121') == -1) {
 				alert("Prefisso matricola errato! '05121' è il prefisso da utilizzare");
 				return false;
@@ -192,7 +212,7 @@
 			//else{
 			//il campo diventa verde come CORRETTO
 			//}
-			
+
 			if (pass1 != pass2) { //alert("Passwords Do not match");
 				alert("Le password immesse non coincidono!");
 				document.getElementById("password").style.borderColor = "#E34234";

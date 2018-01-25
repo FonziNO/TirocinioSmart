@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +42,8 @@ public class Registra extends HttpServlet {
 			System.out.println(email + " " + nome + " " + cognome + " " + matricola + " " + password + " " + datanascita
 					+" "+ cellulare);
 
-			rdao.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
+			res=rdao.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
+		
 
 			HttpSession session = request.getSession();
 
@@ -73,12 +75,11 @@ public class Registra extends HttpServlet {
 			// verifico se i dati immessi sono confermati dal client
 			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		} catch (Exception e1) {
+			
+			RequestDispatcher view = request.getRequestDispatcher("/registrati.jsp");
+			request.setAttribute("ErroreRegistrazione", "Email già esistente!");
+			view.forward(request, response);	
 		}
 	}
 }
