@@ -40,10 +40,9 @@ public class Registra extends HttpServlet {
 			datanascita = sdfsql.format(sdfjava.parse(datanascita));
 			System.out.println("Sono in Registra.java");
 			System.out.println(email + " " + nome + " " + cognome + " " + matricola + " " + password + " " + datanascita
-					+" "+ cellulare);
+					+ " " + cellulare);
 
-			res=rdao.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
-		
+			res = rdao.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
 
 			HttpSession session = request.getSession();
 
@@ -76,10 +75,16 @@ public class Registra extends HttpServlet {
 			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
 		} catch (Exception e1) {
-			
+
 			RequestDispatcher view = request.getRequestDispatcher("/registrati.jsp");
 			request.setAttribute("ErroreRegistrazione", "Email già esistente!");
-			view.forward(request, response);	
+			view.forward(request, response);
 		}
 	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher view = request.getRequestDispatcher("registrati.jsp");
+		view.forward(request, response);
+	}
+
 }

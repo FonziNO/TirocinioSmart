@@ -122,17 +122,17 @@
 					<div class="login-wrap">
 						<label class="checkbox"><span class="pull-right"> </span>
 						</label>
-						<hr>
+						
 					</div>
 
 					<div class="form-group">
 
 						<button class="btn btn-theme btn-block" type="submit"
-							style="font-family: Ruda">Registrati</button>
+							style="font-family: Ruda"><i class="fa fa-lock"></i> REGISTRATI</button>
 						<form>
 
-							<a href="index.jsp" class="btn btn-theme btn-block" type="submit"
-								value="Indietro" style="font-family: Ruda">Indietro</a>
+							<a href="Index" class="btn btn-theme btn-block" type="submit"
+								value="Indietro" style="font-family: Ruda">INDIETRO</a>
 						</form>
 
 					</div>

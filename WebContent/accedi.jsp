@@ -67,12 +67,12 @@
 						value="Accedi" style="font-family: Ruda">
 						<i class="fa fa-lock"></i> ACCEDI
 					</button>
-					<br>
+					
 					<form>
 					
-					<a href="index.jsp"
+					<a href="Index"
 							class="btn btn-theme btn-block" type="submit"
-						value="Indietro" style="font-family: Ruda">Indietro</a>
+						value="Indietro" style="font-family: Ruda">INDIETRO</a>
 					</form>
 					
 

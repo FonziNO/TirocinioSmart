@@ -51,7 +51,7 @@
 					data-original-title="Toggle Navigation"></div>
 			</div>
 			<!--logo start-->
-			<a href="index.html" class="logo"><b>TIROCINIO SMART</b></a>
+			<a href="Dashboard" class="logo"><b>TIROCINIO SMART</b></a>
 			<!--logo end-->
 			<div class="nav notify-row" id="top_menu">
 				<!--  notification start -->

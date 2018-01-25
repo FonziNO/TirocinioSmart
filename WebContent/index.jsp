@@ -59,7 +59,7 @@
 		<br> <br> <br> <br> <br> <br> <br>
 		<br> <br> <br> <a href="Accedi" class="btn btn-theme"
 			style="margin-right: 20%" value="Accedi">Accedi</a> <a
-			href="registrati.jsp" class="btn btn-theme" value="Registrati">Registrati</a>
+			href="Registra" class="btn btn-theme" value="Registra">Registrati</a>
 	</div>
 
 
