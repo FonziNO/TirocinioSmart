@@ -1,4 +1,4 @@
-package test;
+package testGestioneAccount;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

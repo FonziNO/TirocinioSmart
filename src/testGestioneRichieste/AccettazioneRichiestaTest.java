@@ -1,4 +1,4 @@
-package test;
+package testGestioneRichieste;
 
 import static org.junit.Assert.*;
 
@@ -11,16 +11,22 @@ import org.junit.Test;
 
 import application.InviaRichiesta;
 import junit.framework.TestCase;
+import storage.AccettazioneDao;
+import storage.AccettazioneTutorDao;
+import storage.AccettazioneUfficioDao;
 import storage.DriverManagerConnectionPool;
 import storage.RichiestaDao;
 
-public class RichiestaTest {
+public class AccettazioneRichiestaTest {
 	private static final String TABLE_NAME = "Richiesta";
 	Connection conn;
 	PreparedStatement prep = null; // oggetto per inviare query parametriche
 	PreparedStatement prep2 = null;
 	RichiestaDao richiesta;
 	InviaRichiesta inviaric;
+	AccettazioneDao accAz;
+	AccettazioneTutorDao accTu;
+	AccettazioneUfficioDao accUf;
 
 
 	ResultSet rs = null;
@@ -32,22 +38,22 @@ public class RichiestaTest {
 	String studEmai;
 	String azEmai;
 
-	
-	
+
+
 	public void cancellaDatiDB() throws SQLException{
 		conn = null;
 		prep = null;
 
 		try {
 			conn = DriverManagerConnectionPool.getConnection();
-			
+
 			prep = conn.prepareStatement("DELETE FROM richiesta WHERE ID = ?");
 			prep.setString(1, iD);
 			prep.executeUpdate();
 			conn.commit();
 
 			prep.close();
-			
+
 
 		} finally {
 			try {
@@ -60,30 +66,26 @@ public class RichiestaTest {
 		}
 
 	}
-	
-	
-	
 	@Test
-	public void testRichiedi() throws SQLException {
-		richiesta= new  RichiestaDao();
-		inviaric = new InviaRichiesta();
+	public void accettaAz() throws Exception{
+		accAz = new AccettazioneDao();
 
 		iD= "R112";
-		stat= false;
+		stat= true;
 		statoTuto=false;
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaMicroambiente@gmail.it";
-		
-		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
+
+		accAz.accetta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
 		try {
-		String control2="SELECT * FROM Richiesta WHERE ID LIKE ? AND Stato LIKE ? AND StatoTutor LIKE ? AND StatoUfficio LIKE ? AND StudenteEmail LIKE ? AND AziendaEmail LIKE ?;";
+			String control2="SELECT * FROM Richiesta WHERE ID LIKE ? AND Stato LIKE ? AND StatoTutor LIKE ? AND StatoUfficio LIKE ? AND StudenteEmail LIKE ? AND AziendaEmail LIKE ?;";
 			// formulo la stringa
 
 			conn = DriverManagerConnectionPool.getConnection();
 			prep= conn.prepareStatement(control2);
-			
+
 			prep.setString(1, iD);
 			prep.setBoolean(2, stat);
 			prep.setBoolean(3, statoTuto);
@@ -93,9 +95,9 @@ public class RichiestaTest {
 
 			rs = prep.executeQuery();
 			conn.commit();
-			
+
 			if(!rs.next())
-				assertEquals(false, true);
+				throw new Exception("ERRORE!");
 			else{
 				String idr=rs.getString("ID");
 				boolean stato=rs.getBoolean("Stato");
@@ -116,31 +118,34 @@ public class RichiestaTest {
 
 			}
 		}
- 
-			finally {
-				try {
-					if (prep != null) {
-						prep.close();
 
-					}
-					//if (prep2 != null) {
-					//	prep2.close();
-					//}
-				} 
-			
-
-				finally {
-					if (prep != null) {
-						prep.close();
-					}
-					//if (prep2 != null) {
-						//prep2.close();
-					//}
+		finally {
+			try {
+				if (prep != null) {
+					prep.close();
 
 				}
-			
+				//if (prep2 != null) {
+				//	prep2.close();
+				//}
+			} 
+
+
+			finally {
+				if (prep != null) {
+					prep.close();
+				}
+				//if (prep2 != null) {
+				//prep2.close();
+				//}
+
+			}
+
 		}
 		cancellaDatiDB();
+
 	}
-	
+
+
+
 }
