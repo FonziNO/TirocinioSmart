@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RichiestaDao {
-	private static final String TABLE_NAME = "Richiesta";
+	public static final String TABLE_NAME = "Richiesta";
 	int res = 0;
 
 	
