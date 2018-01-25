@@ -86,7 +86,7 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-	<h5 style="margin-left: 10%">In questa sezione potrai inviare una
+	<h5>In questa sezione potrai inviare una
 		richiesta se interessato al progetto formativo offerto dall'azienda.</h5>
 	<div class="row mt">
 		<div class="col-lg-12">
@@ -118,7 +118,7 @@
 					<h4 align="center">DETTAGLI AZIENDA</h4>
 					</section>
 				</table>
-				<h5>Microambiente Srl è una società operante nel contesto
+				<h5 style="text-align:center">Microambiente Srl è una società operante nel contesto
 					nazionale e internazionale, formatasi nel 2005 da un gruppo di
 					professionisti dotati di esperienze multidisciplinari, legati da un
 					rapporto di collaborazione iniziato nel 1991. La società è in grado

@@ -120,7 +120,7 @@
 					<h4 align="center">DETTAGLI AZIENDA</h4>
 					</section>
 				</table>
-				<h5 style="margin-left:10%">Grazie all'elevata flessibilita' e scalabilita' e' possibile sviluppare numerose soluzioni, 
+				<h5 style="text-align:center">Grazie all'elevata flessibilita' e scalabilita' e' possibile sviluppare numerose soluzioni, 
 				abbinate o non a specifiche configurazioni hardware, per 
 				soddisfare ogni necessita' nella diagnostica per immagini</h5>
 				<br>

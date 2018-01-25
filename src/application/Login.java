@@ -109,6 +109,7 @@ public class Login extends HttpServlet {
 				System.out.println(n + " " + c);
 			} else {
 				RequestDispatcher login = request.getRequestDispatcher("accedi.jsp");
+				request.setAttribute("ErroreLogin", "Username e/o password non corretti");
 				login.forward(request, response);
 			}
 		} catch (SQLException e) {

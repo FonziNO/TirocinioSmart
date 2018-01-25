@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	import="java.util.ArrayList" import="storage.Studente"
-	import="storage.Richiesta" 
-	import="application.ListaStudentiTutor" pageEncoding="ISO-8859-1"%>
+	import="storage.Richiesta" import="application.ListaStudentiTutor"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -81,8 +81,9 @@
 					class="fa fa-dashboard"></i> <span>Dashboard</span>
 			</a></li>
 
-			<li class="sub-menu"><a class="active" href="ListaStudentiTutor.jsp">
-					<i class="fa fa-desktop"></i> <span>Lista Studenti</span>
+			<li class="sub-menu"><a class="active"
+				href="ListaStudentiTutor.jsp"> <i class="fa fa-desktop"></i> <span>Lista
+						Studenti</span>
 			</a></li>
 
 
@@ -94,17 +95,17 @@
       *********************************************************************************************************************************************************** -->
 	<!--main content start--> <section id="main-content"> <section
 		class="wrapper">
-		
-		 <%
- 	if (request.getAttribute("accetta") != null) {
- %>
+	<h5></h5>
+	<%
+		if (request.getAttribute("accetta") != null) {
+	%>
 	<p>
 		<font color="green"><%=request.getAttribute("accetta")%></font>
 	</p>
 	<%
 		}
 	%>
-	
+
 	<div class="row mt">
 		<div class="col-lg-12">
 			<div class="content-panel">
@@ -137,7 +138,7 @@
 								System.out.println(ric.get(i).getEmailT());
 
 								if (ric.get(i).getEmailT().equals(session.getAttribute("email"))) {
-									if(ric.get(i).getStatoT()==false){
+									if (ric.get(i).getStatoT() == false) {
 						%>
 						<tr>
 							<td><%=ric.get(i).getNomeS()%></td>
@@ -154,7 +155,7 @@
 						</tr>
 
 						<%
-									}
+							}
 								}
 							}
 						%>
@@ -195,7 +196,7 @@
 	<script src="assets/js/common-scripts.js"></script>
 
 	<!--script for this page-->
-	
+
 
 </body>
 </html>

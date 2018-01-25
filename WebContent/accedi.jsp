@@ -34,12 +34,26 @@
 	<!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
-
+	<%
+		String errore = (String) request.getAttribute("ErroreLogin");
+		if (errore == null) {
+			errore = "";
+		}
+		if (!errore.equals("")) {
+			
+			
+	%>
+		<script>
+		alert("E-mail o Password non corretti!");
+		</script>
+	
+	<%
+		}
+	%>
 	<div id="login-page">
 		<div class="container">
 
-			<form class="form-login" action="Login"
-				onsubmit="return controlloLogin(this);" method="post">
+			<form class="form-login" action="Login" method="post">
 				<h2 class="form-login-heading">Effettua l'accesso</h2>
 				<div class="login-wrap">
 					<input type="email" name="email" class="form-control"
@@ -103,6 +117,7 @@
 			speed : 500
 		});
 	</script>
+
 	<!--
 	<script>
 		function controlloLogin(form) {

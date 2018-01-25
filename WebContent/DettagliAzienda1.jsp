@@ -121,7 +121,7 @@
 					<h4 align="center">DETTAGLI AZIENDA</h4>
 					</section>
 				</table>
-				<h5 style="margin-left:10%">AF Soluzioni è un azienda di produzione di soluzioni software gestionali multicanali per 
+				<h5 style="text-align:center">AF Soluzioni è un azienda di produzione di soluzioni software gestionali multicanali per 
 							l'SCM. La elevata flessibilità delle soluzioni ed il continuo adeguamento alle nuove 
 							esigenze del mercato sono i temi che indirizzano le strategie di sviluppo.<br>
 						<a href="https://www.afsoluzioni.it/index.html"> Clicca qui per vedere la pagina ufficiale dell'azienda</a></h5>
