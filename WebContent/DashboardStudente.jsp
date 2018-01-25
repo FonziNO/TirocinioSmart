@@ -321,7 +321,7 @@
 
 				<!--/row -->
 				<div class="col-md-3"></div>
-				<div class="col-md-4" style="margin-top: 1.5%">
+				<div class="col-md-9" style="margin-top: 1.5%">
 					<div class="content-panel">
 						<h5>
 							<i class="fa fa-angle-right"></i>Legenda
