@@ -3,14 +3,12 @@ package test;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
 import java.sql.Connection;
 
 import junit.framework.TestCase;
 import storage.DriverManagerConnectionPool;
 import storage.LoginDao;
 import storage.RegistratiDao;
-import storage.Studente;
 
 public class AccountTest extends TestCase {
 	private Connection conn;
@@ -182,7 +180,8 @@ public class AccountTest extends TestCase {
 
 		try {
 			conn = DriverManagerConnectionPool.getConnection();
-			prep = conn.prepareStatement("INSERT INTO azienda (email,password,nome,locazione,tipo) " + "VALUES(?,?,?,?,?);");
+			prep = conn.prepareStatement(
+					"INSERT INTO azienda (email,password,nome,locazione,tipo) " + "VALUES(?,?,?,?,?);");
 
 			prep.setString(1, emailATest);
 			prep.setString(2, passwordATest);
@@ -214,6 +213,121 @@ public class AccountTest extends TestCase {
 			prep = conn.prepareStatement("DELETE FROM azienda WHERE email=?;");
 
 			prep.setString(1, emailATest);
+			prep.executeUpdate();
+			conn.commit();
+		} finally {
+			try {
+				if (prep != null)
+					prep.close();
+			} finally {
+				if (conn != null)
+					conn.close();
+			}
+		}
+
+	}
+
+	public final void testLoginTutor() throws Exception {
+		String emailTutorTest = "tutor@gmail.com";
+		String nomeTutorTest = "tutorNomeTest";
+		String cognomeTutorTest = "tutorCognomeTest";
+		String matricolaTutorTest = "0512151478";
+		String passwordTutorTest = "tutor123";
+		int tipoTutorTest = 2;
+
+		conn = null;
+		prep = null;
+
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+			prep = conn.prepareStatement(
+					"INSERT INTO tutor (email,nome,cognome,matricola, password,tipo) " + "VALUES(?,?,?,?,?,?);");
+
+			prep.setString(1, emailTutorTest);
+			prep.setString(2, nomeTutorTest);
+			prep.setString(3, cognomeTutorTest);
+			prep.setString(4, matricolaTutorTest);
+			prep.setString(5, passwordTutorTest);
+			prep.setInt(6, tipoTutorTest);
+
+			prep.executeUpdate();
+			conn.commit();
+		} finally {
+			try {
+				if (prep != null)
+					prep.close();
+			} finally {
+				if (conn != null)
+					conn.close();
+			}
+		}
+
+		int tutor = loginDao.doLogin(emailTutorTest, passwordTutorTest);
+
+		assertEquals(2, tutor);
+
+		conn = null;
+		prep = null;
+
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+			prep = conn.prepareStatement("DELETE FROM tutor WHERE email=?;");
+
+			prep.setString(1, emailTutorTest);
+			prep.executeUpdate();
+			conn.commit();
+		} finally {
+			try {
+				if (prep != null)
+					prep.close();
+			} finally {
+				if (conn != null)
+					conn.close();
+			}
+		}
+
+	}
+
+	public final void testLoginUfficioStage() throws Exception {
+		String emailUfficioTest = "ufficioTest@unisa.it";
+		String passwordUfficioTest = "ufficio123";
+		int tipoUfficioTest = 1;
+
+		conn = null;
+		prep = null;
+
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+			prep = conn.prepareStatement("INSERT INTO ufficiostage (email,password,tipo) " + "VALUES(?,?,?);");
+
+			prep.setString(1, emailUfficioTest);
+			prep.setString(2, passwordUfficioTest);
+			prep.setInt(3, tipoUfficioTest);
+
+			prep.executeUpdate();
+			conn.commit();
+		} finally {
+			try {
+				if (prep != null)
+					prep.close();
+			} finally {
+				if (conn != null)
+					conn.close();
+			}
+		}
+
+		int ufficioStage = loginDao.doLogin(emailUfficioTest, passwordUfficioTest);
+
+		assertEquals(1, ufficioStage);
+
+		conn = null;
+		prep = null;
+
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+			prep = conn.prepareStatement("DELETE FROM ufficiostage WHERE email=?;");
+
+			prep.setString(1, emailUfficioTest);
 			prep.executeUpdate();
 			conn.commit();
 		} finally {
