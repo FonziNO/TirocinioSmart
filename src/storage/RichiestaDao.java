@@ -51,7 +51,8 @@ public class RichiestaDao {
 
 			conn.commit();
 			System.out.println("risultato: " + res);
-		} finally {
+		}
+		finally {
 			try {
 				if (prep != null) {
 					prep.close();

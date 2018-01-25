@@ -74,12 +74,12 @@ public class InviaRichiestaTest {
 		richiesta= new  RichiestaDao();
 		inviaric = new InviaRichiesta();
 
-		iD= "R112";
+		iD= "R113";
 		stat= false;
 		statoTuto=false;
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
-		azEmai="aziendaMicroambiente@gmail.it";
+		azEmai="aziendaTheorema@gmail.it";
 
 		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
