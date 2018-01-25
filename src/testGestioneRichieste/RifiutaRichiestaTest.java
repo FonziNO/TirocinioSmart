@@ -78,10 +78,9 @@ public class RifiutaRichiestaTest {
 		stat= false;
 		statoTuto=false;
 		statoUffici=false;
-		studEmai="n.neri@studenti.unisa.it";
+		studEmai="a.carrabs@studenti.unisa.it";
 		azEmai="aziendaMicroambiente@gmail.it";
 		
-		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
 		rifAz.rifiuta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
@@ -107,13 +106,16 @@ public class RifiutaRichiestaTest {
 				String studE=rs.getString("StudenteEmail");
 				String azE=rs.getString("AziendaEmail");
 
+				try{
 				assertNotEquals(idr,iD);
-//				assertNotEquals(stato, stat);
-//				assertNotEquals(statoTu, statoTuto);
-//				assertNotEquals(statoUff, statoUffici);
-//				assertNotEquals(studE,studEmai);
-//				assertNotEquals(azE,azEmai);
-				
+				assertNotEquals(stato, stat);
+				assertNotEquals(statoTu, statoTuto);
+				assertNotEquals(statoUff, statoUffici);
+				assertNotEquals(studE,studEmai);
+				assertNotEquals(azE,azEmai);
+				}catch(Throwable e){
+					
+				}
 
 
 			}

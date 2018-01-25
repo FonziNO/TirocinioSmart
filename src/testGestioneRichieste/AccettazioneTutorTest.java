@@ -43,12 +43,12 @@ public class AccettazioneTutorTest {
 	public void accettaTu() throws Exception {
 		accTu = new AccettazioneTutorDao();
 
-		iD= "R112";
+		iD= "R113";
 		stat= true;
 		statoTuto=true;
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
-		azEmai="aziendaMicroambiente@gmail.it";
+		azEmai="aziendaTheorema@gmail.it";
 
 		accTu.accettaTutor(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 

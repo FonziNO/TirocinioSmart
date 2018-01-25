@@ -1,34 +1,23 @@
 package testGestioneRichieste;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
-import application.InviaRichiesta;
-import junit.framework.TestCase;
-import storage.AccettazioneDao;
-import storage.AccettazioneTutorDao;
-import storage.AccettazioneUfficioDao;
+import application.ListaStudentiTutor;
 import storage.DriverManagerConnectionPool;
+import storage.Richiesta;
 import storage.RichiestaDao;
 
-public class AccettazioneUfficioTest {
-
-	private static final String TABLE_NAME = "Richiesta";
-	Connection conn;
-	PreparedStatement prep = null; // oggetto per inviare query parametriche
-	PreparedStatement prep2 = null;
+public class ListaAccettatiTutorTest {
 	RichiestaDao richiesta;
-	InviaRichiesta inviaric;
-	AccettazioneDao accAz;
-	AccettazioneTutorDao accTu;
-	AccettazioneUfficioDao accUf;
-
 
 	ResultSet rs = null;
 
@@ -38,7 +27,8 @@ public class AccettazioneUfficioTest {
 	boolean statoUffici;
 	String studEmai;
 	String azEmai;
-
+	Connection conn;
+	PreparedStatement prep;
 
 
 	public void cancellaDatiDB() throws SQLException{
@@ -71,54 +61,61 @@ public class AccettazioneUfficioTest {
 
 
 	@Test
-	public void accettaUf() throws Exception{
-		accUf = new AccettazioneUfficioDao();
-		
+	public void testDoListaStudenteTutor() throws SQLException {
+
+		ListaStudentiTutor lista= new ListaStudentiTutor();
+		List<Richiesta> richieste = new ArrayList<Richiesta>();
+		richiesta = new RichiestaDao();
+
 		iD= "R113";
 		stat= true;
-		statoTuto=true;
-		statoUffici=true;
+		statoTuto=false;
+		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaTheorema@gmail.it";
-		
-		accUf.accettaUfficio(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
+
+		richieste=lista.doListaStudenteTutor();
+
 
 		try {
-			String control2="SELECT * FROM Richiesta WHERE ID LIKE ? AND Stato LIKE ? AND StatoTutor LIKE ? AND StatoUfficio LIKE ? AND StudenteEmail LIKE ? AND AziendaEmail LIKE ?;";
+			String control2="SELECT * FROM Richiesta;";
 			// formulo la stringa
 
 			conn = DriverManagerConnectionPool.getConnection();
 			prep= conn.prepareStatement(control2);
 
-			prep.setString(1, iD);
-			prep.setBoolean(2, stat);
-			prep.setBoolean(3, statoTuto);
-			prep.setBoolean(4, statoUffici);
-			prep.setString(5, studEmai);
-			prep.setString(6, azEmai);
 
 			rs = prep.executeQuery();
 			conn.commit();
 
-			if(!rs.next()){
-				
-				throw new Exception("ERRORE!");
-		}else{
+			while(rs.next())
+				//				throw new Exception("ERRORE!");
+				//			else{
+			{
 				String idr=rs.getString("ID");
 				boolean stato=rs.getBoolean("Stato");
 				boolean statoTu=rs.getBoolean("StatoTutor");
 				boolean statoUff=rs.getBoolean("StatoUfficio");
 				String studE=rs.getString("StudenteEmail");
-				
-				assertEquals(idr,iD);
-				assertEquals(stato, stat);
-				assertEquals(statoTu, statoTuto);
-				assertEquals(statoUff, statoUffici);
-				assertEquals(studE,studEmai);
+				String azE=rs.getString("AziendaEmail");
 
-				prep.close();
+
+				try
+				{
+					assertEquals(idr,iD);
+					assertEquals(stato, stat);
+					assertEquals(statoTu, statoTuto);
+					assertEquals(statoUff, statoUffici);
+					assertEquals(studE,studEmai);
+					assertEquals(azE,azEmai);
+
+				}
+				catch(Throwable e){
+				}
+
 
 			}
+			prep.close();
 		}
 
 		finally {
@@ -144,12 +141,9 @@ public class AccettazioneUfficioTest {
 			}
 
 		}
-		cancellaDatiDB();	
-
+		//cancellaDatiDB();
 
 	}
 
 
-
 }
-

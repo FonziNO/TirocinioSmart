@@ -70,13 +70,13 @@ public class AccettazioneRichiestaTest {
 	public void accettaAz() throws Exception{
 		accAz = new AccettazioneDao();
 
-		iD= "R112";
+		iD= "R113";
 		stat= true;
 		statoTuto=false;
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
-		azEmai="aziendaMicroambiente@gmail.it";
-
+		azEmai="aziendaTheorema@gmail.it";
+		
 		accAz.accetta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
 		try {

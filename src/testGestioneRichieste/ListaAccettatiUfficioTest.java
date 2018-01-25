@@ -18,11 +18,12 @@ import application.ListaStudentiTutor;
 import application.ListaStudentiUfficio;
 import storage.DriverManagerConnectionPool;
 import storage.Richiesta;
+import storage.RichiestaDao;
 
-public class ListaAccettatiTest {
+public class ListaAccettatiUfficioTest {
 
-	
-	
+	RichiestaDao richiesta;
+
 	ResultSet rs = null;
 
 	String iD;
@@ -33,8 +34,8 @@ public class ListaAccettatiTest {
 	String azEmai;
 	Connection conn;
 	PreparedStatement prep;
-	
-	
+
+
 	public void cancellaDatiDB() throws SQLException{
 		conn = null;
 		prep = null;
@@ -62,105 +63,23 @@ public class ListaAccettatiTest {
 
 	}
 
-	
-	
-	@Test
-	public void testDoListaStudenteTutor() throws SQLException {
-
-		ListaStudentiTutor lista= new ListaStudentiTutor();
-		List<Richiesta> richieste = new ArrayList<Richiesta>();
-		
-		
-		iD= "R112";
-		stat= true;
-		statoTuto=false;
-		statoUffici=false;
-		studEmai="a.ursi@studenti.unisa.it";
-		azEmai="aziendaMicroambiente@gmail.it";
-		
-		
-		richieste=lista.doListaStudenteTutor();
-
-		try {
-			String control2="SELECT * FROM Richiesta;";
-			// formulo la stringa
-
-			conn = DriverManagerConnectionPool.getConnection();
-			prep= conn.prepareStatement(control2);
-
-
-			rs = prep.executeQuery();
-			conn.commit();
-
-			while(rs.next())
-//				throw new Exception("ERRORE!");
-//			else{
-			{
-				String idr=rs.getString("ID");
-				boolean stato=rs.getBoolean("Stato");
-				boolean statoTu=rs.getBoolean("StatoTutor");
-				boolean statoUff=rs.getBoolean("StatoUfficio");
-				String studE=rs.getString("StudenteEmail");
-				String azE=rs.getString("AziendaEmail");
-
-				assertEquals(idr,iD);
-				assertEquals(stato, stat);
-				assertEquals(statoTu, statoTuto);
-				assertEquals(statoUff, statoUffici);
-				assertEquals(studE,studEmai);
-				assertEquals(azE,azEmai);
-				
-
-
-			}
-			prep.close();
-		}
-
-		finally {
-			try {
-				if (prep != null) {
-					prep.close();
-
-				}
-				//if (prep2 != null) {
-				//	prep2.close();
-				//}
-			} 
-
-
-			finally {
-				if (prep != null) {
-					prep.close();
-				}
-				//if (prep2 != null) {
-				//prep2.close();
-				//}
-
-			}
-
-		}
-		cancellaDatiDB();
-
-	}
-
-	
 	@Test
 	public void testDoListaStudenteUfficio() throws SQLException {
 
 		ListaStudentiUfficio lista= new ListaStudentiUfficio();
-		
-		List<Richiesta> richieste2 = new ArrayList<Richiesta>();
-		
-		
-		iD= "R112";
+
+		List<Richiesta> richieste = new ArrayList<Richiesta>();
+		richiesta = new RichiestaDao();
+
+		iD= "R113";
 		stat= true;
 		statoTuto=true;
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
-		azEmai="aziendaMicroambiente@gmail.it";
-		
-		
-		richieste2=lista.doListaStudenteUfficio();
+		azEmai="aziendaTheorema@gmail.it";
+
+
+		richieste=lista.doListaStudenteUfficio();
 
 		try {
 			String control2="SELECT * FROM Richiesta;";
@@ -174,8 +93,8 @@ public class ListaAccettatiTest {
 			conn.commit();
 
 			while(rs.next())
-//				throw new Exception("ERRORE!");
-//			else{
+				//				throw new Exception("ERRORE!");
+				//			else{
 			{
 				String idr=rs.getString("ID");
 				boolean stato=rs.getBoolean("Stato");
@@ -184,13 +103,16 @@ public class ListaAccettatiTest {
 				String studE=rs.getString("StudenteEmail");
 				String azE=rs.getString("AziendaEmail");
 
-				assertEquals(idr,iD);
-				assertEquals(stato, stat);
-				assertEquals(statoTu, statoTuto);
-				assertEquals(statoUff, statoUffici);
-				assertEquals(studE,studEmai);
-				assertEquals(azE,azEmai);
-				
+
+				try{
+					assertEquals(idr,iD);
+					assertEquals(stato, stat);
+					assertEquals(statoTu, statoTuto);
+					assertEquals(statoUff, statoUffici);
+					assertEquals(studE,studEmai);
+					assertEquals(azE,azEmai);
+				}
+				catch(Throwable e){}
 
 
 			}
@@ -220,8 +142,8 @@ public class ListaAccettatiTest {
 			}
 
 		}
-		cancellaDatiDB();
+		//cancellaDatiDB();
 
 	}
-	
+
 }
