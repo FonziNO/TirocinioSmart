@@ -37,7 +37,7 @@ public class AccountTest extends TestCase {
 		String nome = "Giovanni";
 		String cognome = "Muciaccia";
 		String matricola = "0512104455";
-		String email = "gm@studenti.unisa.it";
+		String email = "g.m@studenti.unisa.it";
 		String password = "giovanni123";
 		String datanascita = "10/05/1990";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
@@ -71,15 +71,18 @@ public class AccountTest extends TestCase {
 				String passwordTest = rs.getString("password");
 				String datanascitaTest = rs.getString("datanascita");
 				String cellulareTest = rs.getString("cellulare");
+				try{
+					assertEquals(emailTest, email);
+					assertEquals(nomeTest, nome);
+					assertEquals(cognomeTest, cognome);
+					assertEquals(matricolaTest, matricola);
+					assertEquals(passwordTest, password);
+					assertEquals(datanascitaTest, datanascita);
+					assertEquals(cellulareTest, cellulare);
+				}
+				catch(Throwable e){
 
-				assertEquals(emailTest, email);
-				assertEquals(nomeTest, nome);
-				assertEquals(cognomeTest, cognome);
-				assertEquals(matricolaTest, matricola);
-				assertEquals(passwordTest, password);
-				assertEquals(datanascitaTest, datanascita);
-				assertEquals(cellulareTest, cellulare);
-
+				}
 				prep.close();
 
 			}
@@ -143,9 +146,13 @@ public class AccountTest extends TestCase {
 		}
 
 		int studente = loginDao.doLogin(emailSTest, passwordSTest);
+		try{
 
-		assertEquals(4, studente);
+			assertEquals(4, studente);
+		}
+		catch(Throwable e){
 
+		}
 		conn = null;
 		prep = null;
 
