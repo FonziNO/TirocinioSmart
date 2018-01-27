@@ -23,7 +23,9 @@ public class RegistratiDao {
 
 			conn = DriverManagerConnectionPool.getConnection();
 			prep = conn.prepareStatement(register);
+		if(email.indexOf("studenti.unisa.it")!=-1){
 			prep.setString(1, email);
+			}
 			prep.setString(2, nome);
 			prep.setString(3, cognome);
 			prep.setString(4, matricola);

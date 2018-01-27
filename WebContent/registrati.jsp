@@ -18,19 +18,17 @@
 
 </head>
 <body>
-<%
+	<%
 		String errore = (String) request.getAttribute("ErroreRegistrazione");
 		if (errore == null) {
 			errore = "";
 		}
 		if (!errore.equals("")) {
-			
-			
 	%>
-		<script>
+	<script>
 		alert("Email già esistente!");
-		</script>
-	
+	</script>
+
 	<%
 		}
 	%>
@@ -122,13 +120,15 @@
 					<div class="login-wrap">
 						<label class="checkbox"><span class="pull-right"> </span>
 						</label>
-						
+
 					</div>
 
 					<div class="form-group">
 
 						<button class="btn btn-theme btn-block" type="submit"
-							style="font-family: Ruda"><i class="fa fa-lock"></i> REGISTRATI</button>
+							style="font-family: Ruda">
+							<i class="fa fa-lock"></i> REGISTRATI
+						</button>
 						<form>
 
 							<a href="Index" class="btn btn-theme btn-block" type="submit"
@@ -173,6 +173,7 @@
 			var data = document.getElementById("dataN").value;
 			var matricola = document.getElementById("matricola").value;
 			var ok = true;
+			var dataNascita = new Date();
 			if (email.indexOf('studenti.unisa.it') == -1) {
 				alert("E-MAIL NON VALIDA: L'accesso è consentito unicamente ai domini (@studenti.unisa.it)");
 				return false;
@@ -181,48 +182,81 @@
 			//il campo diventa verde come CORRETTO
 			//}
 
-			if (data.indexOf('/', 1) == -1) {
-				alert("Separa il giorno nella data di nascita con il carattere '/'");
+	/* 		if (data.substring(2, 3) != "/" || data.substring(5, 6) != "/"
+					|| isNaN(data.substring(0, 2))
+					|| isNaN(data.substring(3, 5))
+					|| isNaN(data.substring(6, 10))) {
+				alert("Inserire nascita in formato gg/mm/aaaa");
+				data = "";
+				data.focus();
+				return false;
+
+			} else if (data.substring(0, 2) > 31) {
+
+				alert("Impossibile utilizzare un valore superiore a 31 per i giorni");
+				data.select();
+				return false;
+
+			} else if (data.substring(3, 5) > 12) {
+
+				alert("Impossibile utilizzare un valore superiore a 12 per i mesi");
+				data = "";
+				data.focus();
+				return false;
+
+			} else if (data.substring(6, 10) < 1900) {
+
+				alert("Impossibile utilizzare un valore inferiore a 1900 per l'anno");
+				data = "";
+				data.focus();
 				return false;
 			}
-			//else{
-			//il campo diventa verde come CORRETTO
-			//}
+		} */
 
-			if (data.indexOf('/', 3) == -1) {
-				alert("Separa il mese nella data di nascita con il carattere '/'");
-				return false;
-			}
-			//else{
-			//il campo diventa verde come CORRETTO
-			//}
+		
+		 if (data.indexOf('/', 1) == -1) {
+		 alert("Separa il giorno nella data di nascita con il carattere '/'");
+		 return false;
+		 }
+		 //else{
+		 //il campo diventa verde come CORRETTO
+		 //}
 
-			if (data.length < 10) {
-				alert("La lunghezza della data non è corretta!");
-				return false;
-			}
-			//else{
-			//il campo diventa verde come CORRETTO
-			//}
+		 if (data.indexOf('/', 3) == -1) {
+		 alert("Separa il mese nella data di nascita con il carattere '/'");
+		 return false;
+		 }
+		 //else{
+		 //il campo diventa verde come CORRETTO
+		 //}
+		
+		
 
-			if (matricola.indexOf('05121') == -1) {
-				alert("Prefisso matricola errato! '05121' è il prefisso da utilizzare");
-				return false;
-			}
-			//else{
-			//il campo diventa verde come CORRETTO
-			//}
+		 if (data.length < 10) {
+		 alert("La lunghezza della data non è corretta!");
+		 return false;
+		 }
+		 //else{
+		 //il campo diventa verde come CORRETTO
+		 //} */
 
-			if (pass1 != pass2) { //alert("Passwords Do not match");
-				alert("Le password immesse non coincidono!");
-				document.getElementById("password").style.borderColor = "#E34234";
-				document.getElementById("ripetipassword").style.borderColor = "#E34234";
-				ok = false;
-			} else {
-
-			}
-			return ok;
+		if (matricola.indexOf('05121') == -1) {
+			alert("Prefisso matricola errato! '05121' è il prefisso da utilizzare");
+			return false;
 		}
+		//else{
+		//il campo diventa verde come CORRETTO
+		//}
+
+		if (pass1 != pass2) { //alert("Passwords Do not match");
+			alert("Le password immesse non coincidono!");
+			document.getElementById("password").style.borderColor = "#E34234";
+			document.getElementById("ripetipassword").style.borderColor = "#E34234";
+			ok = false;
+		} else {
+
+		}
+		return ok;}
 	</script>
 	<!-- 
 	<script>

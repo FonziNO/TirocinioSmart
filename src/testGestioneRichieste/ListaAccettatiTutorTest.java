@@ -63,9 +63,10 @@ public class ListaAccettatiTutorTest {
 	@Test
 	public void testDoListaStudenteTutor() throws SQLException {
 
+		richiesta = new RichiestaDao();
+
 		ListaStudentiTutor lista= new ListaStudentiTutor();
 		List<Richiesta> richieste = new ArrayList<Richiesta>();
-		richiesta = new RichiestaDao();
 
 		iD= "R113";
 		stat= true;
@@ -73,12 +74,15 @@ public class ListaAccettatiTutorTest {
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaTheorema@gmail.it";
-
+		
+		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
+		
 		richieste=lista.doListaStudenteTutor();
-
+		
+		
 
 		try {
-			String control2="SELECT * FROM Richiesta;";
+			String control2="SELECT * FROM Richiesta, Tutor;";
 			// formulo la stringa
 
 			conn = DriverManagerConnectionPool.getConnection();
@@ -141,9 +145,7 @@ public class ListaAccettatiTutorTest {
 			}
 
 		}
-		//cancellaDatiDB();
 
+		cancellaDatiDB();
 	}
-
-
 }

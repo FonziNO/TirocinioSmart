@@ -38,36 +38,6 @@ public class RifiutaRichiestaTest {
 	String studEmai;
 	String azEmai;
 
-
-
-	
-	
-	public void cancellaDatiDB() throws SQLException{
-		conn = null;
-		prep = null;
-
-		try {
-			conn = DriverManagerConnectionPool.getConnection();
-
-			prep = conn.prepareStatement("DELETE FROM richiesta WHERE ID = ?");
-			prep.setString(1, iD);
-			prep.executeUpdate();
-			conn.commit();
-
-			prep.close();
-
-
-		} finally {
-			try {
-				if (prep != null)
-					prep.close();
-			} finally {
-				if (conn != null)
-					conn.close();
-			}
-		}
-
-	}
 	@Test
 	public void rifiutaTest() throws Exception{
 		
@@ -78,9 +48,8 @@ public class RifiutaRichiestaTest {
 		stat= false;
 		statoTuto=false;
 		statoUffici=false;
-		studEmai="a.carrabs@studenti.unisa.it";
+		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaMicroambiente@gmail.it";
-		
 
 		rifAz.rifiuta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
@@ -105,17 +74,8 @@ public class RifiutaRichiestaTest {
 				boolean statoUff=rs.getBoolean("StatoUfficio");
 				String studE=rs.getString("StudenteEmail");
 				String azE=rs.getString("AziendaEmail");
-
-				try{
-				assertNotEquals(idr,iD);
-				assertNotEquals(stato, stat);
-				assertNotEquals(statoTu, statoTuto);
-				assertNotEquals(statoUff, statoUffici);
-				assertNotEquals(studE,studEmai);
-				assertNotEquals(azE,azEmai);
-				}catch(Throwable e){
-					
-				}
+				
+				assertEquals(idr, iD);
 
 
 			}
@@ -145,7 +105,6 @@ public class RifiutaRichiestaTest {
 			}
 
 		}
-		//cancellaDatiDB();
 
 	}
 

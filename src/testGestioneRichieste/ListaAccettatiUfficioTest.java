@@ -78,7 +78,8 @@ public class ListaAccettatiUfficioTest {
 		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaTheorema@gmail.it";
 
-
+		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
+		
 		richieste=lista.doListaStudenteUfficio();
 
 		try {
@@ -142,7 +143,7 @@ public class ListaAccettatiUfficioTest {
 			}
 
 		}
-		//cancellaDatiDB();
+		cancellaDatiDB();
 
 	}
 

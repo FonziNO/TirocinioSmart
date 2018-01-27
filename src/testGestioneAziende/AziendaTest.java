@@ -8,14 +8,42 @@ import java.util.List;
 
 import org.junit.Test;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import application.InviaRichiesta;
 import application.ListaAziende;
+import storage.AccettazioneDao;
+import storage.AccettazioneTutorDao;
+import storage.AccettazioneUfficioDao;
 import storage.Azienda;
+import storage.DriverManagerConnectionPool;
+import storage.RichiestaDao;
 
 
 public class AziendaTest{
+	
+	
+	Connection conn;
+	PreparedStatement prep = null; // oggetto per inviare query parametriche
+	PreparedStatement prep2 = null;
+	RichiestaDao richiesta;
+	InviaRichiesta inviaric;
+	AccettazioneDao accAz;
+	AccettazioneTutorDao accTu;
+	AccettazioneUfficioDao accUf;
 
+
+	ResultSet rs = null;
+
+	String iD;
+	boolean stat;
+	boolean statoTuto;
+	boolean statoUffici;
+	String studEmai;
+	String azEmai;
 
 	@Test
 	public void testDoListaAziende() throws SQLException {
@@ -23,13 +51,7 @@ public class AziendaTest{
 		ListaAziende lista= new ListaAziende();
 		List<Azienda> aziende = new ArrayList<Azienda>();
 		aziende=lista.doListaAziende();
-
-		//l'azienda azienda1 non esiste nel database
-		//verifichiamo che non sia presente nella lista
-		for(int i=0; i<aziende.size(); i++){
-
-			assertNotEquals("azienda1", aziende.get(i).getNomeA());
-		}
+	
 		
 		//l'azienda AF Soluzioni esiste nel database
 		//verifichiamo che sia presente nella lista
@@ -38,8 +60,11 @@ public class AziendaTest{
 		assertEquals("AFSoluzioni", aziende.get(0).getPasswordA());
 		assertEquals("AF Soluzioni srl", aziende.get(0).getNomeA());
 		assertEquals("Salerno", aziende.get(0).getLocazioneA());
-
-
 	}
+	
+
+	
+	
+	
 
 }

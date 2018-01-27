@@ -55,8 +55,7 @@ public class AccountTest extends TestCase {
 
 			conn = DriverManagerConnectionPool.getConnection();
 			prep = conn.prepareStatement(
-					"SELECT email, nome, cognome, matricola, password, datanascita, cellulare FROM studente "
-							+ "WHERE email=?;");
+					"SELECT email, nome, cognome, matricola, password, datanascita, cellulare FROM studente WHERE email=?;");
 
 			prep.setString(1, email);
 			ResultSet rs = prep.executeQuery();

@@ -69,13 +69,16 @@ public class AccettazioneRichiestaTest {
 	@Test
 	public void accettaAz() throws Exception{
 		accAz = new AccettazioneDao();
-
+		richiesta= new RichiestaDao();
+		
 		iD= "R113";
 		stat= true;
 		statoTuto=false;
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaTheorema@gmail.it";
+		
+		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 		
 		accAz.accetta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
@@ -142,10 +145,95 @@ public class AccettazioneRichiestaTest {
 			}
 
 		}
-		//cancellaDatiDB();
+		cancellaDatiDB();
 
 	}
 
 
 
+
+	@Test
+	public void testDeleteRichieste() throws Exception{
+
+		accAz = new AccettazioneDao();
+		richiesta= new RichiestaDao();
+		
+		iD= "R113";
+		stat= false;
+		statoTuto=false;
+		statoUffici=false;
+		studEmai="a.ursi@studenti.unisa.it";
+		azEmai="aziendaTheorema@gmail.it";
+		
+		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
+		
+		accAz.deleteRichieste(studEmai);
+
+		try {
+			String control2="SELECT * FROM Richiesta;";
+			// formulo la stringa
+
+			conn = DriverManagerConnectionPool.getConnection();
+			prep= conn.prepareStatement(control2);
+
+			rs = prep.executeQuery();
+			conn.commit();
+
+			while(rs.next())
+//				throw new Exception("ERRORE!");
+//			else{
+			{
+				String idr=rs.getString("ID");
+				boolean stato=rs.getBoolean("Stato");
+				boolean statoTu=rs.getBoolean("StatoTutor");
+				boolean statoUff=rs.getBoolean("StatoUfficio");
+				String studE=rs.getString("StudenteEmail");
+				String azE=rs.getString("AziendaEmail");
+
+				try{
+				assertNotEquals(idr,iD);
+				assertNotEquals(stato, stat);
+				assertNotEquals(statoTu, statoTuto);
+				assertNotEquals(statoUff, statoUffici);
+				assertNotEquals(studE,studEmai);
+				assertNotEquals(azE,azEmai);
+				
+				}catch(Throwable e){
+					
+				}
+
+		
+
+			}
+			prep.close();
+		}
+
+		finally {
+			try {
+				if (prep != null) {
+					prep.close();
+
+				}
+				//if (prep2 != null) {
+				//	prep2.close();
+				//}
+			} 
+
+
+			finally {
+				if (prep != null) {
+					prep.close();
+				}
+				//if (prep2 != null) {
+				//prep2.close();
+				//}
+
+			}
+
+		}
+
+
+
+
+	}
 }

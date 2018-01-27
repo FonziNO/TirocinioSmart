@@ -6,16 +6,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
 import application.InviaRichiesta;
+import application.ListaAziende;
 import junit.framework.TestCase;
 import storage.AccettazioneDao;
 import storage.AccettazioneTutorDao;
 import storage.AccettazioneUfficioDao;
+import storage.Azienda;
 import storage.DriverManagerConnectionPool;
 import storage.RichiestaDao;
+import storage.Tutor;
 
 
 
@@ -39,9 +44,11 @@ public class AccettazioneTutorTest {
 	boolean statoUffici;
 	String studEmai;
 	String azEmai;
+	
 	@Test
 	public void accettaTu() throws Exception {
 		accTu = new AccettazioneTutorDao();
+		richiesta=new RichiestaDao();
 
 		iD= "R113";
 		stat= true;
@@ -49,6 +56,8 @@ public class AccettazioneTutorTest {
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaTheorema@gmail.it";
+		
+		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
 		accTu.accettaTutor(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 
@@ -78,14 +87,17 @@ public class AccettazioneTutorTest {
 				boolean statoUff=rs.getBoolean("StatoUfficio");
 				String studE=rs.getString("StudenteEmail");
 				String azE=rs.getString("AziendaEmail");
-
+try{
 				assertEquals(idr,iD);
 				assertEquals(stato, stat);
 				assertEquals(statoTu, statoTuto);
 				assertEquals(statoUff, statoUffici);
 				assertEquals(studE,studEmai);
 				assertEquals(azE,azEmai);
-
+}
+catch(Throwable e){
+	
+}
 
 				prep.close();
 
@@ -117,6 +129,17 @@ public class AccettazioneTutorTest {
 		}
 		//cancellaDatiDB();	
 
+	}
+	
+	@Test
+	public void doListaTutorTest() throws Exception {
+		AccettazioneTutorDao lista= new AccettazioneTutorDao();
+		List<Tutor> tutor = new ArrayList<Tutor>();
+		tutor=lista.doListaTutor();
+
+
+		assertEquals("c.gialli@unisa.it", tutor.get(0).getEmailT());
+		assertEquals("aziendaAFSoluzioni@gmail.it", tutor.get(0).getEmailA());
 	}
 
 }

@@ -36,6 +36,36 @@ public class ListaRichiesteTest {
 	PreparedStatement prep;
 
 
+	public void cancellaDatiDB() throws SQLException{
+		conn = null;
+		prep = null;
+
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+
+			prep = conn.prepareStatement("DELETE FROM richiesta WHERE ID = ?");
+			prep.setString(1, iD);
+			prep.executeUpdate();
+			conn.commit();
+
+			prep.close();
+
+
+		} finally {
+			try {
+				if (prep != null)
+					prep.close();
+			} finally {
+				if (conn != null)
+					conn.close();
+			}
+		}
+
+	}
+	
+	
+	
+	
 	@Test
 	public void testDoListaRichieste() throws SQLException {
 
@@ -50,6 +80,8 @@ public class ListaRichiesteTest {
 		statoUffici=false;
 		studEmai="a.ursi@studenti.unisa.it";
 		azEmai="aziendaTheorema@gmail.it";
+		
+		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
 		
 		richieste=lista.doListaRichieste();
 
@@ -114,14 +146,8 @@ public class ListaRichiesteTest {
 			}
 
 		}
-		//cancellaDatiDB();
-
+		cancellaDatiDB();
 	}
-
-
-
-
-
 }
 
 
