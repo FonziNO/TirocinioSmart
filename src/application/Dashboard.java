@@ -8,14 +8,12 @@ import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import storage.DriverManagerConnectionPool;
-import storage.LoginDao;
 
 /**
  * Servlet implementation class Dashboard
@@ -29,7 +27,6 @@ public class Dashboard extends HttpServlet {
 	 */
 	public Dashboard() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -73,7 +70,6 @@ public class Dashboard extends HttpServlet {
 			prep3.setString(1, user);
 
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
@@ -87,7 +83,6 @@ public class Dashboard extends HttpServlet {
 			rs3 = prep3.executeQuery();
 
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {
@@ -141,7 +136,6 @@ public class Dashboard extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

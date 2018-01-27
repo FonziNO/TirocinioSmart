@@ -1,22 +1,24 @@
 package storage;
 
+/**
+ * il progetto formativo ha un id
+ */
 public class ProgettoFormativo {
-	
+
 	private String IdP;
-	private boolean statoP;
+
+	/**
+	 * metodo che restituisce l'id del progetto formativo
+	 * @return id del progetto formativo
+	 */
 	public String getIdP() {
 		return IdP;
 	}
+	/**
+	 * Metodo che permette di modificare l'id del progetto formativo
+	 * @param idP - id del progetto formativo
+	 */
 	public void setIdP(String idP) {
 		IdP = idP;
 	}
-	public boolean getStatoP() {
-		return statoP;
-	}
-	public void setStatoP(boolean statoP) {
-		this.statoP = statoP;
-	}
-	
-	
-	
 }

@@ -1,7 +1,6 @@
 package application;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
@@ -16,11 +15,17 @@ import javax.servlet.http.HttpSession;
 import storage.RegistratiDao;
 import storage.Studente;
 
+/**
+ * Servlet implementation class Registra
+ */
 public class Registra extends HttpServlet {
 	RegistratiDao rdao = new RegistratiDao();
 	int res = 0;
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		try {
@@ -38,9 +43,9 @@ public class Registra extends HttpServlet {
 			String cellulare = (String) request.getParameter("cellulare");
 
 			datanascita = sdfsql.format(sdfjava.parse(datanascita));
-			System.out.println("Sono in Registra.java");
+			/*System.out.println("Sono in Registra.java");
 			System.out.println(email + " " + nome + " " + cognome + " " + matricola + " " + password + " " + datanascita
-					+ " " + cellulare);
+					+ " " + cellulare);*/
 
 			res = rdao.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
 

@@ -15,11 +15,16 @@ import javax.servlet.http.HttpSession;
 
 import storage.DriverManagerConnectionPool;
 import storage.LoginDao;
-import storage.RegistratiDao;
-
+/**
+ * Servlet implementation class Login
+ */
 public class Login extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PreparedStatement prep = null;
@@ -52,7 +57,6 @@ public class Login extends HttpServlet {
 			prep2 = conn.prepareStatement(nomeTutor);
 			prep2.setString(1, user);
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
@@ -66,12 +70,11 @@ public class Login extends HttpServlet {
 			rs2 = prep2.executeQuery();
 			rs2.next();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {
 			int i = registrato.doLogin(user, password);
-			System.out.println(i);
+			//System.out.println(i);
 
 			if (i == 1) {
 				HttpSession session = request.getSession();
@@ -106,7 +109,7 @@ public class Login extends HttpServlet {
 				request.setAttribute("notifica", not);
 				RequestDispatcher dashboardStudente = request.getRequestDispatcher("DashboardStudente.jsp");
 				dashboardStudente.forward(request, response);
-				System.out.println(n + " " + c);
+				//System.out.println(n + " " + c);
 			} else {
 				RequestDispatcher login = request.getRequestDispatcher("accedi.jsp");
 				request.setAttribute("ErroreLogin", "Username e/o password non corretti");

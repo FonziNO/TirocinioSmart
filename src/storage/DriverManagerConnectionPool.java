@@ -6,8 +6,9 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-
-
+/**
+ * la classe DriverManagerConnectionPool permette la connessione al database
+ */
 public class DriverManagerConnectionPool
 {
 
@@ -20,16 +21,25 @@ public class DriverManagerConnectionPool
 		} catch (ClassNotFoundException e) {
 			System.out.println("DB driver not found:"+ e.getMessage());
 		} 
-}
-
+	}
+	/**
+	 * metodo che crea la connessione al database tirociniosmart
+	 * @return connessione al database
+	 * @throws SQLException
+	 */
 	private static synchronized Connection createDBConnection() throws SQLException {
 		Connection conn = null;
 		conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/tirociniosmart", "admin", "admin");
-		
-		conn.setAutoCommit(false);// usato in grandi  progetti
+
+		conn.setAutoCommit(false);
 		return conn;
 
-}
+	}
+	/**
+	 * metodo che restituisce la connessione
+	 * @return connessione
+	 * @throws SQLException
+	 */
 	public static synchronized Connection getConnection() throws SQLException {
 		Connection connection;
 
@@ -50,7 +60,12 @@ public class DriverManagerConnectionPool
 
 		return connection;
 	}
-
+	
+	/**
+	 * Metodo che rilascia la connessione
+	 * @param connection - connessione
+	 * @throws SQLException
+	 */
 	public static synchronized void releaseConnection(Connection connection) throws SQLException {
 		if(connection != null) freeDbConnections.add(connection);
 	}

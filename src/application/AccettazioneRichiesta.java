@@ -13,15 +13,21 @@ import javax.servlet.http.HttpSession;
 
 import storage.AccettazioneDao;
 import storage.Richiesta;
-import storage.RichiestaDao;
 
+/**
+ * Servlet implementation class AccettazioneRichiesta
+ */
 public class AccettazioneRichiesta extends HttpServlet {
 AccettazioneDao ricDao = new AccettazioneDao();
 	
 	int res = 0;
 	int res2 = 0;
 	private static final long serialVersionUID = 1L;
-
+	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	@SuppressWarnings("static-access")
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		

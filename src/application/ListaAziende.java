@@ -9,8 +9,15 @@ import java.util.List;
 
 import storage.Azienda;
 import storage.DriverManagerConnectionPool;
-
+/**
+ * La classe ListaAziende permette di vedere la lista delle aziende
+ */
 public class ListaAziende{
+
+	/**
+	 * Metodo che restituisce la lista delle aziende
+	 * @return lista delle aziende convenzionate
+	 */
 
 	public synchronized ArrayList<Azienda> doListaAziende()throws SQLException{ 
 		Connection conn= null;
@@ -33,6 +40,7 @@ public class ListaAziende{
 				azienda.setPasswordA(risultato1.getString("Password"));
 				azienda.setNomeA(risultato1.getString("Nome"));
 				azienda.setLocazioneA(risultato1.getString("Locazione"));
+
 				listaA.add(azienda);	
 			}
 		}catch(Exception e){

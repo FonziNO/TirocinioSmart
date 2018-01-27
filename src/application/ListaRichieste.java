@@ -1,6 +1,7 @@
 package application;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +10,17 @@ import java.util.List;
 
 import storage.DriverManagerConnectionPool;
 import storage.Richiesta;
+
+/**
+ * la classe ListaRichieste permette di vedere la lista delle richieste
+ */
+
 public class ListaRichieste {
+	/**
+	 * Metodo che restituisce la lista delle richieste
+	 * @return
+	 * @throws SQLException
+	 */
 
 	public synchronized ArrayList<Richiesta> doListaRichieste() throws SQLException {
 		Connection conn = null;

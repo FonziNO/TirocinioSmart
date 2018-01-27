@@ -9,12 +9,22 @@ import java.util.List;
 
 import storage.DriverManagerConnectionPool;
 import storage.Richiesta;
-
+/**
+ * la classe ListaStudentiUfficio permette di visualizzare gli studenti accettati dall'azienda e dal tutor
+ */
 public class ListaStudentiUfficio {
+	
+	/**
+	 * Metodo che permette all'ufficio stage di accettare la richiesta 
+	 * accettata prima dall'azienda e dal tutor
+	 * @return
+	 * @throws SQLException
+	 */
 	
 	public synchronized ArrayList<Richiesta> doListaStudenteUfficio() throws SQLException {
 		Connection conn = null;
 		PreparedStatement s = null;
+		
 		List<Richiesta> lista = new ArrayList<Richiesta>();
 
 		String query = "SELECT * FROM Richiesta, Studente, UfficioStage WHERE Richiesta.StudenteEmail = Studente.Email AND Richiesta.Stato = true AND Richiesta.StatoTutor = true;";
@@ -41,9 +51,7 @@ public class ListaStudentiUfficio {
 				richiesta.setEmailU(risultato.getString("UfficioStage.Email"));
 				
 				
-				lista.add(richiesta);
-				
-				
+				lista.add(richiesta);			
 		}
 	}
 		

@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import storage.AccettazioneUfficioDao;
-import storage.Azienda;
 import storage.Richiesta;
-import storage.Tutor;
-import storage.UfficioStage;
 
+/**
+ * Servlet implementation class AccettazioneUfficio
+ */
 public class AccettazioneUfficio extends HttpServlet{
 	AccettazioneUfficioDao ricUDao = new AccettazioneUfficioDao();
 	
@@ -26,7 +26,11 @@ public class AccettazioneUfficio extends HttpServlet{
 	String emailTutor;
 	boolean stato;
 	private static final long serialVersionUID = 1L;
-	
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+@SuppressWarnings("static-access")
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		

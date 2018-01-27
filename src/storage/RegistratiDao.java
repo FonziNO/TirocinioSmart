@@ -4,12 +4,25 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+/**
+ * la classe RegistratiDao aggiunge uno studente al database
+ */
 public class RegistratiDao {
 
 	private static final String TABLE_NAME = "Studente";
 	int res = 0;
-
+	/**
+	 * metodo che memorizza lo sudente nel database
+	 * @param email - email dello studente
+	 * @param nome - nome dello studente
+	 * @param cognome - cognome dello studente
+	 * @param matricola - matricola dello studente
+	 * @param password - password dello studente
+	 * @param datanascita - data di nascita dello studente
+	 * @param cellulare - numero di cellulare dello studente
+	 * @return il numero di righe modificate
+	 * @throws SQLException
+	 */
 	public synchronized int salva(String email, String nome, String cognome, String matricola, String password,
 			String datanascita, String cellulare) throws SQLException {
 		Connection conn = null; // istanzio la connessione
@@ -23,8 +36,9 @@ public class RegistratiDao {
 
 			conn = DriverManagerConnectionPool.getConnection();
 			prep = conn.prepareStatement(register);
-		if(email.indexOf("studenti.unisa.it")!=-1){
-			prep.setString(1, email);
+
+			if(email.indexOf("studenti.unisa.it")!=-1){
+				prep.setString(1, email);
 			}
 			prep.setString(2, nome);
 			prep.setString(3, cognome);

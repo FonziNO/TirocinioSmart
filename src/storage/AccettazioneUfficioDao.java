@@ -7,17 +7,30 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * la classe AccettazioneUfficioDao aggiorna lo stato di accettazione della richiesta
+ * da parte dell'ufficio stage
+ */
 public class AccettazioneUfficioDao {
-	
-	private static final String TABLE_NAME="Richiesta";
 	int res = 0;
+	/**
+	 * Metodo che permette di aggiornare lo stato di accettazione da parte dell'ufficio stage 
+	 * di una determinata richiesta accettata dall'azienda e dal tutor
+	 * @param id - codice della richiesta
+	 * @param stato - lo stato di accettazione da parte dell'azienda
+	 * @param statoTutor - lo stato di accettazione da parte del tutor
+	 * @param statoUfficio - lo stato di accettazione da parte dell'ufficio stage
+	 * @param studEmail - email dello studente che ha inviato la richiesta
+	 * @param azEmailA - email dell'azienda a cui è stata inviata la richiesta
+	 * @return il numero di righe aggiornate
+	 * @throws SQLException
+	 */
 	public synchronized int accettaUfficio(String id, boolean stato, boolean statoTutor, boolean statoUfficio, String studEmail, String azEmailA) throws SQLException{
 		Connection conn=null;
 		PreparedStatement prep=null;
-		ResultSet rs = null;
 		
 		try{
-			System.out.println("Sono in AccettazioneUfficioDao");
+			//System.out.println("Sono in AccettazioneUfficioDao");
 
 			String richieste="UPDATE Richiesta SET StatoUfficio=true WHERE StudenteEmail='"+studEmail+"'AND StatoTutor=true AND Stato=true;";
 			conn = DriverManagerConnectionPool.getConnection();
@@ -25,15 +38,14 @@ public class AccettazioneUfficioDao {
 			prep = conn.prepareStatement(richieste);
 
 			res=prep.executeUpdate();
-			System.out.println(richieste);
-
+			//System.out.println(richieste);
 
 		}finally {
 			try {
 				if (prep != null) {
 					prep.close();
-					System.out.print("ho modificato" + res);
-					System.out.println("");
+					//System.out.print("ho modificato" + res);
+					//System.out.println("");
 				}
 
 			} finally {
@@ -43,11 +55,13 @@ public class AccettazioneUfficioDao {
 			}
 			DriverManagerConnectionPool.releaseConnection(conn);
 		}
-
-
-
 		return res;
 	}
+	/**
+	 * Metodo che restituisce la lista delle aziende
+	 * @return lista delle aziende convenzionate
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<Richiesta> doListaAziende() throws SQLException {
 		Connection conn = null;
 		PreparedStatement s1 = null;
@@ -94,41 +108,4 @@ public class AccettazioneUfficioDao {
 		}
 		return (ArrayList<Richiesta>) listaA;
 	}
-	
-	/*public synchronized int cambiaStatoPF(String emailAzienda, String emailTutor, boolean stato) throws SQLException{
-		Connection conn=null;
-		PreparedStatement prep=null;
-		ResultSet rs = null;
-		try{
-			System.out.println("Sono in AccettazioneUfficioDao");
-
-			String richieste="UPDATE ProgettoFormativo SET StatoP=true WHERE AziendaEmail='"+emailAzienda+"' AND TutorEmail='"+emailTutor+"';";
-			conn = DriverManagerConnectionPool.getConnection();
-
-			prep = conn.prepareStatement(richieste);
-
-			res=prep.executeUpdate();
-			System.out.println(richieste);
-
-
-		}finally {
-			try {
-				if (prep != null) {
-					prep.close();
-					System.out.print("ho modificato" + res);
-					System.out.println("");
-				}
-
-			} finally {
-				if (prep != null) {
-					prep.close();
-				}
-			}
-			DriverManagerConnectionPool.releaseConnection(conn);
-		}
-		return res;
-		
-	}*/
-
-
 }

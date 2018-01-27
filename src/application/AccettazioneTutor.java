@@ -11,23 +11,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import storage.AccettazioneDao;
 import storage.AccettazioneTutorDao;
-import storage.Azienda;
-import storage.AziendaTutor;
 import storage.Richiesta;
 import storage.Tutor;
 
+
+/**
+ * Servlet implementation class AccettazioneTutor
+ */
 public class AccettazioneTutor extends HttpServlet{
-AccettazioneTutorDao ricTDao = new AccettazioneTutorDao();
-	
+	AccettazioneTutorDao ricTDao = new AccettazioneTutorDao();
+
 	int res = 0;
 	String emailAzienda;
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	@SuppressWarnings("static-access")
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
+
 		HttpSession session = request.getSession();
 		session.getId();
 		System.out.println("il tutor sta per accettare");
@@ -44,7 +49,7 @@ AccettazioneTutorDao ricTDao = new AccettazioneTutorDao();
 			res = ricTDao.accettaTutor(r.getCounter(), false, false, false, request.getParameter("emailSt"), emailAzienda);
 			if(res >= 0 ){
 				request.setAttribute("accetta", "Richiesta accettata");
-				}
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
