@@ -37,25 +37,25 @@ public class RegistratiDao {
 			conn = DriverManagerConnectionPool.getConnection();
 			prep = conn.prepareStatement(register);
 
-			if(email.indexOf("studenti.unisa.it")!=-1){
+			if((email.indexOf("studenti.unisa.it")!=-1)&&(matricola.indexOf("05121")!=-1)&&(cellulare.length() <=10)){
 				prep.setString(1, email);
-			}
-			prep.setString(2, nome);
-			prep.setString(3, cognome);
-			if (matricola.indexOf("05121") != -1) {
-			prep.setString(4, matricola);
-			}
-			prep.setString(5, password);
-			prep.setDate(6, Date.valueOf(datanascita));
-			if (cellulare.length() < 10) {
-			prep.setString(7, cellulare);
-			}
-			prep.setInt(8, 0);
-			prep.setString(9, null);
 
+				prep.setString(2, nome);
+				prep.setString(3, cognome);
+				prep.setString(4, matricola);
+			
+				prep.setString(5, password);
+				prep.setDate(6, Date.valueOf(datanascita));
+				
+				prep.setString(7, cellulare);
+				
+				prep.setInt(8, 0);
+				prep.setString(9, null);
+			
 			// eseguo la query
 			res = prep.executeUpdate();// mi ritorna il numero di righe
 			conn.commit();
+			}
 			// System.out.println("risultato: " + res);
 		} finally {
 			try {
