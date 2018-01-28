@@ -83,10 +83,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -161,10 +161,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -237,10 +237,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -390,10 +390,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -469,10 +469,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -500,7 +500,7 @@ public class AccountTestError {
 		String password = "angela123";
 		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "33456127";
+		String cellulare = "3345612147";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -545,10 +545,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -577,7 +577,7 @@ public class AccountTestError {
 		String password = "angela123";
 		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "33456127";
+		String cellulare = "3345612147";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -622,10 +622,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -654,7 +654,7 @@ public class AccountTestError {
 		String password = "angela123";
 		String datanascita = null;
 		//datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "33456127";
+		String cellulare = "3345612147";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -699,10 +699,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -730,7 +730,7 @@ public class AccountTestError {
 		String password = "angela123";
 		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "33456127";
+		String cellulare = "3345612147";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -775,10 +775,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -851,10 +851,10 @@ public class AccountTestError {
 
 			}
 
-//			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
-//
-//			prep.setString(1, email);
-//			prep.executeUpdate();
+			prep = conn.prepareStatement("DELETE FROM studente WHERE email=?;");
+
+			prep.setString(1, email);
+			prep.executeUpdate();
 			conn.commit();
 			prep.close();
 		} finally {
@@ -881,7 +881,7 @@ public class AccountTestError {
 		String passwordSTest = "angela123";
 		String dataNascitaTest = "10/07/1996";
 		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
-		String cellulareSTest = "33456127";
+		String cellulareSTest = "3345612147";
 		int tipoTest = 0;
 
 		conn = null;
@@ -953,7 +953,7 @@ public class AccountTestError {
 		String passwordSTest = "angela123";
 		String dataNascitaTest = "10/07/1996";
 		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
-		String cellulareSTest = "33456127";
+		String cellulareSTest = "3345612147";
 		int tipoTest = 0;
 
 		conn = null;
@@ -1027,7 +1027,7 @@ public class AccountTestError {
 		String passwordSTest = "angela123";
 		String dataNascitaTest = "10/07/1996";
 		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
-		String cellulareSTest = "33456127";
+		String cellulareSTest = "3345612147";
 		int tipoTest = 0;
 
 		conn = null;

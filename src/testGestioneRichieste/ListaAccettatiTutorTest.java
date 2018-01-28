@@ -72,7 +72,7 @@ public class ListaAccettatiTutorTest {
 		stat= true;
 		statoTuto=false;
 		statoUffici=false;
-		studEmai="a.ursi@studenti.unisa.it";
+		studEmai="n.neri@studenti.unisa.it";
 		azEmai="aziendaTheorema@gmail.it";
 		
 		richiesta.richiedi(iD, stat, statoTuto, statoUffici, studEmai, azEmai);

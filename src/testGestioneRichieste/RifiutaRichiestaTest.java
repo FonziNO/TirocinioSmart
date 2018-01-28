@@ -48,7 +48,7 @@ public class RifiutaRichiestaTest {
 		stat= false;
 		statoTuto=false;
 		statoUffici=false;
-		studEmai="a.ursi@studenti.unisa.it";
+		studEmai="n.neri@studenti.unisa.it";
 		azEmai="aziendaMicroambiente@gmail.it";
 
 		rifAz.rifiuta(iD, stat, statoTuto, statoUffici, studEmai, azEmai);
