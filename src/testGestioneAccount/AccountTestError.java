@@ -31,12 +31,12 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
+		String nome = "Angela";
+		String cognome = "Ursi";
 		String matricola = "0512104455";
-		String email = "g.m@stuti.unisa.it";
-		String password = "giovanni123";
-		String datanascita = "10/05/1990";
+		String email = "a.ursi@stuti.unisa.it";
+		String password = "angela123";
+		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
 		String cellulare = "3345612147";
 		try {
@@ -109,12 +109,12 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
+		String nome = "Angela";
+		String cognome = "Ursi";
 		String matricola = "051104455";
-		String email = "g.m@studenti.unisa.it";
-		String password = "giovanni123";
-		String datanascita = "10/05/1990";
+		String email = "a.ursi@studenti.unisa.it";
+		String password = "angela123";
+		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
 		String cellulare = "3345612147";
 		try {
@@ -185,12 +185,12 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
-		String matricola = "051104455";
-		String email = "g.m@studenti.unisa.it";
-		String password = "giovanni123";
-		String datanascita = "10/05/1990";
+		String nome = "Angela";
+		String cognome = "Ursi";
+		String matricola = "0512104455";
+		String email = "a.ursi@studenti.unisa.it";
+		String password = "angela123";
+		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
 		String cellulare = "33456127";
 		try {
@@ -262,14 +262,14 @@ public class AccountTestError {
 		loginDao = new LoginDao();
 
 		
-		String nomeSTest = "Giovannino";
-		String cognomeSTest = "Mucciacino";
-		String matricolaSTest = "0512106355";
-		String emailSTest = "g.m@studenti.unisa.it";
-		String passwordSTest = "giovannino";
-		String dataNascitaTest = "25/06/1997";
+		String nomeSTest = "Angela";
+		String cognomeSTest = "Ursi";
+		String matricolaSTest = "0512104455";
+		String emailSTest = "a.ursi@studenti.unisa.it";
+		String passwordSTest = "angela123";
+		String dataNascitaTest = "10/07/1996";
 		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
-		String cellulareSTest = "3021548555";
+		String cellulareSTest = "3345612147";
 		int tipoTest = 0;
 
 		conn = null;
@@ -303,7 +303,7 @@ public class AccountTestError {
 			}
 		}
 
-		int studente = loginDao.doLogin("g.m@stuti.unisa.it", passwordSTest);
+		int studente = loginDao.doLogin("a.ursi@stuti.unisa.it", passwordSTest);
 		System.out.println(studente);
 			assertNotEquals(4, studente);
 		conn = null;
@@ -338,12 +338,12 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
+		String nome = "Angela";
+		String cognome = "Ursi";
 		String matricola = "0512104455";
-		String email = "g.m@studenti.unisa.it";
+		String email = "a.ursi@studenti.unisa.it";
 		String password = null;
-		String datanascita = "10/05/1990";
+		String datanascita= "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
 		String cellulare = "3345612147";
 		try {
@@ -418,11 +418,11 @@ public class AccountTestError {
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
 		String nome = null;
-		String cognome = "Muciaccia";
+		String cognome = "Ursi";
 		String matricola = "0512104455";
-		String email = "g.m@studenti.unisa.it";
-		String password = "giovannino";
-		String datanascita = "10/05/1990";
+		String email = "a.ursi@studenti.unisa.it";
+		String password = "angela123";
+		String datanascita= "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
 		String cellulare = "3345612147";
 		try {
@@ -493,14 +493,14 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
+		String nome = "Angela";
 		String cognome = null;
 		String matricola = "0512104455";
-		String email = "g.m@studenti.unisa.it";
-		String password = "giovannino";
-		String datanascita = "10/05/1990";
+		String email = "a.ursi@studenti.unisa.it";
+		String password = "angela123";
+		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "3345612147";
+		String cellulare = "33456127";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -570,14 +570,14 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
+		String nome = "Angela";
+		String cognome = "Ursi";
 		String matricola = null;
-		String email = "g.m@studenti.unisa.it";
-		String password = "giovannino";
-		String datanascita = "10/05/1990";
+		String email = "a.ursi@studenti.unisa.it";
+		String password = "angela123";
+		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "3345612147";
+		String cellulare = "33456127";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -647,14 +647,14 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
+		String nome = "Angela";
+		String cognome = "Ursi";
 		String matricola = "0512104455";
-		String email = "g.m@studenti.unisa.it";
-		String password = "giovannino";
+		String email = "a.ursi@studenti.unisa.it";
+		String password = "angela123";
 		String datanascita = null;
 		//datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "3345612147";
+		String cellulare = "33456127";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -723,14 +723,14 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
+		String nome = "Angela";
+		String cognome = "Ursi";
 		String matricola = "0512104455";
 		String email = null;
-		String password = "giovannino";
-		String datanascita = "10/05/1990";
+		String password = "angela123";
+		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
-		String cellulare = "3345612147";
+		String cellulare = "33456127";
 		try {
 
 			registraS.salva(email, nome, cognome, matricola, password, datanascita, cellulare);
@@ -799,12 +799,12 @@ public class AccountTestError {
 		
 		SimpleDateFormat sdfjava = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdfsql = new SimpleDateFormat("yyyy-MM-dd");
-		String nome = "Giovanni";
-		String cognome = "Muciaccia";
+		String nome = "Angela";
+		String cognome = "Ursi";
 		String matricola = "0512104455";
-		String email = "g.m@studenti.unisa.it";
-		String password = "giovannino";
-		String datanascita = "10/05/1990";
+		String email = "a.ursi@studenti.unisa.it";
+		String password = "angela123";
+		String datanascita = "10/07/1996";
 		datanascita = sdfsql.format(sdfjava.parse(datanascita));
 		String cellulare = null;
 		try {
@@ -874,14 +874,14 @@ public class AccountTestError {
 		loginDao = new LoginDao();
 
 		
-		String nomeSTest = "Giovannino";
-		String cognomeSTest = "Mucciacino";
-		String matricolaSTest = "0512106355";
-		String emailSTest = "g.m@studenti.unisa.it";
-		String passwordSTest = "giovannino";
-		String dataNascitaTest = "25/06/1997";
+		String nomeSTest = "Angela";
+		String cognomeSTest = "Ursi";
+		String matricolaSTest = "0512104455";
+		String emailSTest = "a.ursi@studenti.unisa.it";
+		String passwordSTest = "angela123";
+		String dataNascitaTest = "10/07/1996";
 		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
-		String cellulareSTest = "3021548555";
+		String cellulareSTest = "33456127";
 		int tipoTest = 0;
 
 		conn = null;
@@ -946,14 +946,14 @@ public class AccountTestError {
 		loginDao = new LoginDao();
 
 		
-		String nomeSTest = "Giovannino";
-		String cognomeSTest = "Mucciacino";
-		String matricolaSTest = "0512106355";
-		String emailSTest = "g.m@studenti.unisa.it";
-		String passwordSTest = "giovannino";
-		String dataNascitaTest = "25/06/1997";
+		String nomeSTest = "Angela";
+		String cognomeSTest = "Ursi";
+		String matricolaSTest = "0512104455";
+		String emailSTest = "a.ursi@studenti.unisa.it";
+		String passwordSTest = "angela123";
+		String dataNascitaTest = "10/07/1996";
 		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
-		String cellulareSTest = "3021548555";
+		String cellulareSTest = "33456127";
 		int tipoTest = 0;
 
 		conn = null;
@@ -1020,14 +1020,14 @@ public class AccountTestError {
 		loginDao = new LoginDao();
 
 		
-		String nomeSTest = "Giovannino";
-		String cognomeSTest = "Mucciacino";
-		String matricolaSTest = "0512106355";
-		String emailSTest = "g.m@studenti.unisa.it";
-		String passwordSTest = "giovannino";
-		String dataNascitaTest = "25/06/1997";
+		String nomeSTest = "Angela";
+		String cognomeSTest = "Ursi";
+		String matricolaSTest = "0512104455";
+		String emailSTest = "a.ursi@studenti.unisa.it";
+		String passwordSTest = "angela123";
+		String dataNascitaTest = "10/07/1996";
 		dataNascitaTest = sdfsql.format(sdfjava.parse(dataNascitaTest));
-		String cellulareSTest = "3021548555";
+		String cellulareSTest = "33456127";
 		int tipoTest = 0;
 
 		conn = null;

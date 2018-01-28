@@ -42,7 +42,8 @@
 					<label for="nome" class="col-sm-3 control-label">Nome</label>
 					<div class="col-sm-9">
 						<input type="text" style="font-family: Ruda" required id="nome"
-							placeholder="Nome" class="form-control" autofocus name="nome" pattern="[A-za-z\s]{3,20}">
+							placeholder="Nome" class="form-control" autofocus name="nome"
+							pattern="[A-za-z\s]{3,20}">
 					</div>
 				</div>
 
@@ -51,7 +52,8 @@
 					<label for="cognome" class="col-sm-3 control-label">Cognome</label>
 					<div class="col-sm-9">
 						<input type="text" id="cognome" required placeholder="Cognome"
-							class="form-control" autofocus name="cognome" pattern="[A-za-z\s]{3,20}" >
+							class="form-control" autofocus name="cognome"
+							pattern="[A-za-z\s]{3,20}">
 					</div>
 				</div>
 
@@ -126,7 +128,7 @@
 					<div class="form-group">
 
 						<button class="btn btn-theme btn-block" type="submit"
-							style="font-family: Ruda">
+							style="font-family: Ruda" onclick="Control()">
 							<i class="fa fa-lock"></i> REGISTRATI
 						</button>
 						<form>
@@ -172,91 +174,68 @@
 			var email = document.getElementById("email").value;
 			var data = document.getElementById("dataN").value;
 			var matricola = document.getElementById("matricola").value;
+			
+			var espressione =  /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+			
 			var ok = true;
-			var dataNascita = new Date();
+			
+			
+			
 			if (email.indexOf('studenti.unisa.it') == -1) {
 				alert("E-MAIL NON VALIDA: L'accesso è consentito unicamente ai domini (@studenti.unisa.it)");
 				return false;
 			}
-			//else{
-			//il campo diventa verde come CORRETTO
-			//}
-
-	/* 		if (data.substring(2, 3) != "/" || data.substring(5, 6) != "/"
-					|| isNaN(data.substring(0, 2))
-					|| isNaN(data.substring(3, 5))
-					|| isNaN(data.substring(6, 10))) {
-				alert("Inserire nascita in formato gg/mm/aaaa");
-				data = "";
-				data.focus();
+			if(!espressione.test(data)){
 				return false;
+			}else{
+				anno = parseInt(data.substr(6), 10);
+				mese = parseInt(data.substr(3, 2), 10);
+				giorno = parseInt(data.substr(0, 2), 10);
+				var dataNascita = new Date(anno, mese - 1, giorno);
+				if (dataNascita.getFullYear() == anno
+						&& dataNascita.getMonth() + 1 == mese
+						&& dataNascita.getDate() == giorno) {
+					return true;
+				} else {
+					return false;
+				}
+				if (matricola.indexOf('05121') == -1) {
+					alert("Prefisso matricola errato! '05121' è il prefisso da utilizzare");
+					return false;
+				} else if (pass1 != pass2) { //alert("Passwords Do not match");
+					alert("Le password immesse non coincidono!");
+					document.getElementById("password").style.borderColor = "#E34234";
+					document.getElementById("ripetipassword").style.borderColor = "#E34234";
+					ok = false;
+				} else {
 
-			} else if (data.substring(0, 2) > 31) {
-
-				alert("Impossibile utilizzare un valore superiore a 31 per i giorni");
-				data.select();
-				return false;
-
-			} else if (data.substring(3, 5) > 12) {
-
-				alert("Impossibile utilizzare un valore superiore a 12 per i mesi");
-				data = "";
-				data.focus();
-				return false;
-
-			} else if (data.substring(6, 10) < 1900) {
-
-				alert("Impossibile utilizzare un valore inferiore a 1900 per l'anno");
-				data = "";
-				data.focus();
-				return false;
+				}
+				return ok;
 			}
-		} */
-
-		
-		 if (data.indexOf('/', 1) == -1) {
-		 alert("Separa il giorno nella data di nascita con il carattere '/'");
-		 return false;
-		 }
-		 //else{
-		 //il campo diventa verde come CORRETTO
-		 //}
-
-		 if (data.indexOf('/', 3) == -1) {
-		 alert("Separa il mese nella data di nascita con il carattere '/'");
-		 return false;
-		 }
-		 //else{
-		 //il campo diventa verde come CORRETTO
-		 //}
-		
-		
-
-		 if (data.length < 10) {
-		 alert("La lunghezza della data non è corretta!");
-		 return false;
-		 }
-		 //else{
-		 //il campo diventa verde come CORRETTO
-		 //} */
-
-		if (matricola.indexOf('05121') == -1) {
-			alert("Prefisso matricola errato! '05121' è il prefisso da utilizzare");
-			return false;
 		}
+
+		/* if (data.indexOf('/', 1) == -1) {
+		alert("Separa il giorno nella data di nascita con il carattere '/'");
+		return false;
+		} */
+		//else{
+		//il campo diventa verde come CORRETTO
+		//}
+		/* if (data.indexOf('/', 3) == -1) {
+		alert("Separa il mese nella data di nascita con il carattere '/'");
+		return false;
+		} */
 		//else{
 		//il campo diventa verde come CORRETTO
 		//}
 
-		if (pass1 != pass2) { //alert("Passwords Do not match");
-			alert("Le password immesse non coincidono!");
-			document.getElementById("password").style.borderColor = "#E34234";
-			document.getElementById("ripetipassword").style.borderColor = "#E34234";
-			ok = false;
-		} else {
-
-		}
-		return ok;}
+		/*  if (data.length < 10) {
+		 alert("La lunghezza della data non è corretta!");
+		 return false;
+		 } */
+		//else{
+		//il campo diventa verde come CORRETTO
+		//} */
 	</script>
 	<!-- 
 	<script>
