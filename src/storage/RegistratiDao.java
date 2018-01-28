@@ -42,10 +42,14 @@ public class RegistratiDao {
 			}
 			prep.setString(2, nome);
 			prep.setString(3, cognome);
+			if (matricola.indexOf("05121") != -1) {
 			prep.setString(4, matricola);
+			}
 			prep.setString(5, password);
 			prep.setDate(6, Date.valueOf(datanascita));
+			if (cellulare.length() < 10) {
 			prep.setString(7, cellulare);
+			}
 			prep.setInt(8, 0);
 			prep.setString(9, null);
 
