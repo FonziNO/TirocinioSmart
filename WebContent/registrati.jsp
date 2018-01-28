@@ -42,7 +42,7 @@
 					<label for="nome" class="col-sm-3 control-label">Nome</label>
 					<div class="col-sm-9">
 						<input type="text" style="font-family: Ruda" required id="nome"
-							placeholder="Nome" class="form-control" autofocus name="nome">
+							placeholder="Nome" class="form-control" autofocus name="nome" pattern="[A-za-z\s]{3,20}">
 					</div>
 				</div>
 
@@ -51,7 +51,7 @@
 					<label for="cognome" class="col-sm-3 control-label">Cognome</label>
 					<div class="col-sm-9">
 						<input type="text" id="cognome" required placeholder="Cognome"
-							class="form-control" autofocus name="cognome">
+							class="form-control" autofocus name="cognome" pattern="[A-za-z\s]{3,20}" >
 					</div>
 				</div>
 
