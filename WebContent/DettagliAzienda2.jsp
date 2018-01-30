@@ -131,6 +131,16 @@
 					per le aziende in tema ambientale, in particolare per lo schema
 					normativo ISO 14001.</h5>
 				<br>
+				<section id="unseen">
+				<table>
+					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
+					</section>
+				</table>
+				<h5 style="text-align:center">Periodo di tirocinio: </h5>
+				<h5 style="text-align:center">numero mesi: 1 dal 01/05/2018 al 31/05/2018 </h5>
+				<h5 style="text-align:center">Tutor accademico: </h5>
+				<h5 style="text-align:center">Silvia Bruni email: s.bruni@unisa.it </h5>
+				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">
 						<input type="hidden" name="emailAz"

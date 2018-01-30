@@ -126,6 +126,16 @@
 							esigenze del mercato sono i temi che indirizzano le strategie di sviluppo.<br>
 						<a href="https://www.afsoluzioni.it/index.html"> Clicca qui per vedere la pagina ufficiale dell'azienda</a></h5>
 				<br>
+				<section id="unseen">
+				<table>
+					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
+					</section>
+				</table>
+				<h5 style="text-align:center">Periodo di tirocinio: </h5>
+				<h5 style="text-align:center">numero mesi: 1 dal 01/03/2018 al 31/03/2018 </h5>
+				<h5 style="text-align:center">Tutor accademico: </h5>
+				<h5 style="text-align:center">Carlo Gialli email: c.gialli@unisa.it </h5>
+				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">
 

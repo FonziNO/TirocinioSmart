@@ -124,6 +124,16 @@
 				abbinate o non a specifiche configurazioni hardware, per 
 				soddisfare ogni necessita' nella diagnostica per immagini</h5>
 				<br>
+				<section id="unseen">
+				<table>
+					<h4 align="center">DETTAGLI PROGETTO FORMATIVO</h4>
+					</section>
+				</table>
+				<h5 style="text-align:center">Periodo di tirocinio: </h5>
+				<h5 style="text-align:center">numero mesi: 1 dal 01/07/2018 al 31/07/2018 </h5>
+				<h5 style="text-align:center">Tutor accademico: </h5>
+				<h5 style="text-align:center">Mario Bianchi email: m.bianchi@unisa.it </h5>
+				<br>
 				<div align="center">
 					<form action="InviaRichiesta" method="post">
 						<input type="hidden" name="emailAz"
